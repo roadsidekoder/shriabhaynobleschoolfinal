@@ -1,0 +1,62 @@
+{% extends 'Nobles/html/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- Start Banner Area -->
+	<section class="banner-area relative">
+		<div class="container">
+			<div class="row d-flex align-items-center justify-content-center">
+				<div class="about-content col-lg-12">
+					<h1 class="text-white">
+						Photo Gallery
+					</h1>
+					<div class="link-nav">
+						<span class="box">
+							<a href="{% url 'home' %}">Home </a>
+							<i class="lnr lnr-arrow-right"></i>
+							<a href="{% url 'about' %}">About Us</a>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</section>
+	<!-- End Banner Area -->
+<div class="whole-wrap  section-top-border">
+		<div class="container">
+                      <div style="text-align: center;">
+                        <h2> {{ gallery.title| upper }} </h2>
+                       </div>
+                       
+        <div class="row" style="padding: 10px;">
+				 <div class="col-md-4 col-md-offset-0 rowing">
+                    <div><b>Event Date :</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ gallery.event_date }}</div>
+                </div>
+                <div class="col-md-4 col-md-offset-0 rowing">
+                    <div><b>Updated On :</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ gallery.last_update }}</div>
+                </div>
+                <div class="col-md-4 col-md-offset-0 rowing">
+                    <div><b>Total Photo(s) :</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ gallery.image_set.all|length }}</div>
+                </div>
+                
+		</div>
+        <div><b style="color: black;">DESCRIPTIONS: </b><p>{{ gallery.description }}</p></div>
+          <br>
+           <div class="div-grid" id="lightgallery">
+            {% for photo in gallery.image_set.all %}
+  <a class="a-grid" href="{{ photo.image_size.url }}">
+    <figure>
+      <img class="img-grid" src="{{ photo.image_thumbnail.url }}" alt="">
+    </figure>
+  </a>
+  {% endfor %}
+  
+  
+</div> 
+            </div>
+            </div>
+    
+{% endblock %}
+ 

@@ -1,0 +1,85 @@
+{% extends 'Nobles/html/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Start Banner Area -->
+	<section class="banner-area relative">
+		<div class="container">
+			<div class="row d-flex align-items-center justify-content-center">
+				<div class="about-content col-lg-12">
+					<h1 class="text-white">
+						Achievements
+					</h1>
+					<div class="link-nav">
+						<span class="box">
+							<a href="{% url 'home' %}">Home </a>
+							<i class="lnr lnr-arrow-right"></i>
+							<a href="{% url 'achievements' %}">Achievements
+</a>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</section>
+	<!-- End Banner Area -->
+
+<section class="post-content-area single-post-area">
+		<div class="container ">
+			<div class="row">
+				<div class="col-lg-8 posts-list">
+					<div class="single-post row">
+						<div class="col-lg-12">
+							<div class="feature-img">
+								<img class="img-fluid" src="{{ details.cover_photo.url }}" alt="">
+							</div>
+						</div>
+						<div class="col-lg-3  col-md-3 meta-details">
+							<ul class="tags">
+								<li><font style="color: black;">VENUE: </font>{{ details.event_venue }}</li>
+                            
+							</ul>
+							<div class="user-details row">
+								<p class="date col-lg-12 col-md-12 col-6">{{ details.event_date }} <span class="lnr lnr-calendar-full"></span></p>
+								<!----<p class="view col-lg-12 col-md-12 col-6">1.2M Views <span class="lnr lnr-eye"></span></p> -->
+								</div>
+						</div>
+						<div class="col-lg-9 col-md-9">
+							<h3 class="mt-20 mb-20">{{ details.event_title| upper }}</h3>
+							<p class="excert">
+								{{ details.description }}
+							</p>
+							
+						</div>
+						
+					</div>
+                </div>
+
+
+                <div class="col-lg-4 sidebar-widgets">
+					<div class="widget-wrap">
+						<div class="single-sidebar-widget popular-post-widget">
+							<h4 class="popular-title">Achievements</h4>
+							<div class="popular-post-list">
+                            {% for achieve in achievements reversed %}
+								<div class="single-post-list d-flex flex-row align-items-center">
+									<div class="thumb">
+										<img class="img-fluid" src="{{ achieve.cover_photo_toosmall.url }}" alt="">
+									</div>
+									<div class="details">
+										<a href="{% url 'achievement_pk' achieve.id %}"><h6>{{ achieve.event_title| truncatechars:"20   " }}</h6></a>
+										<p>{{ achieve.event_date }}</p>
+									</div>
+								</div>
+							{% endfor %}
+							</div>
+						</div>
+				
+					</div>
+				                 </div>
+			</div>
+		</div>
+    </section>
+
+{% endblock %}

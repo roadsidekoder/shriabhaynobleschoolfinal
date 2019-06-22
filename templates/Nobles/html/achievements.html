@@ -1,0 +1,70 @@
+{% extends 'Nobles/html/base.html' %}
+{% load static %}
+
+{% block content %}
+
+	<!-- Start Banner Area -->
+	<section class="banner-area relative">
+		<div class="container">
+			<div class="row d-flex align-items-center justify-content-center">
+				<div class="about-content col-lg-12">
+					<h1 class="text-white">
+						Achievements
+					</h1>
+					<div class="link-nav">
+						<span class="box">
+							<a href="{% url 'home' %}">Home </a>
+							<i class="lnr lnr-arrow-right"></i>
+							<a href="{% url 'achievements' %}">Achievements</a>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+	</section>
+	<!-- End Banner Area -->
+
+<!-- ================ Start Popular Course Area ================= -->
+  <section class="popular-course-area">
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+				<div class="col-lg-8">
+					<div class="section-title text-center">
+					<br>
+						<h2>Our Achievements</h2>
+						<div  class="typography">
+						<h6>A Glance at our Achievements</h6>
+                        </div>
+					</div>
+				</div>
+		</div>
+      <div class="row">
+      {% for achieve in achievements %}
+      <div class="col-md-4">
+       <a href="{% url 'achievement_pk' achieve.id %}">
+        <div class="single-popular-course">
+          <div class="thumb">
+            <img class="f-img img-fluid mx-auto" src="{{ achieve.image_thumbnail.url }}" alt="" />
+          </div>
+          <div class="details">
+            <div class="d-flex justify-content-between mb-20">
+              <p class="name">Event Date : {{ achieve.event_date }}</p>
+            </div>
+            <a href="{% url 'achievement_pk' achieve.id %}">
+              <h5>{{ achieve.event_title| truncatechars:"35" }}</h5>
+            </a>
+          </div>
+        </div>
+        </a>
+        </div>
+        {% endfor %}
+        </div>
+<br><br>
+
+    </div>
+  </section>
+  <!-- ================ End Popular Course Area ================= -->
+
+
+{% endblock %}

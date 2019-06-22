@@ -1,0 +1,65 @@
+{% extends 'Nobles/html/base.html' %}
+{% load static %}
+
+{% block content %}
+ <!-- Start Banner Area -->
+	<section class="banner-area relative">
+		<div class="container">
+			<div class="row d-flex align-items-center justify-content-center">
+				<div class="about-content col-lg-12">
+					<h1 class="text-white">
+						About Us
+					</h1>
+					
+					<div class="link-nav">
+						<span class="box">
+							<a href="{% url 'home' %}">Home </a>
+							<i class="lnr lnr-arrow-right"></i>
+							<a href="{% url 'about' %}">About Us</a>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="rocket-img">
+			<img src="{% static 'Nobles/img/rocket.png' %}" alt="">
+		</div>
+	</section>
+	<!-- End Banner Area -->
+
+	<!-- Start About Area -->
+	<section class="about-area section-gap">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-5 col-md-6 about-left">
+					<img class="img-fluid" src="{% static 'Nobles/img/schoolfront.jpg' %}" alt="">
+				</div>
+				<div class="offset-lg-1 col-lg-6 offset-md-0 col-md-12 about-right">
+					<h1>
+						Welcome to <br>
+                    Shri Abhay Nobles Senior Secondary 
+                                School
+					</h1>
+					<div class="wow fadeIn" data-wow-duration="1s">
+						 <p>  Shri Abhay Nobles School has been established by a young enthusiastic person, who is highly qualified and well trained and who also knows child psychology. He fully dedicated to education, and imparting is his passion. He thinks to teach English in a specialised manner in guiding the students, motivating them and teach ing English in a specialised way to the student with rural background Recognising the rural talent and leading them to a better future is his life's aim.</p>
+
+  <p> The purpose of education is all round development of the children. A child learns 90% of the things by the age of 5. Therefore, the age 3 to 5 years is very important for his/her to learn about his/her surrounding habits, culture etc. To achieve this goal, it is necessary to attract a child by teaching him/her by various methods of education, i.e., Kindergarten, Froebel, Montessori, Play way etc. So that child education is without any mental burden. </p>
+
+<p>It is neither possible to have an all round development of student living in rural background by devoting only 4-5 hours in the school nor is possible to separate them from their families by keeping an eye on each and every activity personally.</p>
+
+  <p> To attain this goal a noble concept of “Day Boarding School” has been evolved where students. can taught for a longer period in school itself So that become a total person.</p>
+  
+  <p>The education will be imparted to the students according to their field of interest rather than thrusting upon them.</p>
+
+  <p>Audio-visual Medium will be used in Shri Abhay Nobles School to attract the students towards education. Side by side. Films, Charts, Toys, Projector etc, shall be used not only in teaching but also identifying and encouraging hobbies like drawing, painting, craft, soft toy making music, dance etc.</p>
+
+  <p>By keeping in mind the above, we are before you with a team of child education specialists and assure you of our best to in making your child a noble person.</p>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End About Area -->
+
+{% endblock %}

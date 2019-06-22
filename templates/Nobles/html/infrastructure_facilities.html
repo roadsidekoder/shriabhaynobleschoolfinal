@@ -1,0 +1,43 @@
+{% extends 'Nobles/html/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Start Banner Area -->
+	<section class="banner-area relative">
+		<div class="container">
+			<div class="row d-flex align-items-center justify-content-center">
+				<div class="about-content col-lg-12">
+					<h1 class="text-white">
+						Infrastructure & Facilities
+					</h1>
+					<p>In the history of modern astronomy, there is probably no one greater leap forward than the building and launch of
+						the space telescope.</p>
+					<div class="link-nav">
+						<span class="box">
+							<a href="{% url 'home' %}">Home </a>
+							<i class="lnr lnr-arrow-right"></i>
+							<a href="{% url 'infrastructure_facilities' %}">Infrastructure & Facilities</a>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</section>
+	<!-- End Banner Area -->
+<div class="whole-wrap  section-top-border">
+		<div class="container">
+       <div class="div-grid" id="lightgallery">
+            {% for infra in infrastructures %}
+  <a class="a-grid" href="{{ infra.image_size.url }}">
+    <figure>
+      <img class="img-grid" src="{{ infra.image_thumbnail.url }}" alt="">
+    </figure>
+  </a>
+  {% endfor %}
+  
+  
+</div> 
+</div>
+            </div>
+{% endblock %}

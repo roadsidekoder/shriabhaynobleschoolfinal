@@ -1,0 +1,224 @@
+<div class="my-topper">
+	
+							<img class="img-fluid" src="{% static 'Nobles/img/Toppers/class8/Hartejasdwa.jpg' %}" alt="">
+							<p style="background-color:black; color: white;text-align:center;">HARTEJASWA SINGH</p>
+							<p style="background-color:black; color: white;text-align:center;">A+</p>
+						</div>
+						<div class="my-topper">
+	
+							<img class="img-fluid" src="{% static 'Nobles/img/Toppers/class8/Mumal.jpg' %}" alt="">
+							<p style="background-color:black; color: white;text-align:center;">MUMAL KANWAR</p>
+							<p style="background-color:black; color: white;text-align:center;">A+</p>
+						</div>
+						<div class="my-topper">
+	
+							<img class="img-fluid" src="{% static 'Nobles/img/Toppers/class8/AmitSuthar.jpg' %}" alt="">
+							<p style="background-color:black; color: white;text-align:center;">AMIT KUMAR</p>
+							<p style="background-color:black; color: white;text-align:center;">A</p>
+						</div>
+						<div class="my-topper">
+	
+							<img class="img-fluid" src="{% static 'Nobles/img/Toppers/class8/HemlataDewasi.jpeg' %}" alt="">
+							<p style="background-color:black; color: white;text-align:center;">HEMLATA DEWASI</p>
+							<p style="background-color:black; color: white;text-align:center;">A</p>
+						</div>
+						<div class="my-topper">
+	
+							<img class="img-fluid" src="{% static 'Nobles/img/Toppers/class8/KanalKumari.jpeg' %}" alt="">
+							<p style="background-color:black; color: white;text-align:center;">KANAL KUMARI</p>
+							<p style="background-color:black; color: white;text-align:center;">A</p>
+						</div>
+						<div class="my-topper">
+	
+							<img class="img-fluid" src="{% static 'Nobles/img/Toppers/class8/KhushiTrivedi.jpeg' %}" alt="">
+							<p style="background-color:black; color: white;text-align:center;">KHUSHI TRIVEDI</p>
+							<p style="background-color:black; color: white;text-align:center;">A</p>
+						</div>
+						<div class="my-topper">
+	
+							<img class="img-fluid" src="{% static 'Nobles/img/Toppers/class8/KishanLal.jpeg' %}" alt="">
+							<p style="background-color:black; color: white;text-align:center;">KISHAN LAL</p>
+							<p style="background-color:black; color: white;text-align:center;">A</p>
+						</div>
+						<div class="my-topper">
+	
+							<img class="img-fluid" src="{% static 'Nobles/img/Toppers/class8/KritikaKanwar.jpeg' %}" alt="">
+							<p style="background-color:black; color: white;text-align:center;">KRITIKA KANWAR</p>
+							<p style="background-color:black; color: white;text-align:center;">A</p>
+						</div>
+						<div class="my-topper">
+	
+							<img class="img-fluid" src="{% static 'Nobles/img/Toppers/class8/Lokendra.jpeg' %}" alt="">
+							<p style="background-color:black; color: white;text-align:center;">LOKENDRA SINGH</p>
+							<p style="background-color:black; color: white;text-align:center;">A</p>
+						</div>
+						<div class="my-topper">
+	
+							<img class="img-fluid" src="{% static 'Nobles/img/Toppers/class8/MilinChandora.jpg' %}" alt="">
+							<p style="background-color:black; color: white;text-align:center;">MILIND CHANDORA</p>
+							<p style="background-color:black; color: white;text-align:center;">A</p>
+						</div>
+						<div class="my-topper">
+	
+							<img class="img-fluid" src="{% static 'Nobles/img/Toppers/class8/MiteshSuthar.jpg' %}" alt="">
+							<p style="background-color:black; color: white;text-align:center;">MITESH KUMAR</p>
+							<p style="background-color:black; color: white;text-align:center;">A</p>
+						</div>
+						<div class="my-topper">
+	
+							<img class="img-fluid" src="{% static 'Nobles/img/Toppers/class8/PankajSuthar.jpg' %}" alt="">
+							<p style="background-color:black; color: white;text-align:center;">PANKAJ SUTHAR</p>
+							<p style="background-color:black; color: white;text-align:center;">A</p>
+						</div>
+						<div class="my-topper">
+	
+							<img class="img-fluid" src="{% static 'Nobles/img/Toppers/class8/PoojaDewasi.jpg' %}" alt="">
+							<p style="background-color:black; color: white;text-align:center;">POOJA DEWASI</p>
+							<p style="background-color:black; color: white;text-align:center;">A</p>
+						</div>
+						<div class="my-topper">
+	
+							<img class="img-fluid" src="{% static 'Nobles/img/Toppers/class8/PradeepKumawat.jpg' %}" alt="">
+							<p style="background-color:black; color: white;text-align:center;">PRADEEP KUMAWAT</p>
+							<p style="background-color:black; color: white;text-align:center;">A</p>
+						</div>
+						<div class="my-topper">
+	
+							<img class="img-fluid" src="{% static 'Nobles/img/Toppers/class8/PrafulKumar.jpg' %}" alt="">
+							<p style="background-color:black; color: white;text-align:center;">PRAFUL KUMAR</p>
+							<p style="background-color:black; color: white;text-align:center;">A</p>
+						</div>
+						<div class="my-topper">
+	
+							<img class="img-fluid" src="{% static 'Nobles/img/Toppers/class8/PrernaKumawat.jpeg' %}" alt="">
+							<p style="background-color:black; color: white;text-align:center;">PRERNA KUMAWAT</p>
+							<p style="background-color:black; color: white;text-align:center;">A</p>
+						</div>
+						
+						<div class="my-topper">
+	
+							<img class="img-fluid" src="{% static 'Nobles/img/Toppers/class8/Raghuraj.jpeg' %}" alt="">
+							<p style="background-color:black; color: white;text-align:center;">RAGHURAJ SINGH</p>
+							<p style="background-color:black; color: white;text-align:center;">A</p>
+						</div>
+						<div class="my-topper">
+	
+							<img class="img-fluid" src="{% static 'Nobles/img/Toppers/class8/RavinaVaishnav.jpeg' %}" alt="">
+							<p style="background-color:black; color: white;text-align:center;">RAVEENA VAISHNAV</p>
+							<p style="background-color:black; color: white;text-align:center;">A</p>
+						</div>
+
+						<div class="my-topper">
+	
+							<img class="img-fluid" src="{% static 'Nobles/img/Toppers/class8/SonaliChouhan.jpeg' %}" alt="">
+							<p style="background-color:black; color: white;text-align:center;">SONALI CHOUHAN</p>
+							<p style="background-color:black; color: white;text-align:center;">A</p>
+						</div>
+						<div class="my-topper">
+	
+							<img class="img-fluid" src="{% static 'Nobles/img/Toppers/class8/SumeetSuthar.jpg' %}" alt="">
+							<p style="background-color:black; color: white;text-align:center;">SUMIT SUTHAR</p>
+							<p style="background-color:black; color: white;text-align:center;">A</p>
+						</div>
+
+						<div class="my-topper">
+	
+							<img class="img-fluid" src="{% static 'Nobles/img/Toppers/class8/Varshakanwar.jpg' %}" alt="">
+							<p style="background-color:black; color: white;text-align:center;">VARSHA KANWAR</p>
+							<p style="background-color:black; color: white;text-align:center;">A</p>
+						</div>
+						<div class="my-topper">
+	
+							<img class="img-fluid" src="{% static 'Nobles/img/Toppers/class8/VikramSingh.jpg' %}" alt="">
+							<p style="background-color:black; color: white;text-align:center;">VIKRAM SINGH</p>
+							<p style="background-color:black; color: white;text-align:center;">A</p>
+						</div>
+
+
+
+
+                        <div class="my-topper">
+	
+										<img class="img-fluid" src="{% static 'Nobles/img/Toppers/class12/Himani.jpg' %}" alt="">
+										<p style="background-color:black; color: white;text-align:center;">Himani Balot</p>
+										<p style="background-color:black; color: white;text-align:center;">80.00%</p>
+									</div>
+									<div class="my-topper">
+				
+										<img class="img-fluid" src="{% static 'Nobles/img/Toppers/class12/Abhishek.jpg' %}" alt="">
+										<p style="background-color:black; color: white;text-align:center;">Abhishek Kumar</p>
+										<p style="background-color:black; color: white;text-align:center;">83.40%</p>
+									</div>
+									<div class="my-topper">
+				
+										<img class="img-fluid" src="{% static 'Nobles/img/Toppers/class12/Chitransha.jpeg' %}" alt="">
+										<p style="background-color:black; color: white;text-align:center;">Chitransha Parmar </p>
+										<p style="background-color:black; color: white;text-align:center;">82.40%</p>
+									</div>
+									<div class="my-topper">
+				
+										<img class="img-fluid" src="{% static 'Nobles/img/Toppers/class12/Deoraj.jpg' %}" alt="">
+										<p style="background-color:black; color: white;text-align:center;">Deoraj Singh</p>
+										<p style="background-color:black; color: white;text-align:center;">81.20%</p>
+									</div>
+									<div class="my-topper">
+				
+										<img class="img-fluid" src="{% static 'Nobles/img/Toppers/class12/Janvee.jpg' %}" alt="">
+										<p style="background-color:black; color: white;text-align:center;">Janvi Suthar</p>
+										<p style="background-color:black; color: white;text-align:center;">78.80%</p>
+									</div>
+									<div class="my-topper">
+				
+										<img class="img-fluid" src="{% static 'Nobles/img/Toppers/class12/Vipul.jpg' %}" alt="">
+										<p style="background-color:black; color: white;text-align:center;">Vipul Solanki</p>
+										<p style="background-color:black; color: white;text-align:center;">78.60%</p>
+									</div>
+									<div class="my-topper">
+				
+										<img class="img-fluid" src="{% static 'Nobles/img/Toppers/class12/Tejaswani.jpg' %}" alt="">
+										<p style="background-color:black; color: white;text-align:center;">Tejaswani Nagar</p>
+										<p style="background-color:black; color: white;text-align:center;">71.00%</p>
+									</div>
+									<div class="my-topper">
+				
+										<img class="img-fluid" src="{% static 'Nobles/img/Toppers/class12/chetna.jpg' %}" alt="">
+										<p style="background-color:black; color: white;text-align:center;">Chetana Suthar</p>
+										<p style="background-color:black; color: white;text-align:center;">69.80%</p>
+									</div>
+									<div class="my-topper">
+				
+										<img class="img-fluid" src="{% static 'Nobles/img/Toppers/class12/shanu.jpg' %}" alt="">
+										<p style="background-color:black; color: white;text-align:center;">Minakshi Suthar</p>
+										<p style="background-color:black; color: white;text-align:center;">67.40%</p>
+									</div>
+									<div class="my-topper">
+				
+										<img class="img-fluid" src="{% static 'Nobles/img/Toppers/class12/Gajraj.jpg' %}" alt="">
+										<p style="background-color:black; color: white;text-align:center;">Gajraj Singh Balot</p>
+										<p style="background-color:black; color: white;text-align:center;">66.80%</p>
+									</div>
+									<div class="my-topper">
+				
+										<img class="img-fluid" src="{% static 'Nobles/img/Toppers/class12/Chanda.jpg' %}" alt="">
+										<p style="background-color:black; color: white;text-align:center;">Chanda Romina</p>
+										<p style="background-color:black; color: white;text-align:center;">64.80%</p>
+									</div>
+									<div class="my-topper">
+				
+										<img class="img-fluid" src="{% static 'Nobles/img/Toppers/class12/Karan.jpeg' %}" alt="">
+										<p style="background-color:black; color: white;text-align:center;">Karan Pal Singh</p>
+										<p style="background-color:black; color: white;text-align:center;">63.40%</p>
+									</div>
+									<div class="my-topper">
+				
+										<img class="img-fluid" src="{% static 'Nobles/img/Toppers/class12/Sheoraj.jpeg' %}" alt="">
+										<p style="background-color:black; color: white;text-align:center;">Sheoraj Singh</p>
+										<p style="background-color:black; color: white;text-align:center;">62.20%</p>
+									</div>
+									<div class="my-topper">
+				
+										<img class="img-fluid" src="{% static 'Nobles/img/Toppers/class12/Preeti.jpg' %}" alt="">
+										<p style="background-color:black; color: white;text-align:center;">Preet Rawal</p>
+										<p style="background-color:black; color: white;text-align:center;">60.40%</p>
+									</div>
+							

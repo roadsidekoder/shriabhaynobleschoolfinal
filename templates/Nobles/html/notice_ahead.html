@@ -1,0 +1,68 @@
+{% extends 'Nobles/html/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Start Banner Area -->
+	<section class="banner-area relative">
+		<div class="container">
+			<div class="row d-flex align-items-center justify-content-center">
+				<div class="about-content col-lg-12">
+					<h1 class="text-white">
+						NOTICES
+					</h1>
+					<div class="link-nav">
+						<span class="box">
+							<a href="{% url 'home' %}">Home </a>
+							<i class="lnr lnr-arrow-right"></i>
+							<a href="{% url 'all_notices' %}">Notice</a>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+	</section>
+	<!-- End Banner Area -->
+ <section class="courses-area section-gap">
+		<div class="container">
+        <div class="row justify-content-center">
+				<div class="col-lg-8">
+					<div class="section-title text-center">
+						<h2>CURRENT UPDATES</h2>
+					
+					</div>
+				</div>
+		</div>
+        <div class="row" style="padding: 10px;">
+	
+                <div class="col-md-12 col-md-offset-0">
+                    <div><font style="color: green; text-align: center;">Updated On :&nbsp;&nbsp;{{ notices.last_updated }}</font></div>
+                </div>
+                <div class="col-md-12 col-md-offset-0 rowing">
+                    <div><font class="text-white">{{ notices.title| upper }}</font></div>
+                </div>
+                
+		</div>
+        <div class="row align-items-center">
+				<div class="offset-lg-12 col-lg-12">
+					<div class="courses-right">
+						<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12">
+                       {{ notices.content| safe }}  
+            
+
+						</div>
+					</div>
+				</div>
+			</div>
+        </div>
+        </div>
+        </section>
+
+
+{% endblock %}
+
+ <link href="{% static 'Nobles/css/github.css' %}" rel="stylesheet">
+
+<script src="{% static 'Nobles/js/highlight.pack.js' %}"></script>
+<script>hljs.initHighlightingOnLoad();</script>

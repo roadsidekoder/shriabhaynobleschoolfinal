@@ -1,0 +1,291 @@
+{% extends 'Nobles/html/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- Start Banner Area -->
+	<section class="home-banner-area relative">
+		<div class="container">
+			<div class="row fullscreen d-flex align-items-center justify-content-center">
+				<div class="banner-content col-lg-8 col-md-12">
+					<h1 class="wow fadeIn" data-wow-duration="4s">SHRI ABHAY NOBLES <br>SENIOR SECONDARY SCHOOL<br></h1>	
+					<h5 class="text-white">RJ SH 16, TAKHATGARH, <br>RAJASTHAN 306912</h5>
+
+					
+				</div>
+			</div>
+		</div>
+	
+	</section>
+	<!-- End Banner Area -->
+
+<!-- <div class="col-lg-12 sidebar-widgets">
+					<div class="widget-wrap">
+						
+					</div>
+				</div> -->
+
+
+<!-- Start Courses Area -->
+	<section class="feature-area section-gap">
+		<div class="container">
+		<div class="row justify-content-center">
+				<div class="col-lg-8">
+					<div class="section-title text-center">
+						<h2>Latest News & Notices</h2>
+					</div>
+				</div>
+		</div>
+			<div class="row align-items-center">
+				<div class="offset-lg-12 col-lg-12">
+					<div class="courses-right">
+						<div class="row">
+							<div class="col-lg-12 col-md-12 col-sm-12">
+								<ul class="courses-list">
+									             {% for notice in notices reversed %}
+															  {% if forloop.counter < 5 %}
+									<li>
+										<a class="wow fadeInLeft" href="{% url 'notice_pk' notice.id %}" data-wow-duration="1s" data-wow-delay=".1s">
+											<i class="fa fa-book"></i><font color="green">Updated On: {{ notice.last_updated }}</font>&nbsp;&nbsp;<font style="color : black;">{{ notice.title| upper }}</font>
+										</a>
+									</li>
+									{% endif %}
+                                    {% endfor %}
+								</ul>
+								<div>
+								<a href="{% url 'all_notices' %}" class="genric-btn primary float-right" >VIEW ALL</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>		
+	</section>
+	<!-- End Courses Area -->
+
+<section class="feature-area">
+	<div class="container">
+		<div class="row justify-content-center">
+				<div class="col-lg-8">
+					<div class="section-title text-center">
+						<h2>SHRI ABHAY NOBLES SCHOOL</h2>
+						<div  class="typography">
+						<h2></h2>
+                        </div>
+					</div>
+				</div>
+		</div>
+				<div class="row">
+					<div class="col-md-4">
+						<img class="rounded img-thumbnail" src="{% static 'Nobles/img/schoolfront.jpg' %}" alt="" class="img-fluid">
+					</div>
+				
+					<div class="col-md-8 mt-sm-20" style="text-align:center">
+					<br>
+						<p>  Shri Abhay Nobles School has been established by a young enthusiastic person, who is highly qualified and well trained and who also knows child psychology. He fully dedicated to education, and imparting is his passion. He thinks to teach English in a specialised manner in guiding the students, motivating them and teach ing English in a specialised way to the student with rural background Recognising the rural talent and leading them to a better future is his life's aim.</p>
+
+  <p> The purpose of education is all round development of the children. A child learns 90% of the things by the age of 5. Therefore, the age 3 to 5 years is very important for his/her to learn about his/her surrounding habits, culture etc... </p>
+
+					</div>
+				</div>
+
+			                    <div>
+								<a href="{% url 'about' %}" class="genric-btn primary float-right" >READ MORE</a>
+								</div>
+	</div>
+	
+	</section>
+	<!-- End Feature Area -->
+
+<section class="faculty-area">
+<br/><br/>
+		<div class="container">
+		<div class="row justify-content-center">
+				<div class="col-lg-8">
+					<div class="section-title text-center">
+						<h2>Management’s Desk</h2>
+						<div  class="typography">
+						<h6>From the Principal’s Desk</h6>
+                        </div>
+					</div>
+				</div>
+		</div>
+		<div class="row">
+					<div class="col-md-4">
+						<img class="rounded img-thumbnail" src="{% static 'Nobles/img/principal.jpeg' %}" alt="" class="img-fluid">
+					</div>
+					<div class="col-md-8 mt-sm-20" style="text-align:center">
+					<br>
+						<p> The year has gone by in a blur. Activities galore. Some new and some part of our annual calendar.</p>
+
+<p>Laughter, tears, uncertainty, puzzlement, delight, sorrow, glee, despair….we've seen the whole gamut of emotions. And each time we've seen a sad face transform into a joyous one, we know we've done something right…yet again…and we have celebrated.</p>
+<p>Have you ever been privy to such magical moments in time? When a little boy rises out of the ashes...<p>
+
+                    
+         <h5>           
+( Mr. Shambhu Singh Balot )
+		</h5>
+     
+              </div>
+					</div>
+				<br>
+			                     <div>
+								<a href="{% url 'message' %}" class="genric-btn primary float-right" >READ MORE</a>
+								</div>
+								
+		</div>
+		<br/><br/><br/>
+	</section>
+
+<!-- ================ Start Popular Course Area ================= -->
+  <section class="popular-course-area">
+  <br> <br>
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+				<div class="col-lg-8">
+					<div class="section-title text-center">
+					<br>
+						<h2>Our Achievements</h2>
+						<div  class="typography">
+						<h6>A Glance at our Achievements</h6>
+                        </div>
+					</div>
+				</div>
+		</div>
+      <div class="owl-carousel popuar-course-carusel">
+			 {% for achieve in achievements reversed %}
+        <div class="single-popular-course">
+				<a href="{% url 'achievement_pk' achieve.id %}">
+          <div class="thumb">
+            <img class="f-img img-fluid mx-auto" src="{{ achieve.image_thumbnail.url }}" alt="" />
+          </div>
+          <div class="details">
+            <div class="d-flex justify-content-between mb-20">
+              <p class="name">Event Date : {{ achieve.event_date }}</p>
+            </div>
+            <a href="{% url 'achievement_pk' achieve.id %}">
+              <h5>{{ achieve.event_title| truncatechars:"30" }}</h5>
+            </a>
+          </div>
+					</a>
+        </div>
+       {% endfor %}
+      </div>
+	  <br>
+			                     <div>
+								<a href="{% url 'achievements' %}" class="genric-btn primary float-right" >READ MORE</a>
+								</div>
+								<br>
+    </div>
+	<br><br>
+  </section>
+  <!-- ================ End Popular Course Area ================= -->
+ 
+<section class="faculty-area">
+    <div class="container-fluid">
+	    <div class="row justify-content-center">
+				<div class="col-lg-8">
+					<div class="section-title text-center">
+					<br>
+					<br><br>
+						<h2>Our Toppers</h2>
+						<div  class="typography">
+						<h6>Students (2017-18)</h6>
+                        </div>
+					</div>
+				</div>
+		</div>
+		<div class="row justify-content-around mob-topper">
+				<div class="col-md-2"  style="margin-top:25px;">
+					
+					<div class="owl-carousel video-carousel">
+						
+						 {% for topper in class_8_top %}
+    				
+						<div class="my-topper">
+							<h4 style="background-color:black; color: white;text-align:center;">{{ topper.student.name }}</h4>
+							<img class="img-fluid" src="{{ topper.image_thumbnail.url }}" alt="">
+							<p style="background-color:black; color: white;text-align:center;">{{ topper.name }}</p>
+							<p style="background-color:black; color: white;text-align:center;">{{ topper.grade }}</p>
+						</div>			
+		    
+                
+               {% endfor %}
+
+				</div>
+		</div>
+					<div class="col-md-2" style="margin-top:25px;">
+							
+						<div class="owl-carousel video-carousel">
+								 {% for topper in class_10_top %}
+      						
+						<div class="my-topper">
+							<h4 style="background-color:black; color: white;text-align:center;">{{ topper.student.name }}</h4>
+							<img class="img-fluid" src="{{ topper.image_thumbnail.url }}" alt="">
+							<p style="background-color:black; color: white;text-align:center;">{{ topper.name }}</p>
+							<p style="background-color:black; color: white;text-align:center;">{{ topper.percentage }}</p>
+						</div>			
+		       
+               {% endfor %}
+					</div>
+					</div>
+					
+					<div class="col-md-2" style="margin-top:25px;">
+							
+						<div class="owl-carousel video-carousel">
+								 {% for topper in class_12_top %}
+      						
+						<div class="my-topper">
+							<h4 style="background-color:black; color: white;text-align:center;">{{ topper.student.name }}</h4>
+							<img class="img-fluid" src="{{ topper.image_thumbnail.url }}" alt="">
+							<p style="background-color:black; color: white;text-align:center;">{{ topper.name }}</p>
+							<p style="background-color:black; color: white;text-align:center;">{{ topper.percentage }}</p>
+						</div>			
+		       
+               {% endfor %}
+					</div>
+					</div>
+				
+			</div>
+					<br>
+			                     <div>
+								<a href="{% url 'toppers' %}" class="genric-btn primary float-right" >VIEW ALL</a>
+								</div>
+    </div>
+	<br/><br/><br/>
+</section>
+
+<section class="popular-course-area">
+		<div class="container">
+		<div class="row justify-content-center">
+				<div class="col-lg-8">
+					<div class="section-title text-center">
+					<br>
+					<br><br>
+						<h2>Facilities & Infrastructure</h2>
+						<div  class="typography">
+						<h6>Academic Infrastructure</h6>
+                        </div>
+					</div>
+				</div>
+		</div>
+	         <div class="owl-carousel popuar-course-carusel">
+					  {% for infra in infrastructures %}
+        <div class="single-popular-course">
+          <div class="thumb">
+            <img class="f-img img-fluid mx-auto" src="{{ infra.image_thumbnail.url }}" alt="" />
+          </div>
+        </div>
+				  {% endfor %}
+      </div>
+			<br>
+			                     <div>
+								<a href="{% url 'infrastructure_facilities' %}" class="genric-btn primary float-right" >VIEW ALL</a>
+								</div>
+		</div>
+		<br/><br/><br/><br/>
+	</section>
+
+	
+{% endblock %}

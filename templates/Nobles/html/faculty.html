@@ -1,0 +1,65 @@
+{% extends 'Nobles/html/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Start Banner Area -->
+	<section class="banner-area relative">
+		<div class="container">
+			<div class="row d-flex align-items-center justify-content-center">
+				<div class="about-content col-lg-12">
+					<h1 class="text-white">
+						Faculty
+					</h1>
+					<div class="link-nav">
+						<span class="box">
+							<a href="{% url 'home' %}">Home </a>
+							<i class="lnr lnr-arrow-right"></i>
+							<a href="{% url 'faculty' %}">Faculty</a>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</section>
+	<!-- End Banner Area -->
+<!-- Start Faculty Area -->
+	<section class="feature-area">
+		<div class="container">
+		<br><br>
+			<div class="row justify-content-center">
+				<div class="col-lg-8">
+					<div class="section-title text-center">
+						<h1>Faculty Members</h1>
+					</div>
+				</div>
+			</div>
+			<div class="row justify-content-center d-flex align-items-center">
+			
+							{% for person in faculty %}
+			
+				<div class="col-lg-3 col-md-6 col-sm-12 single-faculty">
+					<div class="thumb d-flex justify-content-center">
+						<img  class="img rounded" src="{{ person.image_thumbnail.url }}" alt="">
+					</div>
+					<div class="meta-text text-center">
+						<h4>{{ person.name }}</h4>
+						<p class="designation">{{ person.post }}</p>
+						<div class="info wow fadeIn" data-wow-duration="1s" data-wow-delay=".1s">
+							{% for degree in person.qualification.all %}			
+				
+							    	 {{ degree }} |
+							{% endfor %}
+						</div>
+					
+					</div>
+				</div>
+				                 {% endfor %}
+			</div>
+		</div>
+		<br><br> 
+	</section>
+	
+	<!-- End Faculty Area -->
+
+{% endblock %}

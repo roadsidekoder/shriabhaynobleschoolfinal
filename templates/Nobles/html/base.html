@@ -1,0 +1,367 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+
+<head>
+	<!-- Mobile Specific Meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Favicon-->
+	<link rel="shortcut icon" href="{% static 'Nobles/img/fav.png' %}">
+	<!-- Author Meta -->
+	<meta name="author" content="codepixer">
+	<!-- Meta Description -->
+	<meta name="description" content="">
+	<!-- Meta Keyword -->
+	<meta name="keywords" content="">
+	<!-- meta character set -->
+	<meta charset="UTF-8">
+	<!-- Site Title -->
+	<title>Shri Abhay Nobles School</title>
+
+<link href="https://cdn.rawgit.com/sachinchoolur/lightgallery.js/master/dist/css/lightgallery.css" rel="stylesheet">
+
+	<!--
+			Google Font
+			============================================= -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,500,600" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500i" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+
+
+<link rel="stylesheet" href="{% static 'Nobles/css/lightgallery.css' %}">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+	<!--
+
+			CSS
+			============================================= -->
+                    <link rel="stylesheet" href="{% static 'Nobles/css/hexagons.min.css' %}">
+  	<link rel="stylesheet" href="{% static 'Nobles/css/main2.css' %}">
+<link href="{% static 'Nobles/css/bootstrap/fresh-bootstrap-table.css' %}" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/themify-icons/0.1.2/css/themify-icons.css}">
+	<link rel="stylesheet" href="{% static 'Nobles/css/linearicons.css' %}">
+	<link rel="stylesheet" href="{% static 'Nobles/css/font-awesome.min.css' %}">
+	<link rel="stylesheet" href="{% static 'Nobles/css/bootstrap.css' %}">
+	<link rel="stylesheet" href="{% static 'Nobles/css/magnific-popup.css' %}">
+	<link rel="stylesheet" href="{% static 'Nobles/css/nice-select.css' %}">
+	<link rel="stylesheet" href="{% static 'Nobles/css/animate.min.css' %}">
+	<link rel="stylesheet" href="{% static 'Nobles/css/owl.carousel.css' %}">
+	<link rel="stylesheet" href="{% static 'Nobles/css/main.css' %}">
+
+
+	<!-- SLICK SLIDER CSS -->
+	<link rel="stylesheet" type="text/css" href="{% static 'Nobles/css/slick.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'Nobles/css/slick-theme.css' %}">
+  <style type="text/css">
+
+
+    .slider {
+        width: 50%;
+        margin: 100px auto;
+    }
+
+    .slick-slide {
+      margin: 0px 20px;
+    }
+
+    .slick-slide img {
+      width: 100%;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+      color: black;
+    }
+
+
+    .slick-slide {
+      transition: all ease-in-out .3s;
+      opacity: .2;
+    }
+    
+    .slick-active {
+      opacity: .5;
+    }
+
+    .slick-current {
+      opacity: 1;
+    }
+  </style>
+
+
+<style>
+
+.div-grid {
+  font-size: 0;
+}
+
+.a-grid {
+  font-size: 16px;
+  overflow: hidden;
+  display: inline-block;
+  margin-bottom: 8px;
+  width: calc(50% - 4px);
+  margin-right: 8px;
+}
+
+.a-grid:nth-of-type(2n) {
+  margin-right: 0;
+}
+
+@media screen and (min-width: 50em) {
+  .a-grid {
+    width: calc(25% - 6px);
+  }
+  
+  .a-grid:nth-of-type(2n) {
+    margin-right: 8px;
+  }
+  
+  .a-grid:nth-of-type(4n) {
+    margin-right: 0;
+  }
+}
+
+.a-grid:hover img {
+  transform: scale(1.15);
+}
+
+figure {
+  margin: 0;
+}
+
+.img-grid {
+  border: none;
+  max-width: 100%;
+  height: auto;
+  display: block;
+ 
+  transition: transform .2s ease-in-out;
+}
+
+p .a-grid {
+  display: inline;
+  font-size: 13px;
+  margin: 0;
+}
+
+</style>
+<style>
+.rowing{
+background-color: rgba(0, 0, 0, 0.9);
+            text-align: center;
+            padding: 5px;
+            border: 1px solid none;
+}
+b{ color: white;}
+</style>
+<style>
+.map-responsive{
+    overflow:hidden;
+    padding-bottom:50%;
+    position:relative;
+    height:0;
+}
+.map-responsive iframe{
+    left:0;
+    top:0;
+    height:90%;
+    width:100%;
+    position:absolute;
+}
+</style>
+</head>
+<body>
+	<!-- Start Header Area -->
+	<header id="header">
+		<div class="container">
+			<div class="row align-items-center justify-content-between d-flex">
+				<div id="logo">
+					<a href="#"><img src="{% static 'Nobles/img/lgo.png' %}" alt="" title="" /></a>
+				</div>
+				<nav id="nav-menu-container">
+					<ul class="nav-menu">
+						<li class="menu-active"><a href="{% url 'home' %}">Home</a></li>
+						<li class="menu-has-children"><a href="#">About Us</a>
+							<ul>
+								<li><a href="{% url 'about' %}">About Us</a></li>
+								<li><a href="{% url 'message' %}">Principal's Message</a></li>
+                <li><a href="{% url 'facilities' %}">Facilities</a></li>
+                <li><a href="{% url 'route_plan' %}">Route Plan Of School Buses</a></li>
+							</ul>
+						</li>
+						<li><a href="{% url 'gallery' %}">Gallery</a></li>
+            	<li class="menu-has-children"><a href="#">Academic</a>
+							<ul>
+                <li><a href="{% url 'achievements' %}">Achievements</a></li>
+								<li><a href="{% url 'academic_achievements' %}">Academic Achievements</a></li>
+                <li><a href="{% url 'toppers' %}">Toppers</a></li>
+							</ul>
+						</li>
+<li><a href="{% url 'admission' %}">Admissions and Fee Structure</a></li>
+                            						<li><a href="{% url 'faculty' %}">Faculty</a></li>
+					<li><a href="{% url 'download' %}">Download</a></li>
+						<li><a href="{% url 'contact' %}">Contact</a></li>
+					</ul>
+				</nav><!-- #nav-menu-container -->
+			</div>
+		</div>
+	</header>
+	<!-- End Header Area -->
+
+{% block content %}
+    
+{% endblock %}
+
+
+	<!-- Start Footer Area -->
+<footer id="myFooter">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h2 class="logo"><a href="#"> LOGO </a></h2>
+                </div>
+                <div class="col-sm-2">
+                    <h5>Useful Links</h5>
+                    <ul>
+                        <li><a href="#">Co-curricular</a></li>
+                        <li><a href="{% url 'about' %}">About Us</a></li>
+                        <li><a href="{% url 'all_notices' %}">Notice</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <h5>Academic</h5>
+                    <ul>
+                        <li><a href="{% url 'achievements' %}">Achievements</a></li>
+                        <li><a href="{% url 'facilities' %}">Facilities</a></li>
+                        <li><a href="{% url 'faculty' %}">Faculty</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <h5><a style="color: white;" href="">Donation</a></h5>
+                    
+                </div>
+                <div class="col-sm-3">
+                    <div class="social-networks">
+                         
+                        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
+                    </div>
+                   <a href="{% url 'contact' %}"> <button type="button" class="btn btn-default">Contact Us</button></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p style="text-align: center;">Made with <font style="color:red">❤</font> by <a target="_blank" href="https://www.facebook.com/suthargk">Gaurav M Suthar</a></p>
+            
+        </div>
+    </footer>
+	<!-- End Footer Area -->
+
+	<!-- ####################### Start Scroll to Top Area ####################### -->
+	<div id="back-top">
+		<a title="Go to Top" href="#"></a>
+	</div>
+	<!-- ####################### End Scroll to Top Area ####################### -->
+
+	<script src="{% static 'Nobles/js/vendor/jquery-2.2.4.min.js' %}"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js' %}" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+	 crossorigin="anonymous"></script>
+	<script src="{% static 'Nobles/js/vendor/bootstrap.min.js' %}"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+	<script src="{% static 'Nobles/js/easing.min.js' %}"></script>
+	<script src="{% static 'Nobles/js/hoverIntent.js' %}"></script>
+	<script src="{% static 'Nobles/js/superfish.min.js' %}"></script>
+	<script src="{% static 'Nobles/js/jquery.ajaxchimp.min.js' %}"></script>
+	<script src="{% static 'Nobles/js/jquery.magnific-popup.min.js' %}"></script>
+	<script src="{% static 'Nobles/js/owl.carousel.min.js' %}"></script>
+	<script src="{% static 'Nobles/js/owl-carousel-thumb.min.js' %}"></script>
+	<script src="{% static 'Nobles/js/jquery.sticky.js' %}"></script>
+	<script src="{% static 'Nobles/js/jquery.nice-select.min.js' %}"></script>
+	<script src="{% static 'Nobles/js/parallax.min.js' %}"></script>
+	<script src="{% static 'Nobles/js/waypoints.min.js' %}"></script>
+	<script src="{% static 'Nobles/js/wow.min.js' %}"></script>
+	<script src="{% static 'Nobles/js/jquery.counterup.min.js' %}"></script>
+	<script src="{% static 'Nobles/js/mail-script.js' %}"></script>
+	<script src="{% static 'Nobles/js/main.js' %}"></script>
+
+	 <script src="{% static 'Nobles/js/hexagons.min.js' %}"></script>
+	 <script src="{% static 'Nobles/js/jquery.nice-select.min.js' %}"></script>
+	 <script src="{% static 'Nobles/js/main2.js' %}"></script>
+
+	 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+  <script src="{% static 'Nobles/js/lightgallery.min.js' %}"></script>
+  <script src="{% static 'Nobles/js/lg-thumbnail.min.js' %}"></script>
+    <script src="{% static 'Nobles/js/lg-fullscreen.min.js' %}"></script>
+
+ <script>
+            lightGallery(document.getElementById('lightgallery'));
+        </script>
+
+  <!-- SLICK SLIDER JS-->
+  <script src="{% static 'Nobles/js/slick.js' %}" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript">
+    $(document).on('ready', function() {
+      $(".vertical-center-4").slick({
+        dots: true,
+        vertical: true,
+        centerMode: true,
+        slidesToShow: 4,
+        slidesToScroll: 2
+      });
+      $(".vertical-center-3").slick({
+        dots: true,
+        vertical: true,
+        centerMode: true,
+        slidesToShow: 3,
+        slidesToScroll: 3
+      });
+      $(".vertical-center-2").slick({
+        dots: true,
+        vertical: true,
+        centerMode: true,
+        slidesToShow: 2,
+        slidesToScroll: 2
+      });
+      $(".vertical-center").slick({
+        dots: true,
+        vertical: true,
+        centerMode: true,
+      });
+      $(".vertical").slick({
+        dots: true,
+        vertical: true,
+        slidesToShow: 3,
+        slidesToScroll: 3
+      });
+      $(".regular").slick({
+        dots: true,
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 3
+      });
+      $(".center").slick({
+        dots: true,
+        infinite: true,
+        centerMode: true,
+        slidesToShow: 5,
+        slidesToScroll: 3
+      });
+      $(".variable").slick({
+        dots: true,
+        infinite: true,
+        variableWidth: true
+      });
+      $(".lazy").slick({
+        lazyLoad: 'ondemand', // ondemand progressive anticipated
+        infinite: true
+      });
+    });
+</script>
+
+</body>
+
+</html>

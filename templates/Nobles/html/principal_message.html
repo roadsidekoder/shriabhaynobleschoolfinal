@@ -1,0 +1,74 @@
+{% extends 'Nobles/html/base.html' %}
+{% load static %}
+
+{% block content %}
+ <!-- Start Banner Area -->
+	<section class="banner-area relative">
+		<div class="container">
+			<div class="row d-flex align-items-center justify-content-center">
+				<div class="about-content col-lg-12">
+					<h1 class="text-white">
+					Principal’s Message
+					</h1>
+				
+					<div class="link-nav">
+						<span class="box">
+							<a href="{% url 'home' %}">Home </a>
+							<i class="lnr lnr-arrow-right"></i>
+							<a href="{% url 'message' %}">Principal’s Message </a>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="rocket-img">
+			<img src="{% static 'Nobles/img/rocket.png' %}" alt="">
+		</div>
+	</section>
+	<!-- End Banner Area -->
+
+	<!-- Start About Area -->
+	<section class="about-area section-gap">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-5 col-md-6 about-left">
+					<img class="img-fluid rounded" src="{% static 'Nobles/img/principal.jpeg' %}" alt="">
+                    <br><br>
+         <h5 align="center">           
+( Mr. Shambhu Singh Balot )
+		</h5>
+        <div class="typography">
+<h6 align="center">
+              Principal
+              </h6>
+              </div>
+        		</div>
+				<div class="offset-lg-1 col-lg-6 offset-md-0 col-md-12 about-right">
+					<h1>
+						
+                    Principal’s Message 
+					</h1>
+                   
+						<h6>MAGICAL MOMENTS OF AFFIRMATIVE TRANSFORMATION</h6>
+                        
+                        <br>
+					<div class="wow fadeIn" data-wow-duration="1s">
+						 <p> The year has gone by in a blur. Activities galore. Some new and some part of our annual calendar.</p>
+
+<p>Laughter, tears, uncertainty, puzzlement, delight, sorrow, glee, despair….we've seen the whole gamut of emotions. And each time we've seen a sad face transform into a joyous one, we know we've done something right…yet again…and we have celebrated.</p>
+
+<p>Have you ever been privy to such magical moments in time? When a little boy rises out of the ashes of a perceived agonizing injustice and metamorphoses into a triumphant phoenix, when he finds order restored and his dignity re-established in his microcosmic universe? Trust me – if you haven't – then you have missed out on a miracle.<p>
+
+<p>For those of us who are too busy to stop the clock and bear witness to such epiphanies….we are poorer for it. We have lost out on the laying of yet one more firm brick in the foundation of our society…..a tiny part of the ocean of moments that help our children awake to the realization that justice can prevail and that there is thus hope for our world.<p>
+
+<p>What appears to be small and irrelevant suddenly takes on new significance as we begin to comprehend that it is these little ones, with their little triumphs which affirm them, who will be the harbingers of a better future. Small beginnings that will grow into the magnificent rainbows of tomorrow.<p>
+
+<p>Now do you understand why we take pride in what we do? </p>		</div>
+					
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End About Area -->
+
+{% endblock %}

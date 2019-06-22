@@ -1,0 +1,66 @@
+{% extends 'Nobles/html/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Start Banner Area -->
+	<section class="banner-area relative">
+		<div class="container">
+			<div class="row d-flex align-items-center justify-content-center">
+				<div class="about-content col-lg-12">
+					<h1 class="text-white">
+						DOWNLOAD(S)
+					</h1>
+					<div class="link-nav">
+						<span class="box">
+							<a href="{% url 'home' %}">Home </a>
+							<i class="lnr lnr-arrow-right"></i>
+							<a href="{% url 'download' %}">Download</a>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</section>
+	
+<br><br>
+<section class="about-area">
+
+		<div class="container">
+        <div class="row align-items-center">
+				<div class="offset-lg-12 col-lg-12">
+					<div class="courses-right">
+						<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12">
+						
+                      <div class="widget-wrap">
+						
+					
+						
+					
+						<div class="single-sidebar-widget post-category-widget">
+							<h4 class="category-title">Download(s)</h4>
+							<br>
+							<ul class="cat-list">
+							{% for file in files reversed %}
+								<li>
+									<a href="{{ file.your_file.url }}" class="d-flex justify-content-between" download>
+										<font style="color:black;"><i class="fas fa-file-pdf"></i>&nbsp;&nbsp;{{ file.name }}</font>
+										
+									</a>
+								</li>
+								{% endfor %}
+							</ul>
+						</div>
+					</div> 
+
+						</div>
+					</div>
+				</div>
+			</div>
+        </div>
+        </div>
+		<br><br>
+        </section>
+
+{% endblock %}

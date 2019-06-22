@@ -1,0 +1,56 @@
+{% extends 'Nobles/html/base.html' %}
+{% load static %}
+
+{% block content %}
+
+	<!-- Start Banner Area -->
+	<section class="banner-area relative">
+		<div class="container">
+			<div class="row d-flex align-items-center justify-content-center">
+				<div class="about-content col-lg-12">
+					<h1 class="text-white">
+						School Gallery
+					</h1>
+					<div class="link-nav">
+						<span class="box">
+							<a href="{% url 'home' %}">Home </a>
+							<i class="lnr lnr-arrow-right"></i>
+							<a href="{% url 'gallery' %}">Gallery</a>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</section>
+	<!-- End Banner Area -->
+
+<section class="top-category-widget-area pt-90 pb-90 ">
+		<div class="container">
+		 <div style="text-align: center;">
+                        <h2> ALBUM(S) </h2>
+                       </div>
+			<div class="row"  style="padding-top: 20px;">
+			 {% for photo in gallery reversed %}
+				<div class="col-lg-4">
+					<div class="single-cat-widget">
+						<div class="content relative">
+							<div class="overlay overlay-bg"></div>
+							<a href="{% url 'gallery_pk' photo.id %}">
+								<div class="thumb">
+									<img class="content-image img-fluid d-block mx-auto" src="{{ photo.cover_photo_thumbnail.url }}" alt="">
+								</div>
+								<div class="content-details">
+									<h4 class="content-title mx-auto text-uppercase">{{ photo.title }}</h4>
+									<span></span>
+									<p>{{ photo.description|truncatechars:30 }}</p>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+{% endblock %}
