@@ -1311,11 +1311,11 @@ h1, h2, h3, h4, h5, h6 {
       }
      
       .owl-carousel .prev-slide{
-          
+          background: url(nav-icon.png) no-repeat scroll 0 0;
           left: -33px;
       }
       .owl-carousel .next-slide{
-      
+          background: url(nav-icon.png) no-repeat scroll -24px 0px;
           right: -33px;
       }
       .owl-carousel .prev-slide:hover{

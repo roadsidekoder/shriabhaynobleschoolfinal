@@ -28,7 +28,8 @@ TEMPLATE_DIR = os.path.join(BASE_DIR,  'templates')
 SECRET_KEY = 'b&v4_cy6vpu#c2c*%str(qn71v1h-bubnue6=7tql1p2hudkfi'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
+
 
 
 ALLOWED_HOSTS = ['*']
@@ -96,12 +97,6 @@ TINYMCE_DEFAULT_CONFIG = {
     }
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
 
 db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
