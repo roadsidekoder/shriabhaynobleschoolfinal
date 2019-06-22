@@ -166,7 +166,7 @@ USE_L10N = True
 USE_TZ = True
 
 USE_S3 = True
-
+print()
 if USE_S3:
     # aws settings
     AWS_ACCESS_KEY_ID='AKIA5OJAYKHIKTWVX5OI'
