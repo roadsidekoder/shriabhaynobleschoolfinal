@@ -8,8 +8,8 @@ def index(request):
     achievements = Achievements.objects.all()
     class_8_top = Toppers.objects.filter(student__name="Class 8")
     class_10_top = Toppers.objects.filter(student__name="Class 10")
-    class_12_top = Toppers.objects.filter(student__name="Class 12")
-    return render(request,'Nobles/html/index.html', {'notices' : notices, 'infrastructures' : infra, 'achievements' : achievements,'class_8_top' : class_8_top, 'class_10_top' : class_10_top, 'class_12_top' : class_12_top})
+    class_12science_top = Toppers.objects.filter(student__name="Class 12 (Science)")
+    return render(request,'Nobles/html/index.html', {'notices' : notices, 'infrastructures' : infra, 'achievements' : achievements,'class_8_top' : class_8_top, 'class_10_top' : class_10_top, 'class_12science_top' : class_12science_top})
 
 def about(request):
     return render(request,'Nobles/html/about.html')
