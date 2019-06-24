@@ -161,9 +161,9 @@
             <img class="f-img img-fluid mx-auto" src="{{ achieve.image_thumbnail.url }}" alt="" />
           </div>
           <div class="details">
-            <div class="d-flex justify-content-between mb-20">
+           <!--<div class="d-flex justify-content-between mb-20">
               <p class="name">Event Date : {{ achieve.event_date }}</p>
-            </div>
+            </div> --> 
             <a href="{% url 'achievement_pk' achieve.id %}">
               <h5>{{ achieve.event_title| truncatechars:"30" }}</h5>
             </a>
