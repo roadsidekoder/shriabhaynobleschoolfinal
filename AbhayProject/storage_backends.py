@@ -12,6 +12,7 @@ class PublicMediaStorage(S3Boto3Storage):
     default_acl = 'public-read'
     file_overwrite = False
 
+
 class CustomS3Boto3Storage(S3Boto3Storage):
     """
     This is our custom version of S3Boto3Storage that fixes a bug in boto3 where the passed in file is closed upon upload.
