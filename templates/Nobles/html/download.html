@@ -42,7 +42,7 @@
 							<h4 class="category-title">Download(s)</h4>
 							<br>
 							<ul class="cat-list">
-							{% for file in files reversed %}
+							{% for file in files%}
 								<li>
 									<a href="{{ file.your_file.url }}" class="d-flex justify-content-between" download>
 										<font style="color:black;"><i class="fas fa-file-pdf"></i>&nbsp;&nbsp;{{ file.name }}</font>
