@@ -2,7 +2,7 @@ from django.db import models
 from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFill
 from tinymce import HTMLField
-
+from django.utils import timezone
 # Create your models here.
 
 class Gallery(models.Model):
@@ -159,7 +159,7 @@ class Achievements(models.Model):
 class Download(models.Model):
     name = models.CharField(max_length=200)
     your_file = models.FileField(upload_to='files/')
-
+    created_date = models.DateTimeField('date created', default=timezone.now)
     def __str__(self):
         return self.name
 

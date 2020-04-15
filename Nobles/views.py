@@ -71,7 +71,7 @@ def admission(request):
     return render(request,'Nobles/html/admission_and_fees.html')
 
 def download(request):
-    files = Download.objects.all()
+    files = Download.objects.order_by('-created_date')
     return render(request, 'Nobles/html/download.html', {'files' : files})
 
 def toppers(request):
