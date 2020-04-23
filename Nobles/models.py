@@ -97,6 +97,7 @@ class Notice(models.Model):
 
     class Meta:
          verbose_name_plural = "Notice"
+         ordering = ['last_updated']
 
 class Infrastructure_and_Facilities(models.Model):
     image = models.ImageField(upload_to='images/')
@@ -180,6 +181,8 @@ class Homeworks(models.Model):
 
     class Meta:
          verbose_name_plural = "Homeworks"
+         ordering = ['added']
+    
 
 class Toppers(models.Model):
     name = models.CharField(max_length=200)
