@@ -169,7 +169,7 @@ class Student(models.Model):
     def __str__(self):
         return self.name
 
-class Homework(models.Model):    
+class Homeworks(models.Model):    
     name = models.CharField(max_length=200)
     your_file = models.FileField(upload_to='files/')
     description = models.TextField(blank=True, null=True)
@@ -177,6 +177,9 @@ class Homework(models.Model):
     added = models.DateTimeField('date created', default=timezone.now)
     def __str__(self):
         return self.name
+
+    class Meta:
+         verbose_name_plural = "Homeworks"
 
 class Toppers(models.Model):
     name = models.CharField(max_length=200)
