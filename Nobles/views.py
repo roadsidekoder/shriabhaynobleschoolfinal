@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
-from Nobles.models import Gallery, Faculty, Notice, Infrastructure_and_Facilities, Achievements, Download, Toppers
+from Nobles.models import Gallery, Faculty, Notice, Infrastructure_and_Facilities, Achievements, Download, Toppers, Student
 def index(request):
     notices = Notice.objects.all()
     infra = Infrastructure_and_Facilities.objects.all()
@@ -73,6 +73,10 @@ def admission(request):
 def download(request):
     files = Download.objects.order_by('-created_date')
     return render(request, 'Nobles/html/download.html', {'files' : files})
+
+def homework(request):
+    classes = Student.objects.all()
+    return render(request, 'Nobles/html/homework.html', {'classes' : classes})
 
 def toppers(request):
     class_1_top = Toppers.objects.filter(student__name="Class 1").order_by('-percentage')

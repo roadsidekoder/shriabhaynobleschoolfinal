@@ -169,6 +169,14 @@ class Student(models.Model):
     def __str__(self):
         return self.name
 
+class Homework(models.Model):    
+    name = models.CharField(max_length=200)
+    description = models.TextField(blank=True, null=True)
+    student = models.ForeignKey('Student',on_delete=models.CASCADE) 
+    added = models.DateTimeField('date created', default=timezone.now)
+    def __str__(self):
+        return self.name
+
 class Toppers(models.Model):
     name = models.CharField(max_length=200)
     student = models.ForeignKey('Student',on_delete=models.CASCADE)
