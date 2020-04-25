@@ -17,6 +17,8 @@ class GalleryAdmin(admin.ModelAdmin):
 class FacultyAdmin(admin.ModelAdmin):
     pass
 
+class HomeworkAdmin(admin.ModelAdmin):
+	list_display  = ('name',)
 
 
 class ToppersAdmin(admin.ModelAdmin):
@@ -35,4 +37,4 @@ admin.site.register(Achievements)
 admin.site.register(Download)
 admin.site.register(Toppers, ToppersAdmin)
 admin.site.register(Student)
-admin.site.register(Homeworks)
+admin.site.register(Homeworks,HomeworkAdmin)
