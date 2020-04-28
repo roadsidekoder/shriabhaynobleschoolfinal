@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 import os
 import dj_database_url
 from decouple import config
+
 #db_from_env = dj_database_url.config(conn_max_age=500)
 #DATABASES['default'].update(db_from_env)
 
@@ -31,7 +32,7 @@ SECRET_KEY = 'b&v4_cy6vpu#c2c*%str(qn71v1h-bubnue6=7tql1p2hudkfi'
 DEBUG = False
 
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['shriabhaynobleschool.herokuapp.com']
 
 
 # Application definition
@@ -170,8 +171,8 @@ USE_S3 = True
 print()
 if USE_S3:
     # aws settings
-    AWS_ACCESS_KEY_ID = 'AKIA5OJAYKHIALC4MHUY'
-    AWS_SECRET_ACCESS_KEY = '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'
+    AWS_ACCESS_KEY_ID = config('SPACES_ACCESS_KEY')
+    AWS_SECRET_ACCESS_KEY = config('SPACES_SECRET_ACCESS_KEY')
     AWS_STORAGE_BUCKET_NAME = 'shriabhaynobleschool-assets'
     AWS_DEFAULT_ACL = 'public-read'
     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
