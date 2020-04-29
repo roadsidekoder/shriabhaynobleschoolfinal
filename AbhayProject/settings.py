@@ -32,7 +32,7 @@ SECRET_KEY = 'b&v4_cy6vpu#c2c*%str(qn71v1h-bubnue6=7tql1p2hudkfi'
 DEBUG = False
 
 
-ALLOWED_HOSTS = ['shriabhaynobleschool.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -169,25 +169,26 @@ USE_TZ = True
 
 USE_S3 = True
 print()
+
 if USE_S3:
     # aws settings
-    AWS_ACCESS_KEY_ID = config('SPACES_ACCESS_KEY')
-    AWS_SECRET_ACCESS_KEY = config('SPACES_SECRET_ACCESS_KEY')
-    AWS_STORAGE_BUCKET_NAME = 'shriabhaynobleschool-assets'
+    AWS_ACCESS_KEY_ID = config('STATIC_ACCESS_KEY')
+    AWS_SECRET_ACCESS_KEY = config('STATIC_SECRET_ACCESS_KEY')
+    AWS_STORAGE_BUCKET_NAME = 'shriabhaynobles-assets'
     AWS_DEFAULT_ACL = 'public-read'
     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
     AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
-    # s3 static settings
+    ## s3 static settings
     STATIC_LOCATION = 'static'
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATIC_LOCATION}/'
     STATICFILES_STORAGE = 'AbhayProject.storage_backends.StaticStorage'
-    # s3 public media settings
+    ## s3 public media settings
     PUBLIC_MEDIA_LOCATION = 'media'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
     DEFAULT_FILE_STORAGE = 'AbhayProject.storage_backends.PublicMediaStorage'
-   # AWS_LOCATION = 'static'
-    #STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{AWS_LOCATION}/'
-    #STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+    AWS_LOCATION = 'static'
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{AWS_LOCATION}/'
+    STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 else:
     STATIC_URL = '/static/'
     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
