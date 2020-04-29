@@ -18,7 +18,10 @@ class FacultyAdmin(admin.ModelAdmin):
     pass
 
 class HomeworkAdmin(admin.ModelAdmin):
-	list_display  = ('name',)
+	list_display  = ('name', 'student')
+	ordering = ('student',)
+	list_filter = ('student',)
+	search_fields = ('name', 'student')
 
 
 class ToppersAdmin(admin.ModelAdmin):
