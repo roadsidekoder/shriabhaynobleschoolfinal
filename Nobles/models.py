@@ -171,6 +171,7 @@ class Student(models.Model):
         return self.classroom
     class Meta:
         ordering = ['id']
+        verbose_name_plural = "Classroom"
 
 class Homeworks(models.Model):    
     name = models.CharField(max_length=200)
