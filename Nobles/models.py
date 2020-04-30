@@ -170,7 +170,7 @@ class Student(models.Model):
     def __str__(self):
         return self.classroom
     class Meta:
-        ordering = ['id']
+        ordering = ['cid']
         verbose_name_plural = "Classroom"
 
 class Homeworks(models.Model):    
