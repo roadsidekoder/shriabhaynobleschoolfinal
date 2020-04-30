@@ -166,7 +166,7 @@ class Download(models.Model):
 
 class Student(models.Model):
     classroom = models.CharField(max_length=100)
-
+    cid = models.IntegerField(null=True)
     def __str__(self):
         return self.classroom
     class Meta:
