@@ -31,6 +31,9 @@ urlpatterns = [
     path('tinymce/', include('tinymce.urls')),
 ]
 
+admin.site.site_header = 'SHRI ABHAY NOBLES SCHOOL'
+admin.site.site_title = 'Shri Abhay Nobles School'
+
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL , document_root = settings.STATIC_ROOT )
