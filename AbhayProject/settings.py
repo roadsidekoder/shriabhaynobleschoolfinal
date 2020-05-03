@@ -171,8 +171,8 @@ print()
 
 if USE_S3:
     # aws settings
-    AWS_ACCESS_KEY_ID = 'AKIAU34FUVFJB3D5PC23'
-    AWS_SECRET_ACCESS_KEY = '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'
+    AWS_ACCESS_KEY_ID = config('ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = config('SECRET_ACCESS_KEY')
     AWS_STORAGE_BUCKET_NAME = 'shriabhaynobles-assets'
     AWS_DEFAULT_ACL = 'public-read'
     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'

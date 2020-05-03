@@ -9,7 +9,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-                <title>SAAS Adventure - Learn to Create your own SAAS</title>
+                <title>Login</title>
 
         <!-- Favicons -->
         <link rel="apple-touch-icon" sizes="57x57" href="{% static 'Elearning/favicons/apple-icon-57x57.png' %}">
@@ -74,7 +74,10 @@
     <div class="flex h-screen bg-gray-100 p-4 rotate">
         <div class="sm:max-w-xl md:max-w-2xl w-full m-auto">
             <form method="POST" action="https://saasadventure.io/login" class="flex items-stretch bg-white rounded-lg shadow overflow-hidden border-t-4 border-custom-purple sm:border-0">
-                <input type="hidden" name="_token" value="5KJjak5y2ASadJfxCkvSvn0sUIglILsPkG74cyja">                <div class="flex hidden overflow-hidden relative sm:block w-5/12 md:w-6/12 bg-gray-600 text-gray-300 py-4 bg-cover bg-center bg-left-bottom" style="background-image: url({% static 'Elearning/img/auth.jpg' %})">
+                {{ form.as_p }}
+                {% csrf_token %}
+                <input type="hidden" name="_token" value="5KJjak5y2ASadJfxCkvSvn0sUIglILsPkG74cyja">              
+                  <div class="flex hidden overflow-hidden relative sm:block w-5/12 md:w-6/12 bg-gray-600 text-gray-300 py-4 bg-cover bg-center bg-left-bottom" style="background-image: url({% static 'Elearning/img/auth.jpg' %})">
                     <div class="flex-1 absolute bottom-0 text-white p-10">
                         <h3 class="text-4xl font-bold inline-block text-shadow-lg">Login</h3>
                         <p class="text-gray-100 whitespace-no-wrap text-shadow">
@@ -89,7 +92,7 @@
                     <h3 class="text-xl text-gray-700 font-bold mb-6">
                         Login <span class="text-gray-600 font-light">to your account</span></h3>
 
-                    <input id="email" type="email" class="px-3 w-full py-2 bg-gray-200 border border-gray-200 rounded focus:border-gray-400 focus:outline-none focus:bg-white mb-4" placeholder="Email" name="email" value="" required autofocus>
+                    <input id="email" type="" class="px-3 w-full py-2 bg-gray-200 border border-gray-200 rounded focus:border-gray-400 focus:outline-none focus:bg-white mb-4" placeholder="Email" name="email" value="" required autofocus>
                     
                     <input id="password" type="password" class="px-3 w-full py-2 bg-gray-200 border border-gray-200 rounded focus:border-gray-400 focus:outline-none focus:bg-white mb-4" name="password" required placeholder="Password">
 
@@ -110,7 +113,7 @@
                         </p>
                     
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 
