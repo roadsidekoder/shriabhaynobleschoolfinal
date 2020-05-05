@@ -168,9 +168,8 @@ USE_TZ = True
 
 USE_S3 = True
 
-LOGIN_REDIRECT_URL = 'dashboard'
-LOGIN_URL = 'login'
-LOGOUT_URL = 'logout'
+LOGIN_REDIRECT_URL = '/homework'
+
 
 
 if USE_S3:
