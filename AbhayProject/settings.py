@@ -38,6 +38,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'Elearning.apps.ElearningConfig',
     'jet.dashboard',
     'jet',
     'imagekit',
@@ -45,7 +46,6 @@ INSTALLED_APPS = [
     'django_cleanup',
     'filebrowser',
     'Nobles.apps.NoblesConfig',
-    'Elearning.apps.ElearningConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -167,7 +167,11 @@ USE_L10N = True
 USE_TZ = True
 
 USE_S3 = True
-print()
+
+LOGIN_REDIRECT_URL = 'dashboard'
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
+
 
 if USE_S3:
     # aws settings
