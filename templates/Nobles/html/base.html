@@ -360,7 +360,11 @@ b{ color: white;}
 							</ul>
             </li>
             <li><a href="{% url 'homework' %}">Homework</a></li>
-            <li><a href="{% url 'login_page' %}">Classroom courses</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'dashboard' %}">Classroom courses</a></li>
+            {% else %}
+            <li><a href="{% url 'login' %}">Classroom courses</a></li>
+            {% endif %}
 <li><a href="{% url 'admission' %}">Admissions and Fee Structure</a></li>
                             						<li><a href="{% url 'faculty' %}">Faculty</a></li>
 					<li><a href="{% url 'download' %}">Download</a></li>
@@ -419,6 +423,17 @@ b{ color: white;}
             <p style="text-align: center;">Made with <font style="color:red">❤</font> by <a target="_blank" href="https://www.facebook.com/suthargk">Gaurav Suthar</a></p>
             
         </div>
+     <!-- <ul class="sidebar-nav">
+
+          ...
+      
+         {% if user.is_authenticated %}
+           <li>User: {{ user.get_username }}</li>
+           <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>   
+         {% else %}
+           <li><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>   
+         {% endif %} 
+        </ul> -->  
     </footer>
 	<!-- End Footer Area -->
 

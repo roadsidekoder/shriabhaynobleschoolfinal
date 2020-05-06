@@ -1,326 +1,348 @@
-{% extends 'Elearning/base.html' %}
 {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    
+<!-- Mirrored from saasadventure.io/dashboard/day-1 by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 02 May 2020 10:28:57 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
+                    <meta name="robots" content="noindex">
+                <title>SAAS Adventure - Learn to Create your own SAAS</title>
 
-{% block content %}
+        <!-- Favicons -->
+     
+        <!-- End Favicons -->
 
-<body class="antialiased bg-white lg:bg-gray-100">
-    <!-- Google Tag Manager (noscript) -->
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KG8LTZJ"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="nhuqCjiyJkHdpJKnAZBqZv3DYa5P3eFZQw2St82N">
 
     
+        
+        <link rel="stylesheet" href="{% static 'Elearning/css/app.css' %}">
 
-<div id="app" class="container mx-auto lg:mx-0 bg-white" v-cloak>
+        <!-- Google Tag Manager -->
+        
 
-    
-    <div id="badge-modal" class="fixed inset-0 w-full h-full z-50" :class="{ 'modal-visible' : showModal }" @click.self="hideBadgeModal()">
-        <div id="badge-confetti" class="fixed inset-0 w-full h-full z-50"></div>
-        <div id="badge-modal-container" class="bg-white rounded shadow text-center">
-            <div class="absolute rounded-full w-8 h-8 bg-pink-500 items-center right-0 -mr-3 -mt-3 text-xl text-center text-gray-200 hover:text-white cursor-pointer" @click="hideBadgeModal()">&times;</div>
-            <h3 class="mt-4 gilroy-bold text-2xl text-gray-600">Congratulations!</h3>
-            <p class="text-gray-600 font-medium mb-5">You just earned the Day 1 badge</p>
-            <img src="../img/badges/day-1.png" alt="Badge Day 1" class="w-64 mx-auto transition">
-            <p class="text-xl text-gray-500 font-bold mt-4"><img src="../img/rock-hand.png" class="w-6 -mt-1 inline-block"> You Rock!</p>
-            <div class="txt-loader"></div>
-                                <p class="text-sm text-gray-500 font-normal mt-2 fade-in relative inline-block mb-8"><span></span>When you're ready, we can move on to <a href="https://saasadventure.io/register?redirect=dashboard" class="font-bold underline text-pink-400">Day 2</a></p>
-                        </div>
-    </div>
-
-    <div id="sideNavBg" class="fixed inset-0 w-full h-full"></div>
-<!-- Side Nav -->
-<div id="sideNav" class="w-64 -ml-64 lg:ml-0 bg-gray-100 lg:bg-gray-200 h-full min-h-screen fixed overflow-y-scroll left-0 z-50 block pb-16">
-
-<div class="h-24 flex flex-col justify-center relative">
-    <a href="https://saasadventure.io/dashboard">
-        <img src="../img/saas-dark-logo.png" alt="Logo" class="w-16 mx-auto -mt-2">
-    </a>
-    <div id="closeSideNav" class="fixed right-0 bg-gray-100 h-8 w-8 flex justify-center items-center rounded-full text-2xl pt-0 pb-1 lg:hidden cursor-pointer mr-10">&times;</div>
-</div>
-
-<a href="https://saasadventure.io/dashboard" class="p-3 mr-3 mt-2 rounded-r-full text-sm uppercase font-medium text-gray-600 pl-8 hover:bg-gray-800 hover:text-white cursor-pointer transition hover-invert-img gilroy-bold flex items-center  bg-gray-300 ">
-    <svg class="svg-icon fill-current w-4 h-4 float-left -ml-1" viewBox="0 0 20 20">
-        <path d="M4.68,13.716v-0.169H4.554C4.592,13.605,4.639,13.658,4.68,13.716z M11.931,6.465
-        c-0.307-0.087-0.623,0.106-0.706,0.432l-1.389,5.484c-0.901,0.084-1.609,0.833-1.609,1.757c0,0.979,0.793,1.773,1.773,1.773
-        c0.979,0,1.773-0.794,1.773-1.773c0-0.624-0.324-1.171-0.812-1.486l1.377-5.439C12.422,6.887,12.239,6.552,11.931,6.465z
-        M10.591,14.729H9.408v-1.182h1.183V14.729z M15.32,13.716c0.04-0.058,0.087-0.11,0.126-0.169H15.32V13.716z M10,3.497
-        c-3.592,0-6.503,2.911-6.503,6.503H4.68c0-2.938,2.382-5.32,5.32-5.32s5.32,2.382,5.32,5.32h1.182
-        C16.502,6.408,13.591,3.497,10,3.497z M10,0.542c-5.224,0-9.458,4.234-9.458,9.458c0,5.224,4.234,9.458,9.458,9.458
-        c5.224,0,9.458-4.234,9.458-9.458C19.458,4.776,15.224,0.542,10,0.542z M15.32,16.335v0.167h-0.212
-        c-1.407,1.107-3.179,1.773-5.108,1.773c-1.93,0-3.701-0.666-5.108-1.773H4.68v-0.167C2.874,14.816,1.724,12.543,1.724,10
-        c0-4.571,3.706-8.276,8.276-8.276c4.57,0,8.275,3.706,8.275,8.276C18.275,12.543,17.126,14.816,15.32,16.335z"></path>
-    </svg>
-    <span class="ml-1 leading-loose">Dashboard</span>
-</a>
-
-<div @click="toggleWeek('1')" :class="'p-3 mr-3 mt-2 rounded-r-full text-sm uppercase font-medium text-gray-600 pl-8 hover:bg-gray-800 hover:text-white cursor-pointer transition hover-invert-img gilroy-bold week-click' + activeWeekNavClass('1')">
-    <img v-show="activeWeekNav != 1" src="https://saasadventure.io/img/svgs/arrow-right.svg" alt="right arrow" class="float-left mr-2 mt-small"><img v-show="activeWeekNav == 1" src="https://saasadventure.io/img/svgs/arrow-down.svg" alt="down arrow" class="float-left mt-2 mr-2"> Week 1
-</div>
-
-<ul :class="getActiveWeekClass('1')">
-    <li>
-        <a href="day-1.html" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block  bg-purple-500 text-white active  rounded-r-full">
-                                <img v-show="completed" src="https://saasadventure.io/img/svgs/checkmark.svg" alt="checkmark" class="float-left mt-1 mr-2 gilroy-medium">
-                <img v-show="!completed" src="https://saasadventure.io/img/svgs/dot.svg" alt="dot" class="dot float-left mt-1 mr-2 gilroy-medium">
-                            <span class="font-bold mr-1 gilroy-bold">Day 1</span> Crafting the idea
-        </a>
-    </li>
-    <li>
-<a href="https://saasadventure.io/register?redirect=dashboard" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block  text-gray-800  rounded-r-full hover:bg-purple-500 hover:text-white" @click.prevent="dayClick('2', '')">
-                                <img v-show="!completed" src="https://saasadventure.io/img/svgs/lock.svg" alt="lock" class="float-left mt-1 mr-2 invert-me gilroy-medium">
-            <img v-show="completed" src="https://saasadventure.io/img/svgs/dot.svg" alt="dot" class="dot float-left mt-1 mr-2 invert-me gilroy-medium">
-                        <span class="font-bold mr-1 gilroy-bold">Day 2</span> The Landing Page
-</a>
-</li>        <li>
-<a href="https://saasadventure.io/register?redirect=dashboard" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block  text-gray-800  rounded-r-full hover:bg-purple-500 hover:text-white" @click.prevent="dayClick('3', '')">
-                                <img src="https://saasadventure.io/img/svgs/lock.svg" alt="lock" class="float-left mt-1 mr-2 invert-me gilroy-medium">
-                        <span class="font-bold mr-1 gilroy-bold">Day 3</span> Get Our Page Live
-</a>
-</li>        <li>
-<a href="https://saasadventure.io/register?redirect=dashboard" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block  text-gray-800  rounded-r-full hover:bg-purple-500 hover:text-white" @click.prevent="dayClick('4', '')">
-                                <img src="https://saasadventure.io/img/svgs/lock.svg" alt="lock" class="float-left mt-1 mr-2 invert-me gilroy-medium">
-                        <span class="font-bold mr-1 gilroy-bold">Day 4</span> Create Our App
-</a>
-</li>        <li>
-<a href="https://saasadventure.io/register?redirect=dashboard" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block  text-gray-800  rounded-r-full hover:bg-purple-500 hover:text-white" @click.prevent="dayClick('5', '')">
-                                <img src="https://saasadventure.io/img/svgs/lock.svg" alt="lock" class="float-left mt-1 mr-2 invert-me gilroy-medium">
-                        <span class="font-bold mr-1 gilroy-bold">Day 5</span> Add Authentication
-</a>
-</li>        <li>
-<a href="https://saasadventure.io/register?redirect=dashboard" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block  text-gray-800  rounded-r-full hover:bg-purple-500 hover:text-white" @click.prevent="dayClick('6', '')">
-                                <img src="https://saasadventure.io/img/svgs/lock.svg" alt="lock" class="float-left mt-1 mr-2 invert-me gilroy-medium">
-                        <span class="font-bold mr-1 gilroy-bold">Day 6</span> The Dashboard
-</a>
-</li>        <li>
-<a href="https://saasadventure.io/register?redirect=dashboard" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block  text-gray-800  rounded-r-full hover:bg-purple-500 hover:text-white" @click.prevent="dayClick('7', '')">
-                                <img src="https://saasadventure.io/img/svgs/lock.svg" alt="lock" class="float-left mt-1 mr-2 invert-me gilroy-medium">
-                        <span class="font-bold mr-1 gilroy-bold">Day 7</span> Add Billing
-</a>
-</li>
-</ul>
-
-<div @click="toggleWeek('2')" :class="'p-3 mr-3 mt-2 rounded-r-full text-sm uppercase font-medium text-gray-600 pl-8 hover:bg-gray-800 hover:text-white cursor-pointer transition hover-invert-img gilroy-bold week-click' + activeWeekNavClass('2')">
-    <img v-show="activeWeekNav != 2" src="https://saasadventure.io/img/svgs/arrow-right.svg" alt="right arrow" class="float-left mr-2 mt-small"><img v-show="activeWeekNav == 2" src="https://saasadventure.io/img/svgs/arrow-down.svg" alt="down arrow" class="float-left mt-2 mr-2"> Week 2
-</div>
-
-<ul :class="getActiveWeekClass('2')">
-    <li>
-<a href="https://saasadventure.io/register?redirect=dashboard" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block  text-gray-800  rounded-r-full hover:bg-purple-500 hover:text-white" @click.prevent="dayClick('8', '')">
-                                <img src="https://saasadventure.io/img/svgs/lock.svg" alt="lock" class="float-left mt-1 mr-2 invert-me gilroy-medium">
-                        <span class="font-bold mr-1 gilroy-bold">Day 8</span> Billing Plans
-</a>
-</li>        <li>
-<a href="https://saasadventure.io/register?redirect=dashboard" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block  text-gray-800  rounded-r-full hover:bg-purple-500 hover:text-white" @click.prevent="dayClick('9', '')">
-                                <img src="https://saasadventure.io/img/svgs/lock.svg" alt="lock" class="float-left mt-1 mr-2 invert-me gilroy-medium">
-                        <span class="font-bold mr-1 gilroy-bold">Day 9</span> Switching Plans
-</a>
-</li>        <li>
-<a href="https://saasadventure.io/register?redirect=dashboard" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block  text-gray-800  rounded-r-full hover:bg-purple-500 hover:text-white" @click.prevent="dayClick('10', '')">
-                                <img src="https://saasadventure.io/img/svgs/lock.svg" alt="lock" class="float-left mt-1 mr-2 invert-me gilroy-medium">
-                        <span class="font-bold mr-1 gilroy-bold">Day 10</span> Billing Trials
-</a>
-</li>        <li>
-<a href="https://saasadventure.io/register?redirect=dashboard" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block  text-gray-800  rounded-r-full hover:bg-purple-500 hover:text-white" @click.prevent="dayClick('11', '')">
-                                <img src="https://saasadventure.io/img/svgs/lock.svg" alt="lock" class="float-left mt-1 mr-2 invert-me gilroy-medium">
-                        <span class="font-bold mr-1 gilroy-bold">Day 11</span> Invoices
-</a>
-</li>        <li>
-<a href="https://saasadventure.io/register?redirect=dashboard" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block  text-gray-800  rounded-r-full hover:bg-purple-500 hover:text-white" @click.prevent="dayClick('12', '')">
-                                <img src="https://saasadventure.io/img/svgs/lock.svg" alt="lock" class="float-left mt-1 mr-2 invert-me gilroy-medium">
-                        <span class="font-bold mr-1 gilroy-bold">Day 12</span> Cancellations
-</a>
-</li>        <li>
-<a href="https://saasadventure.io/register?redirect=dashboard" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block  text-gray-800  rounded-r-full hover:bg-purple-500 hover:text-white" @click.prevent="dayClick('13', '')">
-                                <img src="https://saasadventure.io/img/svgs/lock.svg" alt="lock" class="float-left mt-1 mr-2 invert-me gilroy-medium">
-                        <span class="font-bold mr-1 gilroy-bold">Day 13</span> Stripe Webhooks
-</a>
-</li>        <li>
-<a href="https://saasadventure.io/register?redirect=dashboard" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block  text-gray-800  rounded-r-full hover:bg-purple-500 hover:text-white" @click.prevent="dayClick('14', '')">
-                                <img src="https://saasadventure.io/img/svgs/lock.svg" alt="lock" class="float-left mt-1 mr-2 invert-me gilroy-medium">
-                        <span class="font-bold mr-1 gilroy-bold">Day 14</span> Adding Support
-</a>
-</li>    </ul>
-
-<div @click="toggleWeek('3')" :class="'p-3 mr-3 mt-2 rounded-r-full text-sm uppercase font-medium text-gray-600 pl-8 hover:bg-gray-800 hover:text-white cursor-pointer transition hover-invert-img gilroy-bold week-click' + activeWeekNavClass('3')">
-    <img v-show="activeWeekNav != 3" src="https://saasadventure.io/img/svgs/arrow-right.svg" alt="right arrow" class="float-left mr-2 mt-small"><img v-show="activeWeekNav == 3" src="https://saasadventure.io/img/svgs/arrow-down.svg" alt="down arrow" class="float-left mt-2 mr-2"> Week 3
-</div>
-
-<ul :class="getActiveWeekClass('3')">
-    <li>
-<a href="https://saasadventure.io/register?redirect=dashboard" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block  text-gray-800  rounded-r-full hover:bg-purple-500 hover:text-white" @click.prevent="dayClick('15', '')">
-                                <img src="https://saasadventure.io/img/svgs/lock.svg" alt="lock" class="float-left mt-1 mr-2 invert-me gilroy-medium">
-                        <span class="font-bold mr-1 gilroy-bold">Day 15</span> Announcements
-</a>
-</li>        <li>
-<a href="https://saasadventure.io/register?redirect=dashboard" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block  text-gray-800  rounded-r-full hover:bg-purple-500 hover:text-white" @click.prevent="dayClick('16', '')">
-                                <img src="https://saasadventure.io/img/svgs/lock.svg" alt="lock" class="float-left mt-1 mr-2 invert-me gilroy-medium">
-                        <span class="font-bold mr-1 gilroy-bold">Day 16</span> Adding Pages
-</a>
-</li>        <li>
-<a href="https://saasadventure.io/register?redirect=dashboard" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block  text-gray-800  rounded-r-full hover:bg-purple-500 hover:text-white" @click.prevent="dayClick('17', '')">
-                                <img src="https://saasadventure.io/img/svgs/lock.svg" alt="lock" class="float-left mt-1 mr-2 invert-me gilroy-medium">
-                        <span class="font-bold mr-1 gilroy-bold">Day 17</span> Social Login
-</a>
-</li>        <li>
-<a href="https://saasadventure.io/register?redirect=dashboard" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block  text-gray-800  rounded-r-full hover:bg-purple-500 hover:text-white" @click.prevent="dayClick('18', '')">
-                                <img src="https://saasadventure.io/img/svgs/lock.svg" alt="lock" class="float-left mt-1 mr-2 invert-me gilroy-medium">
-                        <span class="font-bold mr-1 gilroy-bold">Day 18</span> SAAS Functionality
-</a>
-</li>        <li>
-<a href="https://saasadventure.io/register?redirect=dashboard" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block  text-gray-800  rounded-r-full hover:bg-purple-500 hover:text-white" @click.prevent="dayClick('19', '')">
-                                <img src="https://saasadventure.io/img/svgs/lock.svg" alt="lock" class="float-left mt-1 mr-2 invert-me gilroy-medium">
-                        <span class="font-bold mr-1 gilroy-bold">Day 19</span> Setup Email
-</a>
-</li>        <li>
-<a href="https://saasadventure.io/register?redirect=dashboard" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block  text-gray-800  rounded-r-full hover:bg-purple-500 hover:text-white" @click.prevent="dayClick('20', '')">
-                                <img src="https://saasadventure.io/img/svgs/lock.svg" alt="lock" class="float-left mt-1 mr-2 invert-me gilroy-medium">
-                        <span class="font-bold mr-1 gilroy-bold">Day 20</span> Hosting
-</a>
-</li>        <li>
-<a href="https://saasadventure.io/register?redirect=dashboard" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block  text-gray-800  rounded-r-full hover:bg-purple-500 hover:text-white" @click.prevent="dayClick('21', '')">
-                                <img src="https://saasadventure.io/img/svgs/lock.svg" alt="lock" class="float-left mt-1 mr-2 invert-me gilroy-medium">
-                        <span class="font-bold mr-1 gilroy-bold">Day 21</span> Finishing Up
-</a>
-</li>    </ul>
-
-<a href="https://saasadventure.io/register?redirect=dashboard" class="bg-pink-400 hover:bg-pink-500 p-3 mr-3 mt-2 rounded-r-full text-sm uppercase font-medium text-white pl-8 clearfix relative overflow-hidden transition cursor-pointer img-hover-animate block">
-    <img src="https://saasadventure.io/img/svgs/arrow-right.svg" alt="right arrow" class="float-left mr-2 mt-small">
-    <span class="float-left ml-2  gilroy-bold">Goodies<span><img src="https://saasadventure.io/img/svgs/goodies.svg" alt="donut icon" class="w-16 absolute -mr-1 right-0 top-0 float-right clearfix">
-</a>
-
-    <div class="progress w-full absolute bottom-0">
-    <div class="p-5">
-        <span class="text-xs font-medium text-gray-500 w-full text-left block">0% complete</span>
-        <div class="h-2 w-full rounded-full bg-gray-300 relative overflow-hidden mt-2">
-            <div class="absolute h-full bg-green-500" style="width: 0%"></div>
-        </div>
-    </div>
-</div>
-
-</div><!-- Side Nav -->        <!-- Main Content -->
-    <div class="lg:ml-64 lg:pl-10 lg:pr-10 pb-12 min-h-screen px-3 md:px-0 overflow-x-hidden">
-        <div class="flex flex-col justify-center h-24 py-2">
-<div class="flex space-around">
-    <h1 class="flex-1 text-xl font-bold justify-center gilroy-bold">
-        <span id="menuBtn" class="inline-block lg:hidden mr-2 h-10 w-8 float-left rounded-full flex justify-center cursor-pointer">
-            <img src="https://saasadventure.io/img/svgs/menu.svg" alt="menu icon">
-        </span>
-        Crafting the Idea
-    </h1>
-
-        </div>
-</div>
-
-        <!-- Video Container -->
-        <div class="relative rounded-lg cursor-pointer">
-            <div class="ratio-video rounded-lg border border-gray-200">
-                <iframe src="https://player.vimeo.com/video/357065545" width="640" height="360" frameborder="0" ref="player" allow="autoplay; fullscreen" allowfullscreen></iframe>
-            </div>
-        </div>
+    </head>
+    <body class="antialiased bg-white lg:bg-gray-100">
+        <!-- Google Tag Manager (noscript) -->
+            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KG8LTZJ"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
 
         
-        <div class="flex flex-col lg:flex-col xl:flex-row">
-            <div class="flex-1">
-                <div class="bg-gray-100 p-8 relative mt-8 pt-20 rounded-lg">
-                    <div class="absolute top-0 left-0 bg-purple-500 rounded-full px-4 py-2 text-white mt-5 -ml-3 font-bold text-sm gilroy-bold">Video Sections</div>
-                    <input type="hidden" ref="courseId" value="1">
-                    <input type="hidden" ref="userInitialTime" value="0">
-                    <input type="hidden" ref="totalLength" value="610">
-                    <input type="hidden" ref="email" value="">
-                    
-                    <ul class="sections">
-                        <template v-for="section in sections">
-                            <li :class="sectionClass(section)" @click="gotoSection(section)">
-                                <span class="flex-1 z-20">
-                                    <span :class="'w-6 h-6 rounded-full flex justify-center items-center float-left mr-2 ' + sectionBgColor(section)" @click.stop="togglePlay(section)"><img :src="'/img/svgs/' + sectionImage(section) + '.svg'" :alt="sectionImage(section)" :class="sectionImage(section)"></span><span :class="'float-left font-bold text-sm ' + sectionTextColor(section)">{{ section.title }}</span>
-                                </span>
-                                <span class="text-right hidden xl:block z-20">
-                                    <span :class="'text-xs font-normal mr-2 mt-1 block ' + sectionTextColor(section)">{{ sectionLength(section) }}</span>
-                                </span>
-                                <span :style="'width:' + sectionProgress(section) + '%'" class="bg-green-400 absolute top-0 left-0 rounded-full inline-block transition-fast w-0 h-full"></span>
-                            </li>
-                        </template>
-                    </ul>
-                    
-                    <div class="relative mt-8">
-                        <p class="text-gray-500 font-medium text-xs"><span>{{ percentageInteger }}</span>% Completed</p>
-                        <div class="relative rounded-full h-3 bg-gray-300 w-full mt-2 overflow-hidden">
-                            <div class="absolute bg-green-400 rounded-full h-full transition w-0" ref="progressBar"></div>
+    
+    <div id="app" class="container mx-auto lg:mx-0 bg-white" v-cloak>
+
+        
+        <div id="badge-modal" class="fixed inset-0 w-full h-full z-50" :class="{ 'modal-visible' : showModal }" @click.self="hideBadgeModal()">
+            <div id="badge-confetti" class="fixed inset-0 w-full h-full z-50"></div>
+            <div id="badge-modal-container" class="bg-white rounded shadow text-center">
+                <div class="absolute rounded-full w-8 h-8 bg-pink-500 items-center right-0 -mr-3 -mt-3 text-xl text-center text-gray-200 hover:text-white cursor-pointer" @click="hideBadgeModal()">&times;</div>
+                <h3 class="mt-4 gilroy-bold text-2xl text-gray-600">Congratulations!</h3>
+                <p class="text-gray-600 font-medium mb-5">You just earned the Day 1 badge</p>
+                <img src="../img/badges/day-1.png" alt="Badge Day 1" class="w-64 mx-auto transition">
+                <p class="text-xl text-gray-500 font-bold mt-4"><img src="../img/rock-hand.png" class="w-6 -mt-1 inline-block"> You Rock!</p>
+                <div class="txt-loader"></div>
+                                    <p class="text-sm text-gray-500 font-normal mt-2 fade-in relative inline-block mb-8"><span></span>When you're ready, we can move on to <a href="https://saasadventure.io/register?redirect=dashboard" class="font-bold underline text-pink-400">Day 2</a></p>
+                            </div>
+        </div>
+
+        <div id="sideNavBg" class="fixed inset-0 w-full h-full"></div>
+<!-- Side Nav -->
+<div id="sideNav" class="w-64 -ml-64 lg:ml-0 bg-gray-100 lg:bg-gray-200 h-full min-h-screen fixed overflow-y-scroll left-0 z-50 block pb-16">
+    
+    <div class="h-24 flex flex-col justify-center relative">
+        <a href="https://saasadventure.io/dashboard">
+            <img src="../img/saas-dark-logo.png" alt="Logo" class="w-16 mx-auto -mt-2">
+        </a>
+        <div id="closeSideNav" class="fixed right-0 bg-gray-100 h-8 w-8 flex justify-center items-center rounded-full text-2xl pt-0 pb-1 lg:hidden cursor-pointer mr-10">&times;</div>
+    </div>
+
+    <a href="https://saasadventure.io/dashboard" class="p-3 mr-3 mt-2 rounded-r-full text-sm uppercase font-medium text-gray-600 pl-8 hover:bg-gray-800 hover:text-white cursor-pointer transition hover-invert-img gilroy-bold flex items-center  bg-gray-300 ">
+        <svg class="svg-icon fill-current w-4 h-4 float-left -ml-1" viewBox="0 0 20 20">
+            <path d="M4.68,13.716v-0.169H4.554C4.592,13.605,4.639,13.658,4.68,13.716z M11.931,6.465
+            c-0.307-0.087-0.623,0.106-0.706,0.432l-1.389,5.484c-0.901,0.084-1.609,0.833-1.609,1.757c0,0.979,0.793,1.773,1.773,1.773
+            c0.979,0,1.773-0.794,1.773-1.773c0-0.624-0.324-1.171-0.812-1.486l1.377-5.439C12.422,6.887,12.239,6.552,11.931,6.465z
+            M10.591,14.729H9.408v-1.182h1.183V14.729z M15.32,13.716c0.04-0.058,0.087-0.11,0.126-0.169H15.32V13.716z M10,3.497
+            c-3.592,0-6.503,2.911-6.503,6.503H4.68c0-2.938,2.382-5.32,5.32-5.32s5.32,2.382,5.32,5.32h1.182
+            C16.502,6.408,13.591,3.497,10,3.497z M10,0.542c-5.224,0-9.458,4.234-9.458,9.458c0,5.224,4.234,9.458,9.458,9.458
+            c5.224,0,9.458-4.234,9.458-9.458C19.458,4.776,15.224,0.542,10,0.542z M15.32,16.335v0.167h-0.212
+            c-1.407,1.107-3.179,1.773-5.108,1.773c-1.93,0-3.701-0.666-5.108-1.773H4.68v-0.167C2.874,14.816,1.724,12.543,1.724,10
+            c0-4.571,3.706-8.276,8.276-8.276c4.57,0,8.275,3.706,8.275,8.276C18.275,12.543,17.126,14.816,15.32,16.335z"></path>
+        </svg>
+        <span class="ml-1 leading-loose">Dashboard</span>
+    </a>
+    
+    <div @click="toggleWeek('1')" :class="'p-3 mr-3 mt-2 rounded-r-full text-sm uppercase font-medium text-gray-600 pl-8 hover:bg-gray-800 hover:text-white cursor-pointer transition hover-invert-img gilroy-bold week-click' + activeWeekNavClass('1')">
+        <img v-show="activeWeekNav != 1" src="https://saasadventure.io/img/svgs/arrow-right.svg" alt="right arrow" class="float-left mr-2 mt-small"><img v-show="activeWeekNav == 1" src="https://saasadventure.io/img/svgs/arrow-down.svg" alt="down arrow" class="float-left mt-2 mr-2"> Week 1
+    </div>
+
+    <ul :class="getActiveWeekClass('1')">
+        <li>
+            <a href="day-1.html" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block  bg-purple-500 text-white active  rounded-r-full">
+                                    <img v-show="completed" src="https://saasadventure.io/img/svgs/checkmark.svg" alt="checkmark" class="float-left mt-1 mr-2 gilroy-medium">
+                    <img v-show="!completed" src="https://saasadventure.io/img/svgs/dot.svg" alt="dot" class="dot float-left mt-1 mr-2 gilroy-medium">
+                                <span class="font-bold mr-1 gilroy-bold">Day 1</span> Crafting the idea
+            </a>
+        </li>
+        <li>
+    <a href="https://saasadventure.io/register?redirect=dashboard" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block  text-gray-800  rounded-r-full hover:bg-purple-500 hover:text-white" @click.prevent="dayClick('2', '')">
+                                    <img v-show="!completed" src="https://saasadventure.io/img/svgs/lock.svg" alt="lock" class="float-left mt-1 mr-2 invert-me gilroy-medium">
+                <img v-show="completed" src="https://saasadventure.io/img/svgs/dot.svg" alt="dot" class="dot float-left mt-1 mr-2 invert-me gilroy-medium">
+                            <span class="font-bold mr-1 gilroy-bold">Day 2</span> The Landing Page
+    </a>
+</li>        <li>
+    <a href="https://saasadventure.io/register?redirect=dashboard" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block  text-gray-800  rounded-r-full hover:bg-purple-500 hover:text-white" @click.prevent="dayClick('3', '')">
+                                    <img src="https://saasadventure.io/img/svgs/lock.svg" alt="lock" class="float-left mt-1 mr-2 invert-me gilroy-medium">
+                            <span class="font-bold mr-1 gilroy-bold">Day 3</span> Get Our Page Live
+    </a>
+</li>        <li>
+    <a href="https://saasadventure.io/register?redirect=dashboard" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block  text-gray-800  rounded-r-full hover:bg-purple-500 hover:text-white" @click.prevent="dayClick('4', '')">
+                                    <img src="https://saasadventure.io/img/svgs/lock.svg" alt="lock" class="float-left mt-1 mr-2 invert-me gilroy-medium">
+                            <span class="font-bold mr-1 gilroy-bold">Day 4</span> Create Our App
+    </a>
+</li>        <li>
+    <a href="https://saasadventure.io/register?redirect=dashboard" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block  text-gray-800  rounded-r-full hover:bg-purple-500 hover:text-white" @click.prevent="dayClick('5', '')">
+                                    <img src="https://saasadventure.io/img/svgs/lock.svg" alt="lock" class="float-left mt-1 mr-2 invert-me gilroy-medium">
+                            <span class="font-bold mr-1 gilroy-bold">Day 5</span> Add Authentication
+    </a>
+</li>        <li>
+    <a href="https://saasadventure.io/register?redirect=dashboard" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block  text-gray-800  rounded-r-full hover:bg-purple-500 hover:text-white" @click.prevent="dayClick('6', '')">
+                                    <img src="https://saasadventure.io/img/svgs/lock.svg" alt="lock" class="float-left mt-1 mr-2 invert-me gilroy-medium">
+                            <span class="font-bold mr-1 gilroy-bold">Day 6</span> The Dashboard
+    </a>
+</li>        <li>
+    <a href="https://saasadventure.io/register?redirect=dashboard" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block  text-gray-800  rounded-r-full hover:bg-purple-500 hover:text-white" @click.prevent="dayClick('7', '')">
+                                    <img src="https://saasadventure.io/img/svgs/lock.svg" alt="lock" class="float-left mt-1 mr-2 invert-me gilroy-medium">
+                            <span class="font-bold mr-1 gilroy-bold">Day 7</span> Add Billing
+    </a>
+</li>
+    </ul>
+
+    <div @click="toggleWeek('2')" :class="'p-3 mr-3 mt-2 rounded-r-full text-sm uppercase font-medium text-gray-600 pl-8 hover:bg-gray-800 hover:text-white cursor-pointer transition hover-invert-img gilroy-bold week-click' + activeWeekNavClass('2')">
+        <img v-show="activeWeekNav != 2" src="https://saasadventure.io/img/svgs/arrow-right.svg" alt="right arrow" class="float-left mr-2 mt-small"><img v-show="activeWeekNav == 2" src="https://saasadventure.io/img/svgs/arrow-down.svg" alt="down arrow" class="float-left mt-2 mr-2"> Week 2
+    </div>
+
+    <ul :class="getActiveWeekClass('2')">
+        <li>
+    <a href="https://saasadventure.io/register?redirect=dashboard" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block  text-gray-800  rounded-r-full hover:bg-purple-500 hover:text-white" @click.prevent="dayClick('8', '')">
+                                    <img src="https://saasadventure.io/img/svgs/lock.svg" alt="lock" class="float-left mt-1 mr-2 invert-me gilroy-medium">
+                            <span class="font-bold mr-1 gilroy-bold">Day 8</span> Billing Plans
+    </a>
+</li>        <li>
+    <a href="https://saasadventure.io/register?redirect=dashboard" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block  text-gray-800  rounded-r-full hover:bg-purple-500 hover:text-white" @click.prevent="dayClick('9', '')">
+                                    <img src="https://saasadventure.io/img/svgs/lock.svg" alt="lock" class="float-left mt-1 mr-2 invert-me gilroy-medium">
+                            <span class="font-bold mr-1 gilroy-bold">Day 9</span> Switching Plans
+    </a>
+</li>        <li>
+    <a href="https://saasadventure.io/register?redirect=dashboard" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block  text-gray-800  rounded-r-full hover:bg-purple-500 hover:text-white" @click.prevent="dayClick('10', '')">
+                                    <img src="https://saasadventure.io/img/svgs/lock.svg" alt="lock" class="float-left mt-1 mr-2 invert-me gilroy-medium">
+                            <span class="font-bold mr-1 gilroy-bold">Day 10</span> Billing Trials
+    </a>
+</li>        <li>
+    <a href="https://saasadventure.io/register?redirect=dashboard" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block  text-gray-800  rounded-r-full hover:bg-purple-500 hover:text-white" @click.prevent="dayClick('11', '')">
+                                    <img src="https://saasadventure.io/img/svgs/lock.svg" alt="lock" class="float-left mt-1 mr-2 invert-me gilroy-medium">
+                            <span class="font-bold mr-1 gilroy-bold">Day 11</span> Invoices
+    </a>
+</li>        <li>
+    <a href="https://saasadventure.io/register?redirect=dashboard" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block  text-gray-800  rounded-r-full hover:bg-purple-500 hover:text-white" @click.prevent="dayClick('12', '')">
+                                    <img src="https://saasadventure.io/img/svgs/lock.svg" alt="lock" class="float-left mt-1 mr-2 invert-me gilroy-medium">
+                            <span class="font-bold mr-1 gilroy-bold">Day 12</span> Cancellations
+    </a>
+</li>        <li>
+    <a href="https://saasadventure.io/register?redirect=dashboard" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block  text-gray-800  rounded-r-full hover:bg-purple-500 hover:text-white" @click.prevent="dayClick('13', '')">
+                                    <img src="https://saasadventure.io/img/svgs/lock.svg" alt="lock" class="float-left mt-1 mr-2 invert-me gilroy-medium">
+                            <span class="font-bold mr-1 gilroy-bold">Day 13</span> Stripe Webhooks
+    </a>
+</li>        <li>
+    <a href="https://saasadventure.io/register?redirect=dashboard" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block  text-gray-800  rounded-r-full hover:bg-purple-500 hover:text-white" @click.prevent="dayClick('14', '')">
+                                    <img src="https://saasadventure.io/img/svgs/lock.svg" alt="lock" class="float-left mt-1 mr-2 invert-me gilroy-medium">
+                            <span class="font-bold mr-1 gilroy-bold">Day 14</span> Adding Support
+    </a>
+</li>    </ul>
+
+    <div @click="toggleWeek('3')" :class="'p-3 mr-3 mt-2 rounded-r-full text-sm uppercase font-medium text-gray-600 pl-8 hover:bg-gray-800 hover:text-white cursor-pointer transition hover-invert-img gilroy-bold week-click' + activeWeekNavClass('3')">
+        <img v-show="activeWeekNav != 3" src="https://saasadventure.io/img/svgs/arrow-right.svg" alt="right arrow" class="float-left mr-2 mt-small"><img v-show="activeWeekNav == 3" src="https://saasadventure.io/img/svgs/arrow-down.svg" alt="down arrow" class="float-left mt-2 mr-2"> Week 3
+    </div>
+
+    <ul :class="getActiveWeekClass('3')">
+        <li>
+    <a href="https://saasadventure.io/register?redirect=dashboard" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block  text-gray-800  rounded-r-full hover:bg-purple-500 hover:text-white" @click.prevent="dayClick('15', '')">
+                                    <img src="https://saasadventure.io/img/svgs/lock.svg" alt="lock" class="float-left mt-1 mr-2 invert-me gilroy-medium">
+                            <span class="font-bold mr-1 gilroy-bold">Day 15</span> Announcements
+    </a>
+</li>        <li>
+    <a href="https://saasadventure.io/register?redirect=dashboard" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block  text-gray-800  rounded-r-full hover:bg-purple-500 hover:text-white" @click.prevent="dayClick('16', '')">
+                                    <img src="https://saasadventure.io/img/svgs/lock.svg" alt="lock" class="float-left mt-1 mr-2 invert-me gilroy-medium">
+                            <span class="font-bold mr-1 gilroy-bold">Day 16</span> Adding Pages
+    </a>
+</li>        <li>
+    <a href="https://saasadventure.io/register?redirect=dashboard" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block  text-gray-800  rounded-r-full hover:bg-purple-500 hover:text-white" @click.prevent="dayClick('17', '')">
+                                    <img src="https://saasadventure.io/img/svgs/lock.svg" alt="lock" class="float-left mt-1 mr-2 invert-me gilroy-medium">
+                            <span class="font-bold mr-1 gilroy-bold">Day 17</span> Social Login
+    </a>
+</li>        <li>
+    <a href="https://saasadventure.io/register?redirect=dashboard" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block  text-gray-800  rounded-r-full hover:bg-purple-500 hover:text-white" @click.prevent="dayClick('18', '')">
+                                    <img src="https://saasadventure.io/img/svgs/lock.svg" alt="lock" class="float-left mt-1 mr-2 invert-me gilroy-medium">
+                            <span class="font-bold mr-1 gilroy-bold">Day 18</span> SAAS Functionality
+    </a>
+</li>        <li>
+    <a href="https://saasadventure.io/register?redirect=dashboard" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block  text-gray-800  rounded-r-full hover:bg-purple-500 hover:text-white" @click.prevent="dayClick('19', '')">
+                                    <img src="https://saasadventure.io/img/svgs/lock.svg" alt="lock" class="float-left mt-1 mr-2 invert-me gilroy-medium">
+                            <span class="font-bold mr-1 gilroy-bold">Day 19</span> Setup Email
+    </a>
+</li>        <li>
+    <a href="https://saasadventure.io/register?redirect=dashboard" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block  text-gray-800  rounded-r-full hover:bg-purple-500 hover:text-white" @click.prevent="dayClick('20', '')">
+                                    <img src="https://saasadventure.io/img/svgs/lock.svg" alt="lock" class="float-left mt-1 mr-2 invert-me gilroy-medium">
+                            <span class="font-bold mr-1 gilroy-bold">Day 20</span> Hosting
+    </a>
+</li>        <li>
+    <a href="https://saasadventure.io/register?redirect=dashboard" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block  text-gray-800  rounded-r-full hover:bg-purple-500 hover:text-white" @click.prevent="dayClick('21', '')">
+                                    <img src="https://saasadventure.io/img/svgs/lock.svg" alt="lock" class="float-left mt-1 mr-2 invert-me gilroy-medium">
+                            <span class="font-bold mr-1 gilroy-bold">Day 21</span> Finishing Up
+    </a>
+</li>    </ul>
+
+    <a href="https://saasadventure.io/register?redirect=dashboard" class="bg-pink-400 hover:bg-pink-500 p-3 mr-3 mt-2 rounded-r-full text-sm uppercase font-medium text-white pl-8 clearfix relative overflow-hidden transition cursor-pointer img-hover-animate block">
+        <img src="https://saasadventure.io/img/svgs/arrow-right.svg" alt="right arrow" class="float-left mr-2 mt-small">
+        <span class="float-left ml-2  gilroy-bold">Goodies<span><img src="https://saasadventure.io/img/svgs/goodies.svg" alt="donut icon" class="w-16 absolute -mr-1 right-0 top-0 float-right clearfix">
+    </a>
+
+        <div class="progress w-full absolute bottom-0">
+        <div class="p-5">
+            <span class="text-xs font-medium text-gray-500 w-full text-left block">0% complete</span>
+            <div class="h-2 w-full rounded-full bg-gray-300 relative overflow-hidden mt-2">
+                <div class="absolute h-full bg-green-500" style="width: 0%"></div>
+            </div>
+        </div>
+    </div>
+    
+</div><!-- Side Nav -->        <!-- Main Content -->
+        <div class="lg:ml-64 lg:pl-10 lg:pr-10 pb-12 min-h-screen px-3 md:px-0 overflow-x-hidden">
+            <div class="flex flex-col justify-center h-24 py-2">
+    <div class="flex space-around">
+        <h1 class="flex-1 text-xl font-bold justify-center gilroy-bold">
+            <span id="menuBtn" class="inline-block lg:hidden mr-2 h-10 w-8 float-left rounded-full flex justify-center cursor-pointer">
+                <img src="https://saasadventure.io/img/svgs/menu.svg" alt="menu icon">
+            </span>
+            Crafting the Idea
+        </h1>
+
+            </div>
+</div>
+
+            <!-- Video Container -->
+            <div class="relative rounded-lg cursor-pointer">
+                <div class="ratio-video rounded-lg border border-gray-200">
+                    <iframe src="https://player.vimeo.com/video/357065545" width="640" height="360" frameborder="0" ref="player" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            
+            <div class="flex flex-col lg:flex-col xl:flex-row">
+                <div class="flex-1">
+                    <div class="bg-gray-100 p-8 relative mt-8 pt-20 rounded-lg">
+                        <div class="absolute top-0 left-0 bg-purple-500 rounded-full px-4 py-2 text-white mt-5 -ml-3 font-bold text-sm gilroy-bold">Video Sections</div>
+                        <input type="hidden" ref="courseId" value="1">
+                        <input type="hidden" ref="userInitialTime" value="0">
+                        <input type="hidden" ref="totalLength" value="610">
+                        <input type="hidden" ref="email" value="">
+                        
+                        <ul class="sections">
+                            <template v-for="section in sections">
+                                <li :class="sectionClass(section)" @click="gotoSection(section)">
+                                    <span class="flex-1 z-20">
+                                        <span :class="'w-6 h-6 rounded-full flex justify-center items-center float-left mr-2 ' + sectionBgColor(section)" @click.stop="togglePlay(section)"><img :src="'/img/svgs/' + sectionImage(section) + '.svg'" :alt="sectionImage(section)" :class="sectionImage(section)"></span><span :class="'float-left font-bold text-sm ' + sectionTextColor(section)">{{ section.title }}</span>
+                                    </span>
+                                    <span class="text-right hidden xl:block z-20">
+                                        <span :class="'text-xs font-normal mr-2 mt-1 block ' + sectionTextColor(section)"></span>
+                                    </span>
+                                    <span :style="'width:' + sectionProgress(section) + '%'" class="bg-green-400 absolute top-0 left-0 rounded-full inline-block transition-fast w-0 h-full"></span>
+                                </li>
+                            </template>
+                        </ul>
+                        
+                        <div class="relative mt-8">
+                            <p class="text-gray-500 font-medium text-xs"><span></span>% Completed</p>
+                            <div class="relative rounded-full h-3 bg-gray-300 w-full mt-2 overflow-hidden">
+                                <div class="absolute bg-green-400 rounded-full h-full transition w-0" ref="progressBar"></div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                
-                <div class="bg-gray-100 p-8 relative mt-8 pt-20 rounded-lg">
-                    <div class="absolute top-0 left-0 bg-purple-500 rounded-full px-4 py-2 text-white mt-5 -ml-3 font-bold text-sm gilroy-bold">Video Details</div>
-                    <p class="text-gray-600 text-sm xl:text-normal">In this first video we&#039;ll be covering brainstorming, finding a domain, and creating a logo. Why are we creating a logo at such an early stage? Believe me, it will help to conceptualize and motivate throughout this adventure!</p>
-                </div>
-                <div class="bg-gray-100 p-8 relative mt-8 pt-20 rounded-lg">
-                    <div class="absolute top-0 left-0 bg-purple-500 rounded-full px-4 py-2 text-white mt-5 -ml-3 font-bold text-sm gilroy-bold">Homework</div>
-                    <p class="text-gray-600 text-sm xl:text-normal">Here are your homework tasks for the day:</p>
-                                            <ol class="list-disc text-gray-700 mt-6 text-normal xl:text-lg ml-5 xl:ml-8">
-                                                        <li class="">Brainstorm an idea for your SAAS</li>
-                                                        <li class="mt-1"> Find a domain for your SAAS</li>
-                                                        <li class="mt-1"> Create a logo for your SAAS</li>
-                                                </ol>
-                </div>
-                <div class="bg-gray-100 p-8 relative mt-8 pt-20 rounded-lg">
-                    <div class="absolute top-0 left-0 bg-purple-500 rounded-full px-4 py-2 text-white mt-5 -ml-3 font-bold text-sm gilroy-bold">Link Resources</div>
-                    <p class="text-gray-600 text-sm xl:text-normal">Here are the link resources mentioned in this video:</p>
-                    <div class="mt-5 links">
-                        <p><a href="https://dribbble.com/">Dribbble</a>
+                    
+                    <div class="bg-gray-100 p-8 relative mt-8 pt-20 rounded-lg">
+                        <div class="absolute top-0 left-0 bg-purple-500 rounded-full px-4 py-2 text-white mt-5 -ml-3 font-bold text-sm gilroy-bold">Video Details</div>
+                        <p class="text-gray-600 text-sm xl:text-normal">In this first video we&#039;ll be covering brainstorming, finding a domain, and creating a logo. Why are we creating a logo at such an early stage? Believe me, it will help to conceptualize and motivate throughout this adventure!</p>
+                    </div>
+                    <div class="bg-gray-100 p-8 relative mt-8 pt-20 rounded-lg">
+                        <div class="absolute top-0 left-0 bg-purple-500 rounded-full px-4 py-2 text-white mt-5 -ml-3 font-bold text-sm gilroy-bold">Homework</div>
+                        <p class="text-gray-600 text-sm xl:text-normal">Here are your homework tasks for the day:</p>
+                                                <ol class="list-disc text-gray-700 mt-6 text-normal xl:text-lg ml-5 xl:ml-8">
+                                                            <li class="">Brainstorm an idea for your SAAS</li>
+                                                            <li class="mt-1"> Find a domain for your SAAS</li>
+                                                            <li class="mt-1"> Create a logo for your SAAS</li>
+                                                    </ol>
+                    </div>
+                    <div class="bg-gray-100 p-8 relative mt-8 pt-20 rounded-lg">
+                        <div class="absolute top-0 left-0 bg-purple-500 rounded-full px-4 py-2 text-white mt-5 -ml-3 font-bold text-sm gilroy-bold">Link Resources</div>
+                        <p class="text-gray-600 text-sm xl:text-normal">Here are the link resources mentioned in this video:</p>
+                        <div class="mt-5 links">
+                            <p><a href="https://dribbble.com/">Dribbble</a>
 <a href="https://namecheap.com/">Namecheap</a>
 <a href="https://www.sketch.com/">Sketch App</a>
 <a href="https://stock.adobe.com/">Adobe Stock</a>
 <a href="https://tailwindcss.com/">Tailwind CSS</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="flex-1 xl:ml-8">
-
-                <div class="bg-gray-100 p-8 relative mt-8 pt-20 rounded-lg">
-                    <div class="absolute top-0 left-0 bg-pink-500 rounded-full px-4 py-2 text-white mt-5 -ml-3 font-bold text-sm gilroy-bold">Completion</div>
-                    <img src="../img/badges/day-1.png" alt="Badge Day 1" class="w-3/5 mx-auto transition" :class="{ 'badge-filter' : !completed }">
-                    <p class="text-gray-600 text-sm xl:text-normal mt-6 text-center px-4">After finishing <span class="font-bold">Day 1</span>,<br> mark as
-                        <span class="font-bold">completed</span> to earn your badge.</p>
-                    <div :class="completedClass()" @click="toggleCompleted">
-                    
-                        <div class="w-full">
-                            <img src="https://saasadventure.io/img/svgs/checkmark-white.svg" class="w-5 h-5 inline-block mr-2 completedCheck">
-                            <span class="w-5 h-5 rounded bg-gray-200 mr-2 inline-block -mb-1 completedBox"></span>
-                            <span class="text-lg uppercase font-medium text-white inline-block  gilroy-bold"><span class="completedText">Completed</span><span class="notCompletedText">Mark as Completed</span></span>
                         </div>
                     </div>
                 </div>
+                <div class="flex-1 xl:ml-8">
 
-                <div class="bg-gray-100 p-8 relative mt-4 pt-20 rounded-lg">
-                    <div class="absolute top-0 left-0 bg-pink-500 rounded-full px-4 py-2 text-white mt-5 -ml-3 font-bold text-sm gilroy-bold">File Downloads</div>
-                    <div class="downloads">
-                        <h3 class="font-bold text-gray-700 mb-2">Source Code</h3>
-                        <div class="block flex flex-col items-start">
-                            <a href="https://saasadventure.s3.us-west-1.amazonaws.com/files/day-1.zip" class="text-pink-500 font-bold inline-block hover:underline">Click to Download</a>
-                            <a href="https://saasadventure.io/instructions" target="_blank" class="text-gray-500 text-xs rounded-full inline-block mt-2 font-medium underline">Install Instructions</a>
-                        </div>
-
-                        <h3 class="font-bold text-gray-700 mb-2 mt-6 flex items-center">Video Files <span class="text-xs text-gray-500 ml-2 font-thin">(Right-Click -> Save Link As)</span></h3>
+                    <div class="bg-gray-100 p-8 relative mt-8 pt-20 rounded-lg">
+                        <div class="absolute top-0 left-0 bg-pink-500 rounded-full px-4 py-2 text-white mt-5 -ml-3 font-bold text-sm gilroy-bold">Completion</div>
+                        <img src="../img/badges/day-1.png" alt="Badge Day 1" class="w-3/5 mx-auto transition" :class="{ 'badge-filter' : !completed }">
+                        <p class="text-gray-600 text-sm xl:text-normal mt-6 text-center px-4">After finishing <span class="font-bold">Day 1</span>,<br> mark as
+                            <span class="font-bold">completed</span> to earn your badge.</p>
+                        <div :class="completedClass()" @click="toggleCompleted">
                         
-                        <div class="block mt-2"><a href="https://player.vimeo.com/external/357065545.hd.mp4?s=760412049895cf6ce3c27d936bfea9cb0756d021&amp;profile_id=175" class="text-pink-500 font-bold inline-block hover:underline">Video HD 1080</a></div>
-                        <div class="block mt-2"><a href="https://player.vimeo.com/external/357065545.hd.mp4?s=760412049895cf6ce3c27d936bfea9cb0756d021&amp;profile_id=174" class="text-pink-500 font-bold inline-block hover:underline">Video HD 720</a></div>
-                        <div class="block mt-2"><a href="https://player.vimeo.com/external/357065545.sd.mp4?s=9e8257362a767466857cdc6d50a5981209df27da&amp;profile_id=165" class="text-pink-500 font-bold inline-block hover:underline">Video SD 540</a></div>
+                            <div class="w-full">
+                                <img src="https://saasadventure.io/img/svgs/checkmark-white.svg" class="w-5 h-5 inline-block mr-2 completedCheck">
+                                <span class="w-5 h-5 rounded bg-gray-200 mr-2 inline-block -mb-1 completedBox"></span>
+                                <span class="text-lg uppercase font-medium text-white inline-block  gilroy-bold"><span class="completedText">Completed</span><span class="notCompletedText">Mark as Completed</span></span>
+                            </div>
+                        </div>
                     </div>
+
+                    <div class="bg-gray-100 p-8 relative mt-4 pt-20 rounded-lg">
+                        <div class="absolute top-0 left-0 bg-pink-500 rounded-full px-4 py-2 text-white mt-5 -ml-3 font-bold text-sm gilroy-bold">File Downloads</div>
+                        <div class="downloads">
+                            <h3 class="font-bold text-gray-700 mb-2">Source Code</h3>
+                            <div class="block flex flex-col items-start">
+                                <a href="https://saasadventure.s3.us-west-1.amazonaws.com/files/day-1.zip" class="text-pink-500 font-bold inline-block hover:underline">Click to Download</a>
+                                <a href="https://saasadventure.io/instructions" target="_blank" class="text-gray-500 text-xs rounded-full inline-block mt-2 font-medium underline">Install Instructions</a>
+                            </div>
+
+                            <h3 class="font-bold text-gray-700 mb-2 mt-6 flex items-center">Video Files <span class="text-xs text-gray-500 ml-2 font-thin">(Right-Click -> Save Link As)</span></h3>
+                            
+                            <div class="block mt-2"><a href="https://player.vimeo.com/external/357065545.hd.mp4?s=760412049895cf6ce3c27d936bfea9cb0756d021&amp;profile_id=175" class="text-pink-500 font-bold inline-block hover:underline">Video HD 1080</a></div>
+                            <div class="block mt-2"><a href="https://player.vimeo.com/external/357065545.hd.mp4?s=760412049895cf6ce3c27d936bfea9cb0756d021&amp;profile_id=174" class="text-pink-500 font-bold inline-block hover:underline">Video HD 720</a></div>
+                            <div class="block mt-2"><a href="https://player.vimeo.com/external/357065545.sd.mp4?s=9e8257362a767466857cdc6d50a5981209df27da&amp;profile_id=165" class="text-pink-500 font-bold inline-block hover:underline">Video SD 540</a></div>
+                        </div>
+                    </div>
+
                 </div>
-
             </div>
-        </div>
-    </div><!-- Main Content -->
-</div>
-<input type="hidden" id="currentDay" value="1">
+        </div><!-- Main Content -->
+    </div>
+    <input type="hidden" id="currentDay" value="1">
 
-<input type="hidden" id="authenticated" value="0">
-<!-- Scripts -->
-<script src="../js/app39e0.js?id=b13a329106de7887d952"></script>
-</body>
+    <input type="hidden" id="authenticated" value="0">
+    <!-- Scripts -->
+    <script src="{% static 'Elearning/jss/app39e0.js' %}"></script>
+    </body>
 
-
-{% endblock %}
+<!-- Mirrored from saasadventure.io/dashboard/day-1 by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 02 May 2020 10:29:21 GMT -->
+</html>

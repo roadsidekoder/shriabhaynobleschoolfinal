@@ -1,15 +1,68 @@
-<form method="post" action="{% url 'login' %}">
-    {% csrf_token %}
-    <table>
-      <tr>
-        <td>{{ form.username.label_tag }}</td>
-        <td>{{ form.username }}</td>
-      </tr>
-      <tr>
-        <td>{{ form.password.label_tag }}</td>
-        <td>{{ form.password }}</td>
-      </tr>
-    </table>
-    <input type="submit" value="login" />
-    <input type="hidden" name="next" value="{{ next }}" />
-  </form>
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <body class="antialiased ">
+        <!-- Google Tag Manager (noscript) -->
+            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KG8LTZJ"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+
+        
+
+    <div class="flex h-screen bg-gray-100 p-4 rotate">
+        <div class="sm:max-w-xl md:max-w-2xl w-full m-auto">
+ 
+            <form method="POST" action="{% url 'login' %}"  class="flex items-stretch bg-white rounded-lg shadow overflow-hidden border-t-4 border-custom-purple sm:border-0">
+                
+                
+                <input type="hidden" name="_token" value="5KJjak5y2ASadJfxCkvSvn0sUIglILsPkG74cyja">            
+                    <div class="flex hidden overflow-hidden relative sm:block w-5/12 md:w-6/12 bg-gray-600 text-gray-300 py-4 bg-cover bg-center bg-left-bottom" style="background-image: url({% static 'Elearning/img/auth.jpg' %})">
+                        <div class="flex-1 absolute bottom-0 text-white p-10">
+                            <h3 class="text-4xl font-bold inline-block text-shadow-lg">Login</h3>
+                            <p class="text-gray-100 whitespace-no-wrap text-shadow">
+                                Welcome back!
+                            </p>
+                        </div>
+                        <svg class="absolute animate h-full w-4/12 sm:w-2/12 right-0 inset-y-0 fill-current text-white" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                            <polygon points="0,0 100,100 100,0">
+                        </svg>
+                    </div>
+                <div class="flex-1 p-6 sm:p-10 sm:py-12">
+                    <h3 class="text-xl text-gray-700 font-bold mb-6">
+                        Login <span class="text-gray-600 font-light">to your account</span></h3>
+                        {% csrf_token %}
+                        {{ form.username }}
+                        {{ form.password }}
+                        
+                        <input type="hidden" name="next" value="{{ next }}" />
+                    <div class="flex flex-wrap items-center">
+                        <div class="w-full sm:flex-1">
+                            <input type="submit" value="Login" class="w-full sm:w-auto bg-custom-purple text-indigo-100 px-6 py-2 rounded focus:outline-none cursor-pointer">
+                        </div>
+                        <div class="text-sm text-gray-500 hover:text-gray-700 pt-4 sm:p-0">
+                            <a href="password/reset.html">Forgot password?</a>
+                        </div>
+                    </div>
+
+                                            <p class="w-full text-xs text-left text-gray-700 mt-8">
+                            Don't have an account?
+                            <a class="text-blue-500 hover:text-blue-700 no-underline" href="register.html">
+                                Register
+                            </a>
+                        </p>
+                    
+                </div>
+            </form>
+        </div>
+    </div>
+
+    
+
+    <input type="hidden" id="authenticated" value="0">
+    <!-- Scripts -->
+    
+    </body>
+
+    {% endblock %}

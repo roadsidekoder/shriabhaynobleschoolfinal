@@ -6,6 +6,9 @@ from django.contrib.auth.decorators import login_required
 from .forms import LoginForm
 
 # Create your views here.
+@login_required
+def dashboard(request):
+    return render(request, 'Elearning/dashboard.html')
 
 def login_paged(request):
     return render(request, 'Elearning/registration/login.html')

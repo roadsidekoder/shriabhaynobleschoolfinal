@@ -168,7 +168,7 @@ USE_TZ = True
 
 USE_S3 = True
 
-LOGIN_REDIRECT_URL = '/homework'
+LOGIN_REDIRECT_URL = '/Elearning/dashboard/'
 
 
 
