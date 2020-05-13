@@ -166,7 +166,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-USE_S3 = True
+USE_S3 = config('USE_S3', cast=bool)
 
 LOGIN_REDIRECT_URL = '/Elearning/dashboard/'
 
@@ -176,7 +176,7 @@ if USE_S3:
     # aws settings
     AWS_ACCESS_KEY_ID = config('ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = config('SECRET_ACCESS_KEY')
-    AWS_STORAGE_BUCKET_NAME = 'shriabhaynobles-assets'
+    AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME')
     AWS_DEFAULT_ACL = 'public-read'
     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
     AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
@@ -192,8 +192,8 @@ if USE_S3:
     #STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{AWS_LOCATION}/'
     #STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 else:
-    STATIC_URL = '/static/'
-    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+    STATIC_URL = '/staticfiles/'
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
