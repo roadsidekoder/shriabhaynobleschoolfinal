@@ -1025,17 +1025,17 @@ th {
 .popular-course-area .container-fluid {
   padding-left: 21%;
   padding-right: 0; }
-  }
+
   @media (min-width: 1921px) {
     .popular-course-area .container-fluid {
       max-width: 1140px;
       padding-left: 15px; } }
-      ; } }
+    
   @media (max-width: 1665px) {
     .popular-course-area .container-fluid {
       max-width: 1140px;
       padding-left: 15px; } }
-       } }
+   
   @media (max-width: 1199px) {
     .popular-course-area .container-fluid {
       max-width: 960px; } }
