@@ -24,7 +24,7 @@
 	</section>
 	
 <br><br>
-<section class="about-area">
+<section style="margin-top: 2rem;" class="about-area">
 
 		<div class="container">
         <div class="row align-items-center">
@@ -46,10 +46,10 @@
                                     </h4>
                                   </div>
                                   {% if class.homeworks_set.all.count > 0 %}
-                                  {% for file in class.homeworks_set.all reversed %}
+                                
                                   <div id="collapse{{ class.id }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{ class.id }}">
                                     <div class="panel-body">
-                                      
+                                        {% for file in class.homeworks_set.all reversed %}
                                       <a href="{{ file.your_file.url }}" class="list-group-item list-group-item-action" download>
                                         <div class="d-flex w-100 justify-content-between">
                                           <i class="fas fa-file-pdf"></i>
@@ -59,9 +59,10 @@
                               
                                        
                                       </a>
+                                      {% endfor %}
                                     </div>
                                   </div>
-                                  {% endfor %}
+                                  
 
                                   {% else %}
                                   <div id="collapse{{ class.id }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{ class.id }}">
