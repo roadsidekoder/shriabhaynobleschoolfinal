@@ -26,21 +26,18 @@
 			============================================= -->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,500,600" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500i" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
-
-
-<link rel="stylesheet" href="{% static 'Nobles/css/lightgallery.css' %}">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+  <link rel="stylesheet" href="{% static 'Nobles/css/lightgallery.css' %}">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/themify-icons/0.1.2/css/themify-icons.css}">
 
 	<!--
 
 			CSS
 			============================================= -->
-                    <link rel="stylesheet" href="{% static 'Nobles/css/hexagons.min.css' %}">
-  	<link rel="stylesheet" href="{% static 'Nobles/css/main2.css' %}">
-<link href="{% static 'Nobles/css/bootstrap/fresh-bootstrap-table.css' %}" rel="stylesheet" />
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/themify-icons/0.1.2/css/themify-icons.css}">
+  <link rel="stylesheet" href="{% static 'Nobles/css/hexagons.min.css' %}">
+  <link rel="stylesheet" href="{% static 'Nobles/css/main2.css' %}">
+  <link href="{% static 'Nobles/css/bootstrap/fresh-bootstrap-table.css' %}" rel="stylesheet" />
 	<link rel="stylesheet" href="{% static 'Nobles/css/linearicons.css' %}">
 	<link rel="stylesheet" href="{% static 'Nobles/css/font-awesome.min.css' %}">
 	<link rel="stylesheet" href="{% static 'Nobles/css/bootstrap.css' %}">
@@ -51,13 +48,11 @@
 	<link rel="stylesheet" href="{% static 'Nobles/css/main.css' %}">
 
    <!------------------------MATERALIZE CSS ---------------------------------->
-   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-   <link rel="stylesheet" href="{% static 'Nobles/css/collapse.css' %}">
       <style type="text/css">
       h3 {
-    color: #fff;
+    
     font-size: 24px;
     text-align: center;
     margin-top: 30px;
@@ -210,9 +205,9 @@
   }
       </style>      
 
-	<!-- SLICK SLIDER CSS -->
+	<!-- SLICK SLIDER CSS 
 	<link rel="stylesheet" type="text/css" href="{% static 'Nobles/css/slick.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'Nobles/css/slick-theme.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'Nobles/css/slick-theme.css' %}"> -->
   <style type="text/css">
 
 
@@ -355,7 +350,7 @@ b{ color: white;}
             	<li class="menu-has-children"><a href="#">Academic</a>
 							<ul>
                 <li><a href="{% url 'achievements' %}">Achievements</a></li>
-								<li><a href="{% url 'academic_achievements' %}">Academic Achievements</a></li>
+							<!--	<li><a href="{% url 'academic_achievements' %}">Academic Achievements</a></li> -->
                 <li><a href="{% url 'toppers' %}">Toppers</a></li>
 							</ul>
             </li>
@@ -442,12 +437,15 @@ b{ color: white;}
 		<a title="Go to Top" href="#"></a>
 	</div>
 	<!-- ####################### End Scroll to Top Area ####################### -->
-
-	<script src="{% static 'Nobles/js/vendor/jquery-2.2.4.min.js' %}"></script>
+	 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js' %}" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
 	 crossorigin="anonymous"></script>
-	<script src="{% static 'Nobles/js/vendor/bootstrap.min.js' %}"></script>
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+
+
+
+	<script src="{% static 'Nobles/js/vendor/jquery-2.2.4.min.js' %}"></script>
+	<script src="{% static 'Nobles/js/vendor/bootstrap.min.js' %}"></script>
 	<script src="{% static 'Nobles/js/easing.min.js' %}"></script>
 	<script src="{% static 'Nobles/js/hoverIntent.js' %}"></script>
 	<script src="{% static 'Nobles/js/superfish.min.js' %}"></script>
@@ -463,16 +461,11 @@ b{ color: white;}
 	<script src="{% static 'Nobles/js/jquery.counterup.min.js' %}"></script>
 	<script src="{% static 'Nobles/js/mail-script.js' %}"></script>
 	<script src="{% static 'Nobles/js/main.js' %}"></script>
-
-	 <script src="{% static 'Nobles/js/hexagons.min.js' %}"></script>
-	 <script src="{% static 'Nobles/js/jquery.nice-select.min.js' %}"></script>
-	 <script src="{% static 'Nobles/js/main2.js' %}"></script>
-
-	 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
+	<script src="{% static 'Nobles/js/hexagons.min.js' %}"></script>
+	<script src="{% static 'Nobles/js/main2.js' %}"></script>
   <script src="{% static 'Nobles/js/lightgallery.min.js' %}"></script>
   <script src="{% static 'Nobles/js/lg-thumbnail.min.js' %}"></script>
-    <script src="{% static 'Nobles/js/lg-fullscreen.min.js' %}"></script>
+  <script src="{% static 'Nobles/js/lg-fullscreen.min.js' %}"></script>
 
  <script>
             lightGallery(document.getElementById('lightgallery'));
