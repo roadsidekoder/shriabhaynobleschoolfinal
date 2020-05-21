@@ -645,12 +645,12 @@ th {
     .section-title {
       padding-bottom: 40px; } }
   .section-title h2 {
-    font-size: 42px;
+    font-size: 28px;
     color: #222;
     margin-bottom: 20px; }
     @media (max-width: 768px) {
       .section-title h2 {
-        font-size: 30px;
+        font-size: 22px;
         margin-bottom: 15px; } }
   .section-title p {
     margin-bottom: 0;
