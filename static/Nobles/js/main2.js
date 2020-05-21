@@ -67,7 +67,7 @@ $(function() {
 		margin: 30,
 		nav: true,
 		stagePadding: 60,
-		navText: [ "<img src='/static/Nobles/img2/prev.png'>", "<img src='/static/Nobles/img2/next.png'>" ],
+		navText: [ "<img src='/static/Nobles/img/prev.png'>", "<img src='/static/Nobles/img/next.png'>" ],
 		responsive: {
 			0: {
 				items: 1,
