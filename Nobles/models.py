@@ -176,6 +176,7 @@ class Student(models.Model):
         verbose_name_plural = "Classroom"
 
 class Homeworks(models.Model):    
+    # Source : https://www.dangtrinh.com/2015/11/django-imagefield-rename-file-on-upload.html
     def path_and_rename(instance, filename):
         upload_to = 'files/'
         ext = filename.split('.')[-1]
