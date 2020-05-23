@@ -183,7 +183,7 @@ class Homeworks(models.Model):
         # get filename
         print(instance.name)
         if instance.name:
-            filename = '{}.{}'.format(instance.name, ext)
+            filename = '{}_{}.{}'.format(instance.name,instance.added, ext)
         else:
             # set filename as random string
             filename = '{}.{}'.format(uuid4().hex, ext)
