@@ -18,9 +18,9 @@ class FacultyAdmin(admin.ModelAdmin):
     pass
 
 class HomeworkAdmin(admin.ModelAdmin):
-	list_display  = ('name', 'student')
+	list_display  = ('name', 'student',)
 	ordering = ('student',)
-	list_filter = ('student',)
+	list_filter = ('student', 'added')
 	search_fields = ('name', 'student')
 
 

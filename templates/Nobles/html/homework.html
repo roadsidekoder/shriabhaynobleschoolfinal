@@ -50,7 +50,7 @@
                                   <div id="collapse{{ class.id }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{ class.id }}">
                                     <div class="panel-body">
                                         {% for file in class.homeworks_set.all reversed %}
-                                      <a href="{{ file.your_file.url }}" class="list-group-item list-group-item-action" download>
+                                      <a href="{{ file.your_file.url }}" class="list-group-item list-group-item-action" download="{{ file.name }}.pdf">
                                         <div class="d-flex w-100 justify-content-between">
                                           <i class="fas fa-file-pdf"></i>
                                           <h5 class="mb-1">{{ file.name}}</h5>
