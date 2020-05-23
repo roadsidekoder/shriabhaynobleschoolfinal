@@ -3,6 +3,8 @@ from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFill
 from tinymce import HTMLField
 from django.utils import timezone
+import os
+from uuid import uuid4
 # Create your models here.
 
 class Gallery(models.Model):
@@ -174,11 +176,25 @@ class Student(models.Model):
         verbose_name_plural = "Classroom"
 
 class Homeworks(models.Model):    
+    def path_and_rename(instance, filename):
+        upload_to = 'files/'
+        ext = filename.split('.')[-1]
+        # get filename
+        print(instance.name)
+        if instance.name:
+            filename = '{}.{}'.format(instance.name, ext)
+        else:
+            # set filename as random string
+            filename = '{}.{}'.format(uuid4().hex, ext)
+        # return the whole path to the file
+        return os.path.join(upload_to, filename)
+
     name = models.CharField(max_length=200)
-    your_file = models.FileField(upload_to='files/')
+    your_file = models.FileField(upload_to=path_and_rename)
     description = models.TextField(blank=True, null=True)
     student = models.ForeignKey('Student',on_delete=models.CASCADE) 
     added = models.DateTimeField('date created', default=timezone.now)
+
     def __str__(self):
         return self.name
 
