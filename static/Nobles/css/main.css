@@ -617,10 +617,10 @@ td, th {
       padding: 80px 0; } }
 
 .section-title {
-  padding-bottom: 80px; }
+  padding-bottom: 40px; }
   @media (max-width: 991px) {
     .section-title {
-      padding-bottom: 50px; } }
+      padding-bottom: 20px; } }
   .section-title h1 {
     margin-bottom: 20px;
     font-size: 42px;
@@ -1847,6 +1847,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .home-banner-area {
   background: url(../img/girls.jpg) no-repeat top center;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
   background-size: cover; }
   @media (max-width: 767.98px) {
     .home-banner-area .fullscreen {
@@ -2008,7 +2009,9 @@ body.mobile-nav-active #mobile-nav-toggle {
         color: #222222; }
 
 .courses-area {
-  background: #f1f9ff; }
+  background: #f1f9ff;
+  margin-top: -42px;
+}
   .courses-area .courses-right {
     background: #fff;
     padding: 40px; }
@@ -2041,10 +2044,12 @@ body.mobile-nav-active #mobile-nav-toggle {
   margin-right: 20px; }
 
 .feature-area {
-  padding: 150px 0 120px; }
+  margin-top: 40px;
+  padding: 0px 0 60px; }
   @media (max-width: 991px) {
     .feature-area {
-      padding: 80px 0px; } }
+      margin-top: 40px;
+      padding: 0px 0px 20px 0px; } }
 
 .feature-item {
   padding: 50px 40px;
@@ -2237,6 +2242,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 /*============ Start Blog Home Styles  =============*/
 .blog-home-banner {
   background: url(../img/blog/blog-home-banner.jpg) bottom;
+  
   background-size: cover;
   padding: 130px 0px; }
   .blog-home-banner h1 span {
@@ -2264,7 +2270,8 @@ body.mobile-nav-active #mobile-nav-toggle {
   margin: 20px 0px; }
 
 .top-category-widget-area {
-  background-color: #f9f9ff; }
+  background-color: #f9f9ff;
+  margin-top: -42px; }
   .top-category-widget-area .single-cat-widget {
     position: relative;
     text-align: center; }
@@ -2925,9 +2932,16 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 html{
   height: 100%;
+  
+}
+
+.rounded {
+  border: 0;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
 
 body{
+ 
   display: flex;
   display: -webkit-flex;
   flex-direction: column;
@@ -2947,3 +2961,17 @@ body{
 }
 /*# sourceMappingURL=main.css.map */
 
+.no-news {
+  background-color: rgba(255, 255, 255, 0.315);
+  text-align: center;
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  border-radius: 3px;
+}
+
+.no-news h6 {
+  font-size: 1.2rem;
+  text-transform: initial;
+  font-weight: 400;
+  color: #777;
+
+}
