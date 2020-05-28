@@ -8,7 +8,7 @@ django-storages==1.6.5
 botocore==1.12.91
 boto3==1.9.143
 django-imagekit==4.0
-django-tinymce4-lite==1.7.4
+django-tinymce4-lite==1.8.0                
 docutils==0.14
 gunicorn==19.9.0
 jmespath==0.9.4

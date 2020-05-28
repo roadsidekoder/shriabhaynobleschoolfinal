@@ -353,6 +353,11 @@ b{ color: white;}
                             						<li><a href="{% url 'faculty' %}">Faculty</a></li>
 					<li><a href="{% url 'download' %}">Download</a></li>
             <li><a href="{% url 'contact' %}">Contact</a></li>
+            {% if user.is_authenticated %}
+            <li id="hide"><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>   
+          {% else %}
+            <li id="hide"><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>   
+          {% endif %} 
             
 					</ul>
 				</nav><!-- #nav-menu-container -->

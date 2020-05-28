@@ -1744,6 +1744,10 @@ h1, h2, h3, h4, h5, h6 {
 .nav-menu ul ul {
   margin: 0; }
 
+.nav-menu #hide {
+  display: none;
+}
+
 /* Mobile Nav Toggle */
 #mobile-nav-toggle {
   position: fixed;
@@ -2975,3 +2979,4 @@ body{
   color: #777;
 
 }
+

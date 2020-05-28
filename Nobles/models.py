@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFill
 from tinymce import HTMLField
@@ -109,7 +110,7 @@ class Infrastructure_and_Facilities(models.Model):
                                       options={'quality': 100})
     image_size = ImageSpecField(source='image',
                                       format='JPEG',
-                                      options={'quality': 80})
+                                      options={'quality': 50})
 
     def delete_image_kit_image_field(image_kit_field):
     # ImageKit has a bug where files are cached and not deleted right away
@@ -157,7 +158,7 @@ class Achievements(models.Model):
     
     class Meta:
          verbose_name_plural = "Achievements"
-        
+
 
 class Download(models.Model):
     name = models.CharField(max_length=200)
@@ -168,6 +169,7 @@ class Download(models.Model):
 
 class Student(models.Model):
     classroom = models.CharField(max_length=100)
+    #student_users = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
     cid = models.IntegerField(null=True)
     def __str__(self):
         return self.classroom
