@@ -17,7 +17,10 @@
 
         <link rel="stylesheet" href="{% static 'Elearning/css/app.css' %}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.4.6/tailwind.css" integrity="sha256-4ni0O+ghCvfW+TWPJQbtmUZBA0qOkxRYaJZiEhyJZdU=" crossorigin="anonymous" />
-       
+        <link href="https://vjs.zencdn.net/7.8.2/video-js.css" rel="stylesheet" />
+
+        <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+        <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
 </head>
 <body class="antialiased bg-white lg:bg-gray-100">
 
@@ -114,11 +117,34 @@
             </div>
         </div>
         </div>
-        <!-- Video Container -->
+        <!-- Video Container 
         <div class="relative rounded-lg cursor-pointer">
             <img src="https://saasadventure.io/img/svgs/play-btn.svg" alt="play button" class="absolute play-btn-pos">
             <img src="https://saasadventure.io/img/video-1-screenshot.png" alt="video screenshot">
         </div>
+    -->
+    <div class="video-js-responsive-container vjs-hd">
+        <video
+        id="my-video"
+        class="video-js"
+        controls
+        preload="auto"
+        width="640"
+        height="264"
+        poster="MY_VIDEO_POSTER.jpg"
+        data-setup="{}"
+      >
+        <source src="{% static 'Elearning/css/english.mp4' %}" type="video/mp4" />
+        <source src="MY_VIDEO.webm" type="video/webm" />
+        <p class="vjs-no-js">
+          To view this video please enable JavaScript, and consider upgrading to a
+          web browser that
+          <a href="https://videojs.com/html5-video-support/" target="_blank"
+            >supports HTML5 video</a
+          >
+        </p>
+      </video>
+    </div>
 
         <div class="flex">
             <div class="flex-1">
@@ -207,5 +233,6 @@
     </div><!-- Main Content -->
 </div>
 <script  type="text/javascript" src="{% static 'Elearning/js/home.js' %}"></script>
+  <script src="https://vjs.zencdn.net/7.8.2/video.js"></script>
     </body>
 </html>
