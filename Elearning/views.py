@@ -30,10 +30,10 @@ def dashboard(request,num, video_url):
     lecture_url = Lectures.objects.get(pk=video_url)
     return render(request, 'Elearning/dashboard.html', {'lecture_list' : lecture_list, 'sections' : sections, 'lecture_url': lecture_url})
 
-# @login_required
-# def classroom(request):
-#     sections = Student.objects.all()
-#     return render(request, 'Elearning/classroom.html', { 'sections' : sections})
+@login_required
+def classroom(request):
+    sections = Student.objects.all()
+    return render(request, 'Elearning/classroom.html', { 'sections' : sections})
 
 # def login_paged(request):
 #     return render(request, 'Elearning/registration/login.html')
