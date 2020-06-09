@@ -170,6 +170,7 @@ class Download(models.Model):
 class Student(models.Model):
     classroom = models.CharField(max_length=100)
     #student_users = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
+    subject = models.ManyToManyField("Elearning.subjects")
     cid = models.IntegerField(null=True)
     def __str__(self):
         return self.classroom

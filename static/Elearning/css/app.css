@@ -102,3 +102,66 @@
     top: 0;
     left: 0;
 }
+
+
+.accordion-header {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .accordion-header:before {
+    content: '\e316';
+    font-size: 21px;
+    position: absolute;
+    font-family: 'Material Icons';
+    left: 5px;
+    top: 8px;
+    transform: rotate(90deg);
+    transition: all 0.4s;
+    }
+    
+  .accordion-header.active:before {
+    transform: rotate(180deg);
+    transition: all 0.4s;
+  }
+  
+  .accordion-content {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s;
+  }
+ 
+/*         new */
+
+  .absolute {
+	position: absolute
+}
+
+.relative {
+	position: relative
+}
+
+.bg-custom-pink {
+	background-color: #39cfca;
+}
+
+.border-t {
+	border-top-width: 1px
+}
+
+.sixteen-by-nine {
+	padding-top: 56.25%
+}
+
+section {
+  background: url(../img/svg.svg) no-repeat;
+}
+.bg-purple-500 {
+  --bg-opacity: 1 !important; 
+  background-color: rgba(57, 207, 202, var(--bg-opacity)) !important;
+}
+
+.fa-circle  {
+  font-size: 7px !important;
+}
+

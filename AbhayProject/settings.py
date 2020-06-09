@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     'storages',
+     'django_extensions',
     
 ]
 
@@ -99,10 +100,21 @@ TINYMCE_DEFAULT_CONFIG = {
     }
 
 
+#DATABASES = {
+ #   'default': {
+  #      'ENGINE': 'django.db.backends.sqlite3',
+   #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    #}
+#}
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'abhay',
+        'USER': 'abhayuser',
+        'PASSWORD': 'abhay',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
@@ -168,7 +180,7 @@ USE_TZ = True
 
 USE_S3 = config('USE_S3', cast=bool)
 
-LOGIN_REDIRECT_URL = '/Elearning/dashboard/'
+LOGIN_REDIRECT_URL = '/Elearning/classroom/'
 
 
 

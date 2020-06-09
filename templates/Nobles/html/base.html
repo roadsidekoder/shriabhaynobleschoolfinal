@@ -345,7 +345,7 @@ b{ color: white;}
             </li>
             <li><a href="{% url 'homework' %}">Homework</a></li>
             {% if user.is_authenticated %}
-            <li><a href="{% url 'dashboard' %}">Classroom courses</a></li>
+            <li><a href="{% url 'classroom' %}">Classroom courses</a></li>
             {% else %}
             <li><a href="{% url 'login' %}">Classroom courses</a></li>
             {% endif %}

@@ -14,17 +14,24 @@
 
         <!-- CSRF Token -->
         <meta name="csrf-token" content="nhuqCjiyJkHdpJKnAZBqZv3DYa5P3eFZQw2St82N">
-
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  
+        <!-- MATERALIZE CSS -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        
         <link rel="stylesheet" href="{% static 'Elearning/css/app.css' %}">
+        
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.4.6/tailwind.css" integrity="sha256-4ni0O+ghCvfW+TWPJQbtmUZBA0qOkxRYaJZiEhyJZdU=" crossorigin="anonymous" />
+        
         <link href="https://vjs.zencdn.net/7.8.2/video-js.css" rel="stylesheet" />
+        
 
         <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
         <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
 </head>
 <body class="antialiased bg-white lg:bg-gray-100">
 
-<div id="app" class="container mx-auto lg:mx-0">
+<div id="app" class="container mx-auto lg:mx-0 bg-white">
     <div id="sideNavBg" class="fixed inset-0 w-full h-full"></div>
     <!-- Side Nav -->
     <div id="sideNav" class="w-64 -ml-64 lg:ml-0 bg-white lg:bg-gray-100 h-full min-h-screen fixed overflow-y-scroll block left-0 z-50">
@@ -32,62 +39,68 @@
             <img src="https://saasadventure.io/img/saas-dark-logo.png" alt="Logo" class="w-16 mx-auto -mt-2">
             <div id="closeSideNav" class="fixed right-0 bg-gray-100 h-8 w-8 flex justify-center items-center rounded-full text-2xl pt-0 pb-1 lg:hidden cursor-pointer mr-10">&times;</div>
         </div>
-        <div class="bg-gray-300 p-3 mr-3 rounded-r-full text-sm uppercase font-medium text-gray-600 pl-8 hover:bg-gray-800 hover:text-white cursor-pointer transition hover-invert-img">
-            <img src="https://saasadventure.io/img/svgs/arrow-down.svg" alt="down arrow" class="float-left mt-2 mr-2 invert-me"> Week 1
+<a href="{% url 'classroom' %}" class="p-3 mr-3 mt-2 rounded-r-full text-sm uppercase font-medium text-gray-600 pl-8 hover:bg-gray-800 hover:text-white cursor-pointer transition hover-invert-img gilroy-bold flex items-center  bg-gray-300 ">
+        <svg class="svg-icon fill-current w-4 h-4 float-left -ml-1" viewBox="0 0 20 20">
+            <path d="M4.68,13.716v-0.169H4.554C4.592,13.605,4.639,13.658,4.68,13.716z M11.931,6.465
+            c-0.307-0.087-0.623,0.106-0.706,0.432l-1.389,5.484c-0.901,0.084-1.609,0.833-1.609,1.757c0,0.979,0.793,1.773,1.773,1.773
+            c0.979,0,1.773-0.794,1.773-1.773c0-0.624-0.324-1.171-0.812-1.486l1.377-5.439C12.422,6.887,12.239,6.552,11.931,6.465z
+            M10.591,14.729H9.408v-1.182h1.183V14.729z M15.32,13.716c0.04-0.058,0.087-0.11,0.126-0.169H15.32V13.716z M10,3.497
+            c-3.592,0-6.503,2.911-6.503,6.503H4.68c0-2.938,2.382-5.32,5.32-5.32s5.32,2.382,5.32,5.32h1.182
+            C16.502,6.408,13.591,3.497,10,3.497z M10,0.542c-5.224,0-9.458,4.234-9.458,9.458c0,5.224,4.234,9.458,9.458,9.458
+            c5.224,0,9.458-4.234,9.458-9.458C19.458,4.776,15.224,0.542,10,0.542z M15.32,16.335v0.167h-0.212
+            c-1.407,1.107-3.179,1.773-5.108,1.773c-1.93,0-3.701-0.666-5.108-1.773H4.68v-0.167C2.874,14.816,1.724,12.543,1.724,10
+            c0-4.571,3.706-8.276,8.276-8.276c4.57,0,8.275,3.706,8.275,8.276C18.275,12.543,17.126,14.816,15.32,16.335z"></path>
+        </svg>
+        <span class="ml-1 leading-loose">Dashboard</span>
+    </a>
+          {% comment %} {% for section in sections.subject.all %}
+      <div class="accordion">
+        <div class="accordion-header bg-gray-300 p-3 mr-3 rounded-r-full text-sm uppercase font-medium text-gray-600 pl-8 hover:bg-gray-800 hover:text-white cursor-pointer transition hover-invert-img">
+             {{ section.subject_name }}
         </div>
-        <ul>
+        <ul class="accordion-content">
+                            {% for l in lecture %}
             <li>
-                <a href="#_" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block bg-purple-500 text-white rounded-r-full">
+                <a href="#" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block bg-purple-500 text-white rounded-r-full">
                     <img src="https://saasadventure.io/img/svgs/dot.svg" alt="dot" class="float-left mt-1 mr-2">
-                    <span class="font-bold mr-1">Day 1</span> Crafting the idea
+                    <span class="font-bold mr-1">{{ l.topic }}</span>
                 </a>
             </li>
-            <li>
-                <a href="#_" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block text-gray-800 rounded-r-full hover:bg-purple-500 hover:text-white hover-invert-img">
-                    <img src="https://saasadventure.io/img/svgs/lock.svg" alt="lock" class="float-left mt-1 mr-2 invert-me">
-                    <span class="font-bold mr-1">Day 2</span> The Landing Page
-                </a>
-            </li>
-            <li>
-                <a href="#_" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block text-gray-800 rounded-r-full hover:bg-purple-500 hover:text-white hover-invert-img">
-                    <img src="https://saasadventure.io/img/svgs/lock.svg" alt="lock" class="float-left mt-1 mr-2 invert-me">
-                    <span class="font-bold mr-1">Day 3</span> Get Our Page Live
-                </a>
-            </li>
-            <li>
-                <a href="#_" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block text-gray-800 rounded-r-full hover:bg-purple-500 hover:text-white hover-invert-img">
-                    <img src="https://saasadventure.io/img/svgs/lock.svg" alt="lock" class="float-left mt-1 mr-2 invert-me">
-                    <span class="font-bold mr-1">Day 4</span> Create Our App
-                </a>
-            </li>
-            <li>
-                <a href="#_" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block text-gray-800 rounded-r-full hover:bg-purple-500 hover:text-white hover-invert-img">
-                    <img src="https://saasadventure.io/img/svgs/lock.svg" alt="lock" class="float-left mt-1 mr-2 invert-me">
-                    <span class="font-bold mr-1">Day 5</span> Add Authentication
-                </a>
-            </li>
-            <li>
-                <a href="#_" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block text-gray-800 rounded-r-full hover:bg-purple-500 hover:text-white hover-invert-img">
-                    <img src="https://saasadventure.io/img/svgs/lock.svg" alt="lock" class="float-left mt-1 mr-2 invert-me">
-                    <span class="font-bold mr-1">Day 6</span> Add billing
-                </a>
-            </li>
-            <li>
-                <a href="#_" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block text-gray-800 rounded-r-full hover:bg-purple-500 hover:text-white hover-invert-img">
-                    <img src="https://saasadventure.io/img/svgs/lock.svg" alt="lock" class="float-left mt-1 mr-2 invert-me">
-                    <span class="font-bold mr-1">Day 7</span> The Dashboard
-                </a>
-            </li>
-
+            {% endfor %}
         </ul>
+      </div>
+        {% endfor %} {% endcomment %}
 
-        <div class="bg-gray-300 p-3 mr-3 mt-2 rounded-r-full text-sm uppercase font-medium text-gray-600 pl-8 hover:bg-gray-800 hover:text-white cursor-pointer transition hover-invert-img">
-            <img src="https://saasadventure.io/img/svgs/arrow-right.svg" alt="right arrow" class="float-left mr-2 mt-small invert-me"> Week 2
+         {% for section in sections.subject.all %} 
+         
+        <div class="accordion">
+          <div class="accordion-header bg-gray-300 p-3 mr-3 mt-2 rounded-r-full text-sm uppercase font-medium text-gray-600 pl-8 hover:bg-gray-800 hover:text-white cursor-pointer transition hover-invert-img">
+              {{ section.subject_name }}
         </div>
+          <ul class="accordion-content">
 
-        <div class="bg-gray-300 p-3 mr-3 mt-2 rounded-r-full text-sm uppercase font-medium text-gray-600 pl-8 hover:bg-gray-800 hover:text-white cursor-pointer transition hover-invert-img">
-            <img src="https://saasadventure.io/img/svgs/arrow-right.svg" alt="right arrow" class="float-left mr-2 mt-small invert-me"> Week 3
-        </div>
+             {% for l in lecture_list %}                                     
+             {% comment %} <!-- Here lecture_list contains lectures of specific class [<QuerySet []>,
+                                                                             <QuerySet [<Lectures: Introduction to Hindi II>, <Lectures: Real python>]>,
+                                                                             <QuerySet []>] --> {% endcomment %}
+                    {% for i in l %}
+                    {% if i.subject.subject_name == section.subject_name %}  
+ 
+            <li>
+                <a href="{% url 'video_pk' sections.pk i.pk %}" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block bg-purple-500 text-white rounded-r-full">
+                   <i class="fa fa-circle" aria-hidden="true" class="float-left mt-1 mr-2"></i> 
+                    <span class="font-bold mr-1">{{ i.topic }}</span>
+                </a>
+            </li>
+             {% endif %}
+                    {% endfor %}
+
+            {% endfor %}
+           
+        </ul>
+      </div>
+{% endfor %}
+
 
         <div class="bg-pink-400 hover:bg-pink-500 p-3 mr-3 mt-2 rounded-r-full text-sm uppercase font-medium text-white pl-8 clearfix relative overflow-hidden transition cursor-pointer img-hover-animate">
             <img src="https://saasadventure.io/img/svgs/arrow-right.svg" alt="right arrow" class="float-left mr-2 mt-small">
@@ -96,11 +109,11 @@
 
 
     </div><!-- Side Nav -->
-    <!-- Main Content -->
-    <div class="lg:ml-64 lg:pl-10 mb-12">
+    <!-- Main Content lg:ml-64 lg:pl-10 mb-12 -->
+    <div class="lg:ml-64 lg:pl-10 lg:pr-10 pb-12 min-h-screen px-3 md:px-0 overflow-x-hidden">
         <div class="flex flex-col justify-center h-24 py-2">
             <div class="flex space-around">
-                <h1 class="flex-1 text-xl font-bold justify-center">
+                <h1 class="flex-1 text-xl font-bold justify-center gilroy-bold">
                     <span id="menuBtn" class="inline-block lg:hidden mr-2 h-10 w-8 float-left rounded-full flex justify-center cursor-pointer">
                         <img src="https://saasadventure.io/img/svgs/menu.svg" alt="menu icon">
                      </span>
@@ -117,14 +130,15 @@
             </div>
         </div>
         </div>
-        <!-- Video Container 
+        {% comment %} <!-- Video Container 
         <div class="relative rounded-lg cursor-pointer">
             <img src="https://saasadventure.io/img/svgs/play-btn.svg" alt="play button" class="absolute play-btn-pos">
             <img src="https://saasadventure.io/img/video-1-screenshot.png" alt="video screenshot">
         </div>
-    -->
-    <div class="video-js-responsive-container vjs-hd">
-        <video
+                    --> {% endcomment %}
+
+                     <div  class="video-js-responsive-container vjs-hd vjs-big-play-centered">
+        <video poster="/static/Elearning/img/auth.jpg"
         id="my-video"
         class="video-js"
         controls
@@ -134,7 +148,7 @@
         poster="MY_VIDEO_POSTER.jpg"
         data-setup="{}"
       >
-        <source src="{% static 'Elearning/css/english.mp4' %}" type="video/mp4" />
+        <source src="{{ lecture_url.video.url }}" type="video/mp4" />
         <source src="MY_VIDEO.webm" type="video/webm" />
         <p class="vjs-no-js">
           To view this video please enable JavaScript, and consider upgrading to a
@@ -144,43 +158,11 @@
           >
         </p>
       </video>
+      
     </div>
-
-        <div class="flex">
+        <div class="flex flex-col lg:flex-col xl:flex-row">
             <div class="flex-1">
-                <div class="bg-gray-100 p-8 relative mt-8 pt-20 rounded-lg">
-                    <div class="absolute top-0 left-0 bg-purple-500 rounded-full px-4 py-2 text-white mt-5 -ml-3 font-bold text-sm">Video Sections</div>
-                    <div class="flex space-around w-full mt-2 cursor-pointer p-1 rounded-full border border-gray-100 hover:bg-white hover:border-2 hover:border-gray-200 -ml-1 transition">
-                        <div class="flex-1">
-                            <div class="w-6 h-6 rounded-full bg-green-400 flex justify-center items-center float-left mr-2"><img src="https://saasadventure.io/img/svgs/checkmark.svg" alt="checkmark"></div><span class="text-green-400 float-left font-bold text-sm">Brainstorming</span>
-                        </div>
-                        <div class="flex-1 text-right hidden xl:block">
-                            <span class="text-xs font-light text-gray-600 mr-2 mt-1 block">2 min. 30 sec.</span>
-                        </div>
-                    </div>
-                    <div class="flex space-around w-full mt-3  bg-white p-1 rounded-full border border-gray-200 -ml-1 transition cursor-pointer">
-                        <div class="flex-1">
-                            <div class="w-6 h-6 rounded-full bg-gray-800 flex justify-center items-center float-left mr-2"><img src="https://saasadventure.io/img/svgs/pause.svg" alt="pause"></div><span class="text-gray-800 float-left font-bold text-sm">Finding a Domain Name</span>
-                        </div>
-                        <div class="flex-1 text-right hidden xl:block">
-                            <span class="text-xs font-light text-gray-600 mr-2 mt-1 block">5 min. 21 sec.</span>
-                        </div>
-                    </div>
-                    <div class="flex space-around w-full mt-2 cursor-pointer p-1 rounded-full border border-gray-100 hover:bg-white hover:border-2 hover:border-gray-200 -ml-1 transition">
-                        <div class="flex-1">
-                            <div class="w-6 h-6 rounded-full bg-gray-300 flex justify-center items-center float-left mr-2 "><img src="https://saasadventure.io/img/svgs/play.svg" alt="play"></div><span class="text-gray-500 float-left font-medium text-sm">Creating the Logo</span>
-                        </div>
-                        <div class="flex-1 text-right hidden xl:block">
-                            <span class="text-xs font-light text-gray-600 mr-2 mt-1 block">12 min. 51 sec.</span>
-                        </div>
-                    </div>
-                    <div class="relative mt-8">
-                        <p class="text-gray-600 font-medium text-xs">10% Completed</p>
-                        <div class="relative rounded-full h-3 bg-gray-300 w-full mt-2">
-                            <div class="absolute w-1/12 bg-green-400 rounded-full h-full"></div>
-                        </div>
-                    </div>
-                </div>
+              
                 <div class="bg-gray-100 p-8 relative mt-8 pt-20 rounded-lg">
                     <div class="absolute top-0 left-0 bg-purple-500 rounded-full px-4 py-2 text-white mt-5 -ml-3 font-bold text-sm">Video Details</div>
                     <p class="text-gray-600 text-sm xl:text-normal">In this first video we'll be covering brainstorming, finding a domain, and creating a logo. Why are we creating a logo at such an early stage? Believe me, it will help to conceptualize and motivate throughout this adventure!</p>
@@ -203,9 +185,9 @@
                     </div>
                 </div>
             </div>
-            <div class="flex-1 ml-8">
+            <div class="flex-1 xl:ml-8">
 
-                <div class="bg-gray-100 p-8 relative mt-8 pt-20 rounded-lg">
+                {% comment %} <div class="bg-gray-100 p-8 relative mt-8 pt-20 rounded-lg">
                     <div class="absolute top-0 left-0 bg-pink-500 rounded-full px-4 py-2 text-white mt-5 -ml-3 font-bold text-sm">Completion</div>
                     <img src="https://saasadventure.io/img/badges/day-1.png" alt="Badge Day 1" class="w-3/5 mx-auto badge-filter transition">
                     <p class="text-gray-600 text-sm xl:text-normal mt-6 text-center px-4">After finishing your <span class="font-bold">homework</span>, mark this as
@@ -216,7 +198,7 @@
                             <span class="text-lg uppercase font-medium text-white inline-block">Mark as Completed</span>
                         </div>
                     </div>
-                </div>
+                </div> {% endcomment %}
 
                 <div class="bg-gray-100 p-8 relative mt-4 pt-20 rounded-lg">
                     <div class="absolute top-0 left-0 bg-pink-500 rounded-full px-4 py-2 text-white mt-5 -ml-3 font-bold text-sm">File Downloads</div>
@@ -232,6 +214,9 @@
         </div>
     </div><!-- Main Content -->
 </div>
+
+
+
 <script  type="text/javascript" src="{% static 'Elearning/js/home.js' %}"></script>
   <script src="https://vjs.zencdn.net/7.8.2/video.js"></script>
     </body>

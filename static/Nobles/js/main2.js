@@ -113,7 +113,7 @@ $(function() {
 		autoplay: true,
 		margin: 30,
 		nav: true,
-		navText: [ "<img src='img/prev.png'>", "<img src='img/next.png'>" ]
+		navText: [ "<img src='/static/Nobles/img/prev.png'>", "<img src='/static/Nobles/img/next.png'>" ]
 	});
 
 	// Select all links with hashes
