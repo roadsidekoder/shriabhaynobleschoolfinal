@@ -19,7 +19,7 @@ psycopg2==2.8.3
 psycopg2-binary==2.8.2
 python-dateutil==2.8.0
 pytz==2018.9
-s3transfer==0.2.1
+s3transfer   # s3transfer==0.2.1
 six==1.12.0
 urllib3==1.25.6   # older : urllib3==1.25.6
 whitenoise==4.1.2
