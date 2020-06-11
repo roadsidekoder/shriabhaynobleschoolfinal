@@ -4,7 +4,7 @@ from filebrowser_safe.storage import S3BotoStorageMixin
 
 
 
-class S3Storage(S3BotoStorageMixin, S3BotoStorage):
+class S3Storage(S3BotoStorageMixin, S3Boto3Storage):
    pass
 
 class StaticStorage(S3Boto3Storage):
