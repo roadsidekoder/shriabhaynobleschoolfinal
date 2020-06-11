@@ -38,7 +38,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    'Elearning.apps.ElearningConfig',
+   
     'jet.dashboard',
     'jet',
     'imagekit',
@@ -55,7 +55,7 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'storages',
      'django_extensions',
-    
+     'Elearning.apps.ElearningConfig',
 ]
 
 MIDDLEWARE = [
@@ -187,6 +187,7 @@ LOGIN_REDIRECT_URL = '/Elearning/classroom/'
 if USE_S3:
     # aws settings
     AWS_ACCESS_KEY_ID = config('ACCESS_KEY_ID')
+    AWS_PRELOAD_METADATA = True
     AWS_SECRET_ACCESS_KEY = config('SECRET_ACCESS_KEY')
     AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME')
     AWS_DEFAULT_ACL = 'public-read'
