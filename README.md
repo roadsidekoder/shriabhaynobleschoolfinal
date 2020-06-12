@@ -9,7 +9,8 @@
 - `python3 manage.py runserver`
 
 ## for postgres
-
-- `sudo su - postgres`
-- `psql`
-- `create database nobles`
+```sh
+$ sudo su - postgres
+$ psql
+$ create database nobles
+```
