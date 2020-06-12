@@ -7,3 +7,9 @@
 - `python3 manage.py makemigrations`
 - `python3 manage.py migrate`
 - `python3 manage.py runserver`
+
+## for postgres
+
+- `sudo su - postgres`
+- `psql`
+- `create database nobles`
