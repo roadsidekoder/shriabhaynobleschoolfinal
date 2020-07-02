@@ -18,10 +18,7 @@ staticfiles/
 __pycache__/
 *.py[cod]
 *$py.class
-# Elearning/migrations/
-# /Elearning/migrations/
-# /Nobles/migrations/
-# Nobles/migrations/
+
 # C extensions
 *.so
 latest.dump
