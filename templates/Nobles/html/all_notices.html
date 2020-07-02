@@ -45,7 +45,7 @@
 								<ul class="courses-list">
                                                 {% for notice in notices reversed %}
 									<li>
-										<a class="wow fadeInLeft" href="{% url 'notice_pk' notice.id %}" data-wow-duration="1s" data-wow-delay=".1s">
+										<a class="wow fadeInLeft" href="{{ notice.get_absolute_url }}" data-wow-duration="1s" data-wow-delay=".1s">
 											<i class="fa fa-book"></i><font color="green">Updated On: {{ notice.last_updated }}</font>&nbsp;&nbsp;<font style="color : black;">{{ notice.title| upper }}</font>
 										</a>
 									</li>

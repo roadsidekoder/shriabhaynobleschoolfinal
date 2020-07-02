@@ -1061,7 +1061,11 @@ th {
       display: none; } }
 .popular-course-area .owl-nav {
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  position: absolute;
+  top: -1rem;
+  left: 1rem; }
+  
   .popular-course-area .owl-nav .owl-prev {
     padding-right: 20px; }
   .popular-course-area .owl-nav .owl-prev img,

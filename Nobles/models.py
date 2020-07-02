@@ -4,9 +4,16 @@ from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFill
 from tinymce import HTMLField
 from django.utils import timezone
+from django.urls import reverse
 import os
 from uuid import uuid4
 # Create your models here.
+
+class PublishedManager(models.Manager):
+    def get_queryset(self):
+        return super(PublishedManager,
+                    self).get_queryset()\
+                        .filter(status='published')
 
 class Gallery(models.Model):
     title = models.CharField('Title', max_length=20)
@@ -90,17 +97,38 @@ class Faculty(models.Model):
     
 
 class Notice(models.Model):
-    title = models.CharField(max_length=350)
+    STATUS_CHOICES = (
+        ('draft', 'Draft'),
+        ('published', 'Published')
+    )
+
+    title = models.CharField(max_length=100)
+    slug = models.SlugField(max_length=100,
+                            unique_for_date='publish')
+    publish = models.DateField(default=timezone.now)
+    created = models.DateField(auto_now_add=True)
     last_updated = models.DateField(auto_now=True)
     content = HTMLField('Content')
+    status  = models.CharField(max_length=10,
+                                choices=STATUS_CHOICES,
+                                default='published')
 
     def __str__(self):
         return self.title
 
+    objects = models.Manager()
+    published = PublishedManager()
+
+    def get_absolute_url(self):
+        return reverse('notice_detail',
+                        args=[  self.publish.year,
+                                self.publish.month,
+                                self.publish.day,
+                                self.slug])
 
     class Meta:
          verbose_name_plural = "Notice"
-         ordering = ['last_updated']
+         ordering = ('-publish',)
 
 class Infrastructure_and_Facilities(models.Model):
     image = models.ImageField(upload_to='images/')
@@ -169,8 +197,6 @@ class Download(models.Model):
 
 class Student(models.Model):
     classroom = models.CharField(max_length=100)
-    #student_users = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
-    subject = models.ManyToManyField("Elearning.subjects",blank=True)
     cid = models.IntegerField(null=True)
     def __str__(self):
         return self.classroom

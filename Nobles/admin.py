@@ -28,13 +28,22 @@ class ToppersAdmin(admin.ModelAdmin):
 	list_display  = ('name',)
 	#def instead_marks():
 	#	check = Toppers.objects.all()
-			
+
+
+class NoticeAdmin(admin.ModelAdmin):
+    list_display = ('title', 'slug', 'publish', 'status')
+    #list_filter = ('status', 'author', 'created', 'publish')
+    search_fields = ('title',)
+    date_hierarchy = ('publish')
+    #raw_id_fields = ('author',)
+    ordering = ('status', 'publish')
+    prepopulated_fields = {'slug' : ('title',)}
 
 admin.site.register(Image)
 admin.site.register(Gallery,GalleryAdmin)
 admin.site.register(Qualification)
 admin.site.register(Faculty,FacultyAdmin)
-admin.site.register(Notice)
+admin.site.register(Notice,NoticeAdmin)
 admin.site.register(Infrastructure_and_Facilities)
 admin.site.register(Achievements)
 admin.site.register(Download)

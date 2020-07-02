@@ -2,8 +2,8 @@ from django.shortcuts import render,HttpResponse
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Lectures
-from Nobles.models import Student
+from .models import Lectures, Classroom
+
 
 from .forms import LoginForm
 
@@ -32,7 +32,7 @@ def dashboard(request,num, video_url):
 
 @login_required
 def classroom(request):
-    sections = Student.objects.all()
+    sections = Classroom.objects.all()
     return render(request, 'Elearning/classroom.html', { 'sections' : sections})
 
 # def login_paged(request):

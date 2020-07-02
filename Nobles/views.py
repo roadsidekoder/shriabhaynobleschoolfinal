@@ -1,15 +1,19 @@
 from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from django.core.paginator import Paginator, EmptyPage,\
+                                            PageNotAnInteger
+from django.views.generic import ListView
 
 # Create your views here.
 from Nobles.models import Gallery, Faculty, Notice, Infrastructure_and_Facilities, Achievements, Download, Toppers, Student
 def index(request):
-    notices = Notice.objects.all()
+    notices = Notice.published.all()
     infra = Infrastructure_and_Facilities.objects.all()
     achievements = Achievements.objects.all()
     class_8_top = Toppers.objects.filter(student__classroom="Class 8")
     class_10_top = Toppers.objects.filter(student__classroom="Class 10")
     class_12science_top = Toppers.objects.filter(student__classroom="Class 12 (Science)")
-    return render(request,'Nobles/html/index.html', {'notices' : notices, 'infrastructures' : infra, 'achievements' : achievements,'class_8_top' : class_8_top, 'class_10_top' : class_10_top, 'class_12science_top' : class_12science_top})
+    return render(request,'Nobles/html/index.html', { 'notices' : notices, 'infrastructures' : infra, 'achievements' : achievements,'class_8_top' : class_8_top, 'class_10_top' : class_10_top, 'class_12science_top' : class_12science_top})
 
 def about(request):
     return render(request,'Nobles/html/about.html')
@@ -54,14 +58,24 @@ def faculty(request):
 def contact(request):
     return render(request,'Nobles/html/contact.html')
 
-def all_notices(request):
-    notices = Notice.objects.all()
-    return render(request,'Nobles/html/all_notices.html', {'notices' : notices})
+# def all_notices(request):
+#     notices = Notice.objects.all()
+#     return render(request,'Nobles/html/all_notices.html', {'notices' : notices})
 
-def notice_ahead(request,num):
-    notices = Notice.objects.get(pk=num)
-    notices_all = Notice.objects.all()
-    return render(request,'Nobles/html/notice_ahead.html', {'notices' : notices, 'notices_all' : notices_all})
+class NoticeListView(ListView):
+    queryset = Notice.published.all()
+    context_object_name = 'notices'
+    #paginate_by = 3
+    template_name = 'Nobles/html/all_notices.html'
+
+def notice_detail(request, year, month, day, notice):
+    notice = get_object_or_404(Notice, slug=notice,
+                            status='published',
+                            publish__year = year,
+                            publish__month = month,
+                            publish__day = day)
+
+    return render(request,'Nobles/html/notice_detail.html', {'notice' : notice})
 
 def infrastructure_facilities(request):
     infra = Infrastructure_and_Facilities.objects.all()

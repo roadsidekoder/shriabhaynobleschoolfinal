@@ -36,10 +36,10 @@
         <div class="row" style="padding: 10px;">
 	
                 <div class="col-md-12 col-md-offset-0">
-                    <div><font style="color: green; text-align: center;">Updated On :&nbsp;&nbsp;{{ notices.last_updated }}</font></div>
+                    <div><font style="color: green; text-align: center;">Updated On :&nbsp;&nbsp;{{ notice.last_updated }}</font></div>
                 </div>
                 <div class="col-md-12 col-md-offset-0 rowing">
-                    <div><font class="text-white">{{ notices.title| upper }}</font></div>
+                    <div><font class="text-white">{{ notice.title| upper }}</font></div>
                 </div>
                 
 		</div>
@@ -48,7 +48,7 @@
 					<div class="courses-right">
 						<div class="row">
 						<div class="col-lg-12 col-md-12 col-sm-12">
-                       {{ notices.content| safe }}  
+                       {{ notice.content| safe }}  
             
 
 						</div>
