@@ -345,9 +345,9 @@ b{ color: white;}
             </li>
             <li><a href="{% url 'homework' %}">Homework</a></li>
             {% if user.is_authenticated %}
-            <li><a href="{% url 'classroom' %}">Classroom courses</a></li>
+            <li><a href="{% url 'portal' %}">Student Portal</a></li>
             {% else %}
-            <li><a href="{% url 'login' %}">Classroom courses</a></li>
+            <li><a href="{% url 'login' %}">Student Portal</a></li>
             {% endif %}
 <li><a href="{% url 'admission' %}">Admissions and Fee Structure</a></li>
                             						<li><a href="{% url 'faculty' %}">Faculty</a></li>

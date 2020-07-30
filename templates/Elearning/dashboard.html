@@ -36,10 +36,10 @@
     <!-- Side Nav -->
     <div id="sideNav" class="w-64 -ml-64 lg:ml-0 bg-white lg:bg-gray-100 h-full min-h-screen fixed overflow-y-scroll block left-0 z-50">
         <div class="h-24 flex flex-col justify-center relative">
-            <img src="https://saasadventure.io/img/saas-dark-logo.png" alt="Logo" class="w-16 mx-auto -mt-2">
+            <img src="{% static 'Elearning/img/logo.png' %}" alt="Logo" class="w-16 mx-auto -mt-2">
             <div id="closeSideNav" class="fixed right-0 bg-gray-100 h-8 w-8 flex justify-center items-center rounded-full text-2xl pt-0 pb-1 lg:hidden cursor-pointer mr-10">&times;</div>
         </div>
-<a href="{% url 'classroom' %}" class="p-3 mr-3 mt-2 rounded-r-full text-sm uppercase font-medium text-gray-600 pl-8 hover:bg-gray-800 hover:text-white cursor-pointer transition hover-invert-img gilroy-bold flex items-center  bg-gray-300 ">
+<a href="{% url 'portal' %}" class="p-3 mr-3 mt-2 rounded-r-full text-sm uppercase font-medium text-gray-600 pl-8 hover:bg-gray-800 hover:text-white cursor-pointer transition hover-invert-img gilroy-bold flex items-center  bg-gray-200 ">
         <svg class="svg-icon fill-current w-4 h-4 float-left -ml-1" viewBox="0 0 20 20">
             <path d="M4.68,13.716v-0.169H4.554C4.592,13.605,4.639,13.658,4.68,13.716z M11.931,6.465
             c-0.307-0.087-0.623,0.106-0.706,0.432l-1.389,5.484c-0.901,0.084-1.609,0.833-1.609,1.757c0,0.979,0.793,1.773,1.773,1.773
@@ -56,7 +56,7 @@
           {% comment %} {% for section in sections.subject.all %}
       <div class="accordion">
         <div class="accordion-header bg-gray-300 p-3 mr-3 rounded-r-full text-sm uppercase font-medium text-gray-600 pl-8 hover:bg-gray-800 hover:text-white cursor-pointer transition hover-invert-img">
-             {{ section.subject_name }}
+             {{ section.name }}
         </div>
         <ul class="accordion-content">
                             {% for l in lecture %}
@@ -75,21 +75,21 @@
          
         <div class="accordion">
           <div class="accordion-header bg-gray-300 p-3 mr-3 mt-2 rounded-r-full text-sm uppercase font-medium text-gray-600 pl-8 hover:bg-gray-800 hover:text-white cursor-pointer transition hover-invert-img">
-              {{ section.subject_name }}
+              {{ section.name }}
         </div>
           <ul class="accordion-content">
 
-             {% for l in lecture_list %}                                     
+             {% for lectures in lecture_list %}                                     
              {% comment %} <!-- Here lecture_list contains lectures of specific class [<QuerySet []>,
                                                                              <QuerySet [<Lectures: Introduction to Hindi II>, <Lectures: Real python>]>,
                                                                              <QuerySet []>] --> {% endcomment %}
-                    {% for i in l %}
-                    {% if i.subject.subject_name == section.subject_name %}  
+                    {% for lecture in lectures %}
+                    {% if lecture.subject.name == section.name %}  
  
             <li>
-                <a href="{% url 'video_pk' sections.pk i.pk %}" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block bg-purple-500 text-white rounded-r-full">
+                <a href="{% url 'video_pk' sections.pk lecture.pk %}" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block bg-purple-500 text-white rounded-r-full">
                    <i class="fa fa-circle" aria-hidden="true" class="float-left mt-1 mr-2"></i> 
-                    <span class="font-bold mr-1">{{ i.topic }}</span>
+                    <span class="font-bold mr-1">{{ lecture.topic }}</span>
                 </a>
             </li>
              {% endif %}
@@ -113,30 +113,15 @@
     <div class="lg:ml-64 lg:pl-10 lg:pr-10 pb-12 min-h-screen px-3 md:px-0 overflow-x-hidden">
         <div class="flex flex-col justify-center h-24 py-2">
             <div class="flex space-around">
-                <h1 class="flex-1 text-xl font-bold justify-center gilroy-bold">
-                    <span id="menuBtn" class="inline-block lg:hidden mr-2 h-10 w-8 float-left rounded-full flex justify-center cursor-pointer">
+                <h1 class="flex-1 text-base font-bold justify-center gilroy-bold">
+                    <span id="menuBtn" class="inline-block lg:hidden mr-4 h-10 w-8 float-left rounded-full flex justify-center cursor-pointer">
                         <img src="https://saasadventure.io/img/svgs/menu.svg" alt="menu icon">
                      </span>
-            <span class="uppercase">Day 1</span> - Crafting the Idea
+            <span class="uppercase">{{ lecture_url.subject.name }}</span> - {{ lecture_url.topic }}
             </h1>
-
-            <div class="relative cursor-pointer mt-1">
-                <div class="w-5 h-5 absolute right-0 top-0 bg-red-500 rounded-full text-center text-white text-xs font-bold -mr-2 -mt-2 pt-small">4</div>
-                <img src="https://saasadventure.io/img/svgs/bell.svg" alt="Bell Icon">
-            </div>
-            <div class="ml-8 -mt-2 flex cursor-pointer relative">
-                <img src="https://saasadventure.io/img/avatar.jpg" alt="User Avatar" class="w-12 rounded-full border-3 border-purple-400">
-                <img src="https://saasadventure.io/img/svgs/angle-down.svg" alt="angle down" class="pl-2">
-            </div>
         </div>
         </div>
-        {% comment %} <!-- Video Container 
-        <div class="relative rounded-lg cursor-pointer">
-            <img src="https://saasadventure.io/img/svgs/play-btn.svg" alt="play button" class="absolute play-btn-pos">
-            <img src="https://saasadventure.io/img/video-1-screenshot.png" alt="video screenshot">
-        </div>
-                    --> {% endcomment %}
-
+        
                      <div  class="video-js-responsive-container vjs-hd vjs-big-play-centered">
         <video poster="/static/Elearning/img/auth.jpg"
         id="my-video"
@@ -165,25 +150,9 @@
               
                 <div class="bg-gray-100 p-8 relative mt-8 pt-20 rounded-lg">
                     <div class="absolute top-0 left-0 bg-purple-500 rounded-full px-4 py-2 text-white mt-5 -ml-3 font-bold text-sm">Video Details</div>
-                    <p class="text-gray-600 text-sm xl:text-normal">In this first video we'll be covering brainstorming, finding a domain, and creating a logo. Why are we creating a logo at such an early stage? Believe me, it will help to conceptualize and motivate throughout this adventure!</p>
+                    <p class="text-gray-600 text-sm xl:text-normal">{{ lecture_url.video_detail }}</p>
                 </div>
-                <div class="bg-gray-100 p-8 relative mt-8 pt-20 rounded-lg">
-                    <div class="absolute top-0 left-0 bg-purple-500 rounded-full px-4 py-2 text-white mt-5 -ml-3 font-bold text-sm">Homework</div>
-                    <p class="text-gray-600 text-sm xl:text-normal">Here are your homework tasks for the day:</p>
-                    <ol class="list-disc text-gray-700 mt-6 text-normal xl:text-lg ml-5 xl:ml-8">
-                        <li>Brainstorm an idea for your SAAS</li>
-                        <li class="mt-1">Find a domain for your SAAS</li>
-                        <li class="mt-1">Create a logo for your SAAS</li>
-                    </ol>
-                </div>
-                <div class="bg-gray-100 p-8 relative mt-8 pt-20 rounded-lg">
-                    <div class="absolute top-0 left-0 bg-purple-500 rounded-full px-4 py-2 text-white mt-5 -ml-3 font-bold text-sm">Link Resources</div>
-                    <p class="text-gray-600 text-sm xl:text-normal">Here are the link resources mentioned in this video:</p>
-                    <div class="mt-5">
-                        <a href="#" class="underline text-pink-400 font-bold block">Dribbble</a>
-                        <a href="#" class="underline text-pink-400 font-bold block">NameCheap</a>
-                    </div>
-                </div>
+                
             </div>
             <div class="flex-1 xl:ml-8">
 
@@ -200,14 +169,16 @@
                     </div>
                 </div> {% endcomment %}
 
-                <div class="bg-gray-100 p-8 relative mt-4 pt-20 rounded-lg">
-                    <div class="absolute top-0 left-0 bg-pink-500 rounded-full px-4 py-2 text-white mt-5 -ml-3 font-bold text-sm">File Downloads</div>
-                    <div>
-                        <a href="#" class="text-gray-600 font-bold block hover:underline">Source Code</a>
-                        <a href="#" class="text-gray-600 font-bold block hover:underline">Video HD 1080</a>
-                        <a href="#" class="text-gray-600 font-bold block hover:underline">Video HD 720</a>
-                        <a href="#" class="text-gray-600 font-bold block hover:underline">Video SD 540</a>
-                    </div>
+                <div class="bg-gray-100 p-8 relative mt-8 pt-20 rounded-lg">
+                    <div class="absolute top-0 left-0 bg-purple-500 rounded-full px-4 py-2 text-white mt-5 -ml-3 font-bold text-sm">Homework</div>
+                    <p class="text-gray-600 text-sm xl:text-normal">Here are your homework tasks for the day:</p>
+                    <ol class="list-disc text-gray-700 mt-6 text-normal xl:text-lg ml-5 xl:ml-8">
+                        
+                        {% for home in lecture_url.homework.all %}
+                        <li class="no-underline text-indigo-400"><a href="{{ home.your_file.url }}" download="{{ home.name }}.pdf">{{ home.name }}</a></li>
+                        {% endfor %}
+
+                    </ol>
                 </div>
 
             </div>

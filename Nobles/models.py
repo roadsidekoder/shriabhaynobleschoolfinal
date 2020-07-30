@@ -204,33 +204,33 @@ class Student(models.Model):
         ordering = ['cid']
         verbose_name_plural = "Classroom"
 
-class Homeworks(models.Model):    
-    # Source : https://www.dangtrinh.com/2015/11/django-imagefield-rename-file-on-upload.html
-    def path_and_rename(instance, filename):
-        upload_to = 'files/'
-        ext = filename.split('.')[-1]
-        # get filename
-        print(instance.name)
-        if instance.name:
-            filename = '{}_{}.{}'.format(instance.name,instance.added, ext)
-        else:
-            # set filename as random string
-            filename = '{}.{}'.format(uuid4().hex, ext)
-        # return the whole path to the file
-        return os.path.join(upload_to, filename)
+# class Homeworks(models.Model):    
+#     # Source : https://www.dangtrinh.com/2015/11/django-imagefield-rename-file-on-upload.html
+#     def path_and_rename(instance, filename):
+#         upload_to = 'files/'
+#         ext = filename.split('.')[-1]
+#         # get filename
+#         print(instance.name)
+#         if instance.name:
+#             filename = '{}_{}.{}'.format(instance.name,instance.added, ext)
+#         else:
+#             # set filename as random string
+#             filename = '{}.{}'.format(uuid4().hex, ext)
+#         # return the whole path to the file
+#         return os.path.join(upload_to, filename)
 
-    name = models.CharField(max_length=200)
-    your_file = models.FileField(upload_to=path_and_rename)
-    description = models.TextField(blank=True, null=True)
-    student = models.ForeignKey('Student',on_delete=models.CASCADE) 
-    added = models.DateTimeField('date created', default=timezone.now)
+#     name = models.CharField(max_length=200)
+#     your_file = models.FileField(upload_to=path_and_rename)
+#     description = models.TextField(blank=True, null=True)
+#     student = models.ForeignKey('Student',on_delete=models.CASCADE) 
+#     added = models.DateTimeField('date created', default=timezone.now)
 
-    def __str__(self):
-        return self.name
+#     def __str__(self):
+#         return self.name
 
-    class Meta:
-         verbose_name_plural = "Homeworks"
-         ordering = ['added']
+#     class Meta:
+#          verbose_name_plural = "Homeworks"
+#          ordering = ['added']
     
 
 class Toppers(models.Model):

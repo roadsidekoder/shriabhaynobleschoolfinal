@@ -56,6 +56,9 @@ INSTALLED_APPS = [
     'storages',
      'django_extensions',
      'Elearning.apps.ElearningConfig',
+     'smart_selects',
+         'widget_tweaks',
+
 ]
 
 MIDDLEWARE = [
@@ -180,8 +183,8 @@ USE_TZ = True
 
 USE_S3 = config('USE_S3', cast=bool)
 
-LOGIN_REDIRECT_URL = '/Elearning/classroom/'
-
+LOGIN_REDIRECT_URL = '/Elearning/portal/'
+LOGOUT_REDIRECT_URL = '/'
 
 
 if USE_S3:
@@ -215,3 +218,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 FILEBROWSER_DIRECTORY = ''
 DIRECTORY = ''
+
+USE_DJANGO_JQUERY = True

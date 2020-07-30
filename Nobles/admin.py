@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.shortcuts import get_object_or_404
 from .forms import AtLeastOneRequiredInlineFormSet
 # Register your models here.
-from Nobles.models import Gallery, Image, Faculty, Qualification, Notice, Infrastructure_and_Facilities, Achievements, Download, Toppers, Student, Homeworks
+from Nobles.models import Gallery, Image, Faculty, Qualification, Notice, Infrastructure_and_Facilities, Achievements, Download, Toppers, Student
 
 
 class ImageTabularInline(admin.TabularInline):
@@ -16,13 +16,6 @@ class GalleryAdmin(admin.ModelAdmin):
 
 class FacultyAdmin(admin.ModelAdmin):
     pass
-
-class HomeworkAdmin(admin.ModelAdmin):
-	list_display  = ('name', 'student',)
-	ordering = ('student',)
-	list_filter = ('student', 'added')
-	search_fields = ('name', 'student')
-
 
 class ToppersAdmin(admin.ModelAdmin):
 	list_display  = ('name',)
@@ -49,4 +42,3 @@ admin.site.register(Achievements)
 admin.site.register(Download)
 admin.site.register(Toppers, ToppersAdmin)
 admin.site.register(Student)
-admin.site.register(Homeworks,HomeworkAdmin)
