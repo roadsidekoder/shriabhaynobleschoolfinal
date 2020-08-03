@@ -3,18 +3,37 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from Elearning.models import Lecture, Classroom
+from Elearning.models import Lecture, Classroom, Homework
 # from Elearning.forms import LoginForm
 
 @login_required
 def portal(request):
     user_name = User.objects.get(username=request.user.username)
-    classroom = Classroom.objects.get(user=user_name)
+    try:
+        classroom = Classroom.objects.get(user=user_name)
+    except Classroom.DoesNotExist:
+        classroom = None
+
     lecture = Lecture.objects.filter(classroom=classroom)
-    return render(request, 'Elearning/portal.html', { 'classroom' : classroom, 'lecture_id' : lecture[0].id})
+    if lecture.exists():
+        lecture = lecture[0].id
+    else:
+        lecture = None
+  # class 1
+    list = []
+    homework_list = []
+    
+    for subject in classroom.subject.all():
+        list.append(int(subject.id))                   
+
+    for sub_id in list:
+        homework_list.append(Homework.objects.filter(classroom=classroom, subject__id=sub_id))
+
+       
+    return render(request, 'Elearning/portal.html', {'classroom' : classroom, 'lecture_id' : lecture, 'homework_list': homework_list})
 
 @login_required
-def dashboard(request,num, video_url):
+def dashboard(request, num, video_url):
     sections = Classroom.objects.get(pk=num)   # class 1
     list = []
     lecture_list = []

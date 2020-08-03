@@ -1,4 +1,6 @@
 {% load static %}
+
+
 <html>
 
     <head>
@@ -13,6 +15,7 @@
         <!-- End Favicons -->
 
         <!-- CSRF Token -->
+        <link href="https://unpkg.com/plyr@3/dist/plyr.css" rel="stylesheet">
         <meta name="csrf-token" content="nhuqCjiyJkHdpJKnAZBqZv3DYa5P3eFZQw2St82N">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   
@@ -25,7 +28,7 @@
         
         <link href="https://vjs.zencdn.net/7.8.2/video-js.css" rel="stylesheet" />
         
-
+        
         <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
         <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
 </head>
@@ -122,29 +125,11 @@
         </div>
         </div>
         
-                     <div  class="video-js-responsive-container vjs-hd vjs-big-play-centered">
-        <video poster="/static/Elearning/img/auth.jpg"
-        id="my-video"
-        class="video-js"
-        controls
-        preload="auto"
-        width="640"
-        height="264"
-        poster="MY_VIDEO_POSTER.jpg"
-        data-setup="{}"
-      >
-        <source src="{{ lecture_url.video.url }}" type="video/mp4" />
-        <source src="MY_VIDEO.webm" type="video/webm" />
-        <p class="vjs-no-js">
-          To view this video please enable JavaScript, and consider upgrading to a
-          web browser that
-          <a href="https://videojs.com/html5-video-support/" target="_blank"
-            >supports HTML5 video</a
-          >
-        </p>
-      </video>
-      
-    </div>
+	<div style="height: unset;" id="player" data-plyr-provider="youtube" data-plyr-embed-id="bTqVqk7FSmY"><iframe width="560" height="315" src="{{ lecture_url.video|iriencode }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+    allowtransparency
+    allow="autoplay"></iframe>
+  </div>
+
         <div class="flex flex-col lg:flex-col xl:flex-row">
             <div class="flex-1">
               
@@ -187,8 +172,16 @@
 </div>
 
 
-
 <script  type="text/javascript" src="{% static 'Elearning/js/home.js' %}"></script>
-  <script src="https://vjs.zencdn.net/7.8.2/video.js"></script>
+  {% comment %} <script src="https://vjs.zencdn.net/7.8.2/video.js"></script> {% endcomment %}
+  <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=es6,Array.prototype.includes,CustomEvent,Object.entries,Object.values,URL"></script>
+  <script src="https://unpkg.com/plyr@3"></script>
+  <script>
+  const player = new Plyr('#player', {});
+
+// Expose player so it can be used from the console
+window.player = player;
+
+  </script>
     </body>
 </html>

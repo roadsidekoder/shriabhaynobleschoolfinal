@@ -5,8 +5,6 @@ from imagekit.processors import ResizeToFill
 from django.utils import timezone
 import os
 from uuid import uuid4
-#from Nobles.models import Homework
-# Create your models here.
 
 
 class Classroom(models.Model):
@@ -37,7 +35,8 @@ class Subject(models.Model):
 class Lecture(models.Model):
     topic = models.CharField(max_length = 100)
     video_detail = models.TextField(blank=True, null=True)
-    video = models.FileField(upload_to = 'files/')
+    # video = models.FileField(upload_to = 'files/')
+    video = models.CharField(max_length=300)
     classroom = models.ForeignKey('Elearning.Classroom', on_delete=models.CASCADE)
     subject = models.ForeignKey('Elearning.Subject', on_delete=models.CASCADE)
     homework = models.ManyToManyField('Elearning.Homework',blank=True)

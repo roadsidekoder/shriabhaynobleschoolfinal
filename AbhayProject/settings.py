@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django_cleanup',
     'filebrowser',
     'Nobles.apps.NoblesConfig',
+    'Elearning.apps.ElearningConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -54,10 +55,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     'storages',
-     'django_extensions',
-     'Elearning.apps.ElearningConfig',
-     'smart_selects',
-         'widget_tweaks',
+    'django_extensions',
+    'widget_tweaks',
 
 ]
 
