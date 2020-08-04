@@ -6,6 +6,19 @@ from django.utils import timezone
 import os
 from uuid import uuid4
 
+class Student(models.Model):
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
+    profile_picture = models.ImageField(upload_to='images/profile_picture/', null=True)
+    profile_picture_thumbnail = ImageSpecField(source='profile_picture',
+                                      processors=[ResizeToFill(400, 270)],
+                                      format='JPEG',
+                                      options={'quality': 50})
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.first_name
+    
 
 class Classroom(models.Model):
     name = models.CharField(max_length=100)
@@ -63,7 +76,7 @@ class Homework(models.Model):
     your_file = models.FileField(upload_to=path_and_rename)
     description = models.TextField(blank=True, null=True)
     classroom = models.ForeignKey('Elearning.Classroom',on_delete=models.CASCADE)
-    subject = models.ForeignKey('Elearning.Subject',on_delete=models.CASCADE)
+    subject = models.ForeignKey('Elearning.Subject',on_delete=models.CASCADE, null=True)
     added = models.DateTimeField('date created', default=timezone.now)
 
     def __str__(self):

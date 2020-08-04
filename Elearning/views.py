@@ -9,10 +9,22 @@ from Elearning.models import Lecture, Classroom, Homework
 @login_required
 def portal(request):
     user_name = User.objects.get(username=request.user.username)
+    #print(user_name.student.first_name)
+    
     try:
         classroom = Classroom.objects.get(user=user_name)
+        list = []
+        homework_list = []
+    
+        for subject in classroom.subject.all():
+            list.append(int(subject.id))                   
+
+        for sub_id in list:
+            homework_list.append(Homework.objects.filter(classroom=classroom, subject__id=sub_id))
+
     except Classroom.DoesNotExist:
         classroom = None
+        homework_list = []
 
     lecture = Lecture.objects.filter(classroom=classroom)
     if lecture.exists():
@@ -20,17 +32,8 @@ def portal(request):
     else:
         lecture = None
   # class 1
-    list = []
-    homework_list = []
-    
-    for subject in classroom.subject.all():
-        list.append(int(subject.id))                   
-
-    for sub_id in list:
-        homework_list.append(Homework.objects.filter(classroom=classroom, subject__id=sub_id))
-
        
-    return render(request, 'Elearning/portal.html', {'classroom' : classroom, 'lecture_id' : lecture, 'homework_list': homework_list})
+    return render(request, 'Elearning/portal.html', {'classroom' : classroom, 'lecture_id' : lecture, 'homework_list': homework_list, 'user_name': user_name})
 
 @login_required
 def dashboard(request, num, video_url):
