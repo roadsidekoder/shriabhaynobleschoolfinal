@@ -14,7 +14,7 @@
 
     <div class="flex h-screen bg-gray-100 p-4 rotate">
         <div class="sm:max-w-xl md:max-w-2xl w-full m-auto">
- 
+
             <form method="POST" action="{% url 'login' %}"  class="flex items-stretch bg-white border-teal-400 rounded-lg shadow overflow-hidden border-t-4 border-custom-purple sm:border-0">
                 
                 
@@ -34,7 +34,13 @@
                     <h3 class="text-xl text-gray-700 font-bold mb-6">
                         Login <span class="text-gray-600 font-light">to your account</span></h3>
                         {% csrf_token %}
+                            {% if form.errors %}
+                                <p class="text-red-500 text-xs italic mt-4">
+                                        These credentials do not match our records.
+                                </p>
+                            {% endif %}
                         {% render_field form.username placeholder="Username" class+="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-teal-300 mb-4" %}
+                        
                         {% render_field form.password placeholder="Password" class+="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-teal-300 mb-4" %}
                         
                         <input type="hidden" name="next" value="{{ next }}" />

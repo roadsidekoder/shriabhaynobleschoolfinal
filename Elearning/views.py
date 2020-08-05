@@ -21,7 +21,16 @@ def portal(request):
 
         for sub_id in list:
             homework_list.append(Homework.objects.filter(classroom=classroom, subject__id=sub_id))
-
+        # print(homework_list)
+        # print("--------------------------@@")
+        # for sub in classroom.subject.all():
+        #     for homeworks in homework_list:
+        #         if homeworks.exists():
+        #             for homework in homeworks:
+                        
+        #                 if sub.name == homework.subject.name:
+        #                     print(homework.name)
+                           
     except Classroom.DoesNotExist:
         classroom = None
         homework_list = []
