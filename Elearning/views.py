@@ -3,46 +3,57 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from Elearning.models import Lecture, Classroom, Homework
-# from Elearning.forms import LoginForm
+
+from Elearning.models import Lecture, Classroom, Homework, Student
+
+@login_required
+def teacher_portal(request):
+    user_name = User.objects.get(username=request.user.username)
+
 
 @login_required
 def portal(request):
     user_name = User.objects.get(username=request.user.username)
-    #print(user_name.student.first_name)
-    
-    try:
-        classroom = Classroom.objects.get(user=user_name)
-        list = []
-        homework_list = []
-    
-        for subject in classroom.subject.all():
-            list.append(int(subject.id))                   
+    print(user_name)
+    if Student.objects.filter(user__username=user_name).exists():
+        try:
+            classroom = Classroom.objects.get(user=user_name)
+            list = []
+            homework_list = []
+        
+            for subject in classroom.subject.all():
+                list.append(int(subject.id))                   
 
-        for sub_id in list:
-            homework_list.append(Homework.objects.filter(classroom=classroom, subject__id=sub_id))
-        # print(homework_list)
-        # print("--------------------------@@")
-        # for sub in classroom.subject.all():
-        #     for homeworks in homework_list:
-        #         if homeworks.exists():
-        #             for homework in homeworks:
-                        
-        #                 if sub.name == homework.subject.name:
-        #                     print(homework.name)
-                           
-    except Classroom.DoesNotExist:
-        classroom = None
-        homework_list = []
+            for sub_id in list:
+                homework_list.append(Homework.objects.filter(classroom=classroom, subject__id=sub_id))
+            # print(homework_list)
+            # print("--------------------------@@")
+            # for sub in classroom.subject.all():
+            #     for homeworks in homework_list:
+            #         if homeworks.exists():
+            #             for homework in homeworks:
+                            
+            #                 if sub.name == homework.subject.name:
+            #                     print(homework.name)
+                            
+        except Classroom.DoesNotExist:
+            classroom = None
+            homework_list = []
 
-    lecture = Lecture.objects.filter(classroom=classroom)
-    if lecture.exists():
-        lecture = lecture[0].id
-    else:
-        lecture = None
-  # class 1
+        lecture = Lecture.objects.filter(classroom=classroom)
+        if lecture.exists():
+            lecture = lecture[0].id
+        else:
+            lecture = None
+  # clas
        
-    return render(request, 'Elearning/portal.html', {'classroom' : classroom, 'lecture_id' : lecture, 'homework_list': homework_list, 'user_name': user_name})
+        return render(request, 'Elearning/portal.html', {'classroom' : classroom, 'lecture_id' : lecture, 'homework_list': homework_list, 'user_name': user_name})
+    else:
+        classrooms = Classroom.objects.all()
+        homework_list = Homework.objects.all()
+        lecture_id = Lecture.objects.filter(classroom=classrooms[0])
+        return render(request,'Elearning/teacher-portal.html', {'classrooms' : classrooms, 'user_name': user_name, 'homework_list': homework_list, 'lecture_id': lecture_id})
+
 
 @login_required
 def dashboard(request, num, video_url):

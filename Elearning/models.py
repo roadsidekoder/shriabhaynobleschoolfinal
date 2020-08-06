@@ -11,7 +11,7 @@ class Student(models.Model):
     last_name = models.CharField(max_length=50)
     profile_picture = models.ImageField(upload_to='images/profile_picture/', null=True)
     profile_picture_thumbnail = ImageSpecField(source='profile_picture',
-                                      processors=[ResizeToFill(400, 270)],
+                                      processors=[ResizeToFill(256, 256)],
                                       format='JPEG',
                                       options={'quality': 50})
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -19,11 +19,24 @@ class Student(models.Model):
     def __str__(self):
         return self.first_name
     
+    
+class Teacher(models.Model):
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
+    profile_picture = models.ImageField(upload_to='images/profile_picture/', null=True)
+    profile_picture_thumbnail = ImageSpecField(source='profile_picture',
+                                      processors=[ResizeToFill(256, 256)],
+                                      format='JPEG',
+                                      options={'quality': 50})
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.first_name
 
 class Classroom(models.Model):
     name = models.CharField(max_length=100)
     cid = models.IntegerField(null=True)
-    user = models.ManyToManyField(User)
+    user = models.ManyToManyField(User, null=True, blank=True)
     subject = models.ManyToManyField("Elearning.Subject")
     cover_photo = models.ImageField(upload_to='images/', null=True)
     cover_photo_thumbnail = ImageSpecField(source='cover_photo',
@@ -47,12 +60,17 @@ class Subject(models.Model):
 
 class Lecture(models.Model):
     topic = models.CharField(max_length = 100)
+    slug = models.SlugField(max_length=100,
+                            unique_for_date='publish')
     video_detail = models.TextField(blank=True, null=True)
     # video = models.FileField(upload_to = 'files/')
     video = models.CharField(max_length=300)
     classroom = models.ForeignKey('Elearning.Classroom', on_delete=models.CASCADE)
     subject = models.ForeignKey('Elearning.Subject', on_delete=models.CASCADE)
     homework = models.ManyToManyField('Elearning.Homework',blank=True)
+    publish = models.DateField(default=timezone.now)
+    created = models.DateField(auto_now_add=True)
+    last_updated = models.DateField(auto_now=True)
 
     def __str__(self):
         return self.topic

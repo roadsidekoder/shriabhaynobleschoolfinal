@@ -1,0 +1,232 @@
+{% load static %}
+{% load humanize %}
+<html>
+
+<head>
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="robots" content="noindex">
+    <title></title>
+
+    <!-- Favicons -->
+
+    <!-- End Favicons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'Elearning/css/app.css' %}">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.4.6/tailwind.css"
+        integrity="sha256-4ni0O+ghCvfW+TWPJQbtmUZBA0qOkxRYaJZiEhyJZdU=" crossorigin="anonymous" />
+
+    <link href="https://vjs.zencdn.net/7.8.2/video-js.css" rel="stylesheet" />
+    <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="nhuqCjiyJkHdpJKnAZBqZv3DYa5P3eFZQw2St82N">
+</head>
+
+<body>
+
+    <div class="h-screen flex overflow-hidden" x-data="{ sidebarOpen: false }"
+        @keydown.window.escape="sidebarOpen = false" id="tabs-id">
+        <!-- Off-canvas menu for mobile -->
+        <div x-show="sidebarOpen" class="md:hidden">
+            <div @click="sidebarOpen = false" x-show="sidebarOpen" x-transition:enter-start="opacity-0"
+                x-transition:enter-end="opacity-100" x-transition:leave-start="opacity-100"
+                x-transition:leave-end="opacity-0"
+                class="fixed inset-0 z-30 transition-opacity ease-linear duration-300">
+                <div class="absolute inset-0 bg-gray-600 opacity-75"></div>
+            </div>
+            <div class="fixed inset-0 flex z-40">
+                <div x-show="sidebarOpen" x-transition:enter-start="-translate-x-full"
+                    x-transition:enter-end="translate-x-0" x-transition:leave-start="translate-x-0"
+                    x-transition:leave-end="-translate-x-full"
+                    class="flex-1 flex flex-col max-w-xs w-full pt-5 pb-4 bg-white transform ease-in-out duration-300 ">
+                    <div class="absolute top-0 right-0 -mr-14 py-1">
+                        <button x-show="sidebarOpen" @click="sidebarOpen = false"
+                            class="flex items-center justify-center h-12 w-12 rounded-full focus:outline-none">
+                            <svg class="h-6 w-6 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="flex-shrink-0 flex items-center pr-4 pl-3 -mt-1">
+                        <a href="#" class="text-lg font-normal text-gray-900 uppercase tracking-wide rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline">SHRI ABHAY NOBLES SCHOOL</a>
+                    </div>
+                    <div class="mt-5 flex-1 h-0 overflow-y-auto">
+                        <nav class="px-2 relative h-full">
+                            <a href="#"
+                                class="group flex items-center px-2 py-2 text-base leading-6 font-medium text-gray-600 rounded-md  focus:outline-none focus:bg-gray-200 focus:text-gray-900 transition ease-in-out duration-150" onclick="changeAtiveTab('classroom')" @click="sidebarOpen = false">
+                                <svg class="mr-4 h-6 w-6 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500 transition ease-in-out duration-150" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"   d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"  d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                Classroom Course
+                            </a>
+                            {% comment %} <a href="#"
+                                class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-100 transition ease-in-out duration-150" onclick="changeAtiveTab('attendance')" @click="sidebarOpen = false">
+                                <svg class="mr-4 h-6 w-6 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500 transition ease-in-out duration-150"
+                                    stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                                Attendance
+                            </a> {% endcomment %}
+                            <a href="#"
+                                class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-100 transition ease-in-out duration-150" onclick="changeAtiveTab('homework')" @click="sidebarOpen = false">
+                                <svg class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500 transition ease-in-out duration-150" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                                Homework
+                            </a>
+                            {% comment %} <a href="#"
+                                class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-100 transition ease-in-out duration-150" onclick="changeAtiveTab('result')">
+                                <svg class="mr-4 h-6 w-6 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500 transition ease-in-out duration-150"
+                                    stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                                Result
+                            </a> {% endcomment %}
+                            <a href="#" class="absolute bottom-0 ml-10 mt-1 flex items-center px-2 py-2 text-sm leading-5 hover:text-purple-500 font-light text-gray-600 transition ease-in-out duration-150">
+                            Made with
+                                <svg class="mx-1 h-5 w-5 transition ease-in-out duration-150 text-red-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
+                                </svg>
+                            by Gaurav Suthar
+                            </a>
+                        </nav>
+                    </div>
+                </div>
+                <div class="flex-shrink-0 w-14">
+                    <!-- Force sidebar to shrink to fit close icon -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Static sidebar for desktop -->
+        <div class="hidden md:flex md:flex-shrink-0">
+            <div class="flex flex-col w-64 border-r border-gray-200 pt-5 pb-4 bg-white">
+                <div class="flex items-center flex-shrink-0 pl-2">
+                        <a href="#" class="text-base font-normal tracking-wide text-gray-900 uppercase dark-mode:text-white focus:outline-none focus:shadow-outline">SHRI ABHAY NOBLES SCHOOL</a>
+                </div>
+                <div class="mt-5 h-0 flex-1 flex flex-col overflow-y-auto">
+                    <!-- Sidebar component, swap this element with another sidebar if you like -->
+                    <nav class="h-full flex-1 px-2 bg-white tab-nav relative" style="">
+                    
+                        <a href="#"
+                            class="group flex items-center px-2 py-2 text-sm leading-5 font-medium text-gray-600 rounded-md  hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:bg-gray-200 focus:text-gray-900 transition ease-in-out duration-150" onclick="changeAtiveTab('classroom')">
+                            <svg class="mr-4 h-6 w-6 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500 transition ease-in-out duration-150" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"   d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"  d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            Classroom Course
+                        </a>
+                        {% comment %} <a href="#"
+                            class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:bg-gray-100 transition ease-in-out duration-150" onclick="changeAtiveTab('attendance')">
+                            <svg class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500 transition ease-in-out duration-150"
+                                stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                            Attendance
+                        </a> {% endcomment %}
+                        <a href="#"
+                            class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:bg-gray-200 focus:text-gray-900 transition ease-in-out duration-150" onclick="changeAtiveTab('homework')">
+                            <svg class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500 transition ease-in-out duration-150" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                            Homework
+                        </a>
+                        {% comment %} <a href="#"
+                            class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:bg-gray-100 transition ease-in-out duration-150"
+                            onclick="changeAtiveTab('result')">
+                            <svg class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500 transition ease-in-out duration-150"
+                                stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                            Result
+                        </a> {% endcomment %}
+                        <a href="#" class="absolute bottom-0 ml-5 mt-1 flex items-center py-2 text-sm leading-5 hover:text-purple-500 font-light text-gray-600 transition ease-in-out duration-150">
+                            Made with
+                            <svg class="mx-1 h-5 w-5 transition ease-in-out duration-150 text-red-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
+                            </svg>
+                            by Gaurav Suthar
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col w-0 flex-1 overflow-hidden">
+            <div class="relative z-10 flex-shrink-0 flex h-16 bg-white shadow">
+                <button @click.stop="sidebarOpen = true"
+                    class="px-4 text-gray-500 focus:outline-none focus:bg-gray-100 focus:text-gray-600 md:hidden">
+                    <span id="menuBtn"
+                        class="inline-block lg:hidden h-16 w-8 float-left rounded-full flex justify-center cursor-pointer">
+                        <img src="https://saasadventure.io/img/svgs/menu.svg" alt="menu icon"> </span>
+                </button>
+                <div class="flex-1 px-4 flex justify-between">
+                    <div class="flex-1 flex">
+                        {% comment %} <div class="w-full flex md:ml-0">
+                            <label for="search_field" class="sr-only">Search</label>
+                             <div class="relative w-full text-gray-400 focus-within:text-gray-600">
+                                <div class="absolute inset-y-0 left-0 flex items-center pointer-events-none">
+                                    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" />
+                                    </svg>
+                                </div>
+                                <input id="search_field"
+                                    class="block w-full h-full pl-8 pr-3 py-2 rounded-md text-gray-900 placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 sm:text-sm"
+                                    placeholder="Search" />
+                            </div> 
+                        </div> {% endcomment %}
+                    </div>
+                    <div class="ml-4 flex items-center md:ml-6">
+                        <button
+                            class="p-1 text-gray-400 rounded-full hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:shadow-outline focus:text-gray-500">
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                        </button>
+                        <div @click.away="open = false" class="ml-3 relative" x-data="{ open: false }">
+                            <div>
+                                <button @click="open = !open"
+                                    class="max-w-xs flex items-center text-sm rounded-full focus:outline-none focus:shadow-outline">
+                                    {% block profile_image %}
+                                    
+                                        {% endblock %}
+                                </button>
+                            </div>
+                            {% block menubar %}
+                            
+                            {% endblock %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% block content %}
+            
+
+           {% endblock %}
+
+    </div>
+    <script type="text/javascript" src="{% static 'Elearning/js/home.js' %}"></script>
+    <script src="https://vjs.zencdn.net/7.8.2/video.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.0.1/dist/alpine.js" defer></script>
+    <script>
+    const changeAtiveTab = (contentId) => {
+    const tabContainer = document.querySelector(".tab-content");
+
+    Array.from(tabContainer.children).forEach(child => {
+      
+      if(child.id === contentId && child.classList.contains("hidden")) {
+
+        child.classList.remove("hidden")
+        child.classList.add("block")
+      } 
+      
+      if(child.id !== contentId && !child.classList.contains("hidden")) {
+        console.log("remove",child)
+        child.classList.remove("block")
+        child.classList.add("hidden")
+      }
+    })
+  }
+    </script>
+</body>
+
+</html>

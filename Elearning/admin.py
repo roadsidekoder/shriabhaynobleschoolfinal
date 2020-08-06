@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Subject, Lecture, Classroom, Homework, Student
+from .models import Subject, Lecture, Classroom, Homework, Student, Teacher
 # Register your models here.
 
 class HomeworkAdmin(admin.ModelAdmin):
@@ -9,12 +9,17 @@ class HomeworkAdmin(admin.ModelAdmin):
 	search_fields = ('name', 'classroom')
 
 class LectureAdmin(admin.ModelAdmin):
-	list_display  = ('topic', 'classroom','subject',)
-	ordering = ('classroom',)
-	list_filter = ('classroom',)
-	search_fields = ('topic', 'classroom')
+        list_display  = ('topic', 'slug', 'publish', 'classroom','subject',)
+        ordering = ('classroom',)
+        list_filter = ('classroom',)
+        search_fields = ('topic', 'classroom',)
+        date_hierarchy = ('publish')
+        prepopulated_fields = {'slug' : ('topic',)}
 
 class StudentAdmin(admin.ModelAdmin):
+    list_display = ('first_name', 'last_name','user', )
+
+class TeacherAdmin(admin.ModelAdmin):
     list_display = ('first_name', 'last_name','user', )
 
 
@@ -22,4 +27,5 @@ admin.site.register(Lecture, LectureAdmin)
 admin.site.register(Subject)
 admin.site.register(Classroom)
 admin.site.register(Student,StudentAdmin)
+admin.site.register(Teacher,TeacherAdmin)
 admin.site.register(Homework, HomeworkAdmin)
