@@ -8,9 +8,3 @@
 - `python3 manage.py migrate`
 - `python3 manage.py runserver`
 
-## for postgres
-```sh
-$ sudo su - postgres
-$ psql
-$ create database nobles
-```
