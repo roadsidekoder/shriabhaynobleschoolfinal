@@ -183,7 +183,7 @@ USE_TZ = True
 
 USE_S3 = config('USE_S3', cast=bool)
 
-LOGIN_REDIRECT_URL = '/Elearning/portal/'
+LOGIN_REDIRECT_URL = '/elearning/portal/'
 LOGOUT_REDIRECT_URL = '/'
 
 
