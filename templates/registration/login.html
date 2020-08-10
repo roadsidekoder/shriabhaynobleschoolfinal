@@ -16,7 +16,7 @@
         <div class="sm:max-w-xl md:max-w-2xl w-full m-auto">
 
             <form method="POST" action="{% url 'login' %}"  class="flex items-stretch bg-white border-teal-400 rounded-lg shadow overflow-hidden border-t-4 border-custom-purple sm:border-0">
-                
+                {% csrf_token %}
                 
                 <input type="hidden" name="_token" value="5KJjak5y2ASadJfxCkvSvn0sUIglILsPkG74cyja">            
                     <div class="flex hidden overflow-hidden relative sm:block w-5/12 md:w-6/12 bg-gray-600 text-gray-300 py-4 bg-cover bg-center bg-left-bottom" style="background-image: url({% static 'Elearning/img/auth.jpeg' %})">
@@ -33,7 +33,7 @@
                 <div class="flex-1 p-6 sm:p-10 sm:py-12">
                     <h3 class="text-xl text-gray-700 font-bold mb-6">
                         Login <span class="text-gray-600 font-light">to your account</span></h3>
-                        {% csrf_token %}
+                        
                             {% if form.errors %}
                                 <p class="text-red-500 text-xs italic mt-4">
                                         These credentials do not match our records.
