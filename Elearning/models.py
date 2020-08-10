@@ -6,6 +6,7 @@ from django.utils import timezone
 import os
 from uuid import uuid4
 
+
 class Student(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
@@ -36,9 +37,9 @@ class Teacher(models.Model):
 class Classroom(models.Model):
     name = models.CharField(max_length=100)
     cid = models.IntegerField(null=True)
-    user = models.ManyToManyField(User, null=True, blank=True)
+    user = models.ManyToManyField(User, blank=True)
     subject = models.ManyToManyField("Elearning.Subject")
-    cover_photo = models.ImageField(upload_to='images/', null=True)
+    cover_photo = models.ImageField(upload_to='images/', null=True, blank=True)
     cover_photo_thumbnail = ImageSpecField(source='cover_photo',
                                       processors=[ResizeToFill(1280, 720)],
                                       format='JPEG',
@@ -102,4 +103,4 @@ class Homework(models.Model):
 
     class Meta:
          verbose_name_plural = "Homeworks"
-         ordering = ['added']
+         ordering = ['-added']

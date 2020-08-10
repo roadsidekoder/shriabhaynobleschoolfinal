@@ -146,10 +146,10 @@
                     {% if homework_list %}
                     <p class="w-full text-teal-400 uppercase text-lg  text-center tracking-wider font-medium">Homework</p>
                     <p class="w-full text-center sm:text-xs md:text-xs  text-gray-500 font-normal">Checkout all the <span class="font-bold">homework </span>tasks below:</p>
+                    
+                    {% for sub in classroom.subject.all %}
 
                     <ul class="flex flex-wrap mx-2 mt-8" x-data="{selected:null}">
-                
-                        {% for sub in classroom.subject.all %}
                             
                         <li class="w-full lg:w-1/2 px-2 flex align-center flex-col mb-1">
                             <h4 @click="selected !== {{ sub.id }} ? selected = {{ sub.id }} : selected = null"
@@ -174,8 +174,9 @@
                             {% endfor %}
                             
                         </li>
-                        {% endfor %}
+                       
                     </ul>
+                     {% endfor %}
                     {% else %}
                      <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mx-6 text-center" role="alert">
                             <strong class="font-bold">Something went wrong!</strong>

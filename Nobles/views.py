@@ -5,7 +5,8 @@ from django.core.paginator import Paginator, EmptyPage,\
 from django.views.generic import ListView
 
 # Create your views here.
-from Nobles.models import Gallery, Faculty, Notice, Infrastructure_and_Facilities, Achievements, Download, Toppers, Student
+from Nobles.models import Gallery, Faculty, Notice, Infrastructure_and_Facilities, Achievements, Download, Toppers
+from Elearning.models import Classroom
 def index(request):
     notices = Notice.published.all()
     infra = Infrastructure_and_Facilities.objects.all()
@@ -89,7 +90,7 @@ def download(request):
     return render(request, 'Nobles/html/download.html', {'files' : files})
 
 def homework(request):
-    classes = Student.objects.all()
+    classes = Classroom.objects.all()
     return render(request, 'Nobles/html/homework.html', {'classes' : classes})
 
 def toppers(request):
