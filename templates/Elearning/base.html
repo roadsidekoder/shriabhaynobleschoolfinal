@@ -153,14 +153,22 @@
             </div>
         </div>
         <div class="flex flex-col w-0 flex-1 overflow-hidden">
+            <div class="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4 text-xs" role="alert">
+                
+                <p class="pb-1"><span class="mr-2">🚀</span> ONLINE: Soon we will be offering our course online.</p>
+                <p class="flex"><span class="mr-2">🦠</span> OFFLINE: Due to COVID-19, offline classes have been suspended until further notice.</p>
+            </div>
             <div class="relative z-10 flex-shrink-0 flex h-16 bg-white shadow">
+            
                 <button @click.stop="sidebarOpen = true"
                     class="px-4 text-gray-500 focus:outline-none focus:bg-gray-100 focus:text-gray-600 md:hidden">
                     <span id="menuBtn"
                         class="inline-block lg:hidden h-16 w-8 float-left rounded-full flex justify-center cursor-pointer">
                         <img src="https://saasadventure.io/img/svgs/menu.svg" alt="menu icon"> </span>
                 </button>
+                
                 <div class="flex-1 px-4 flex justify-between">
+                
                     <div class="flex-1 flex">
                         {% comment %} <div class="w-full flex md:ml-0">
                             <label for="search_field" class="sr-only">Search</label>

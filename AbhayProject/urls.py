@@ -29,7 +29,7 @@ urlpatterns = [
     path('chaining/', include('smart_selects.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('', include('Nobles.urls')),
-    path('Elearning/', include('Elearning.urls')),
+    path('elearning/', include('Elearning.urls')),
     path('admin/filebrowser/', site.urls),
     path('tinymce/', include('tinymce.urls')),
 ]
