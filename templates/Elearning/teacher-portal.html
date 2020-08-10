@@ -149,7 +149,7 @@
                     :class="{'cursor-pointer px-5 py-3 bg-custom-pink uppercase text-white text-center inline-block hover:opacity-75 hover:shadow hover:-mb-3': true}">
                     {{ classroom.name }}</h4>
 
-
+                {% if classroom.homework_set.all %}
                 {% for file in classroom.homework_set.all %}
                 <a href="{{ file.your_file.url }}" download="{{ file.name }}.pdf">
 
@@ -167,7 +167,11 @@
                     </div>
                 </a>
                 {% endfor %}
-
+                {% else %}
+                            <div x-show="selected == {{ classroom.id }}" :class="{'border py-4 px-2': true, 'rounded-b': selected == {{ classroom.id }}}" class="flex">
+                    <i class="far fa-empty-set mr-2 text-2xl text-red-400"></i> <p class="text-red-400 w-5/6 text-center text-sm font-light">No files uploaded yet!</p><span class="w-1/6"></span>
+                </div>
+                {% endif %}
 
             </li>
            
