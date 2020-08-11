@@ -125,8 +125,12 @@
         </div>
         </div>
         
-        <div style="height: unset;" id="player" data-plyr-provider="youtube" data-plyr-embed-id="bTqVqk7FSmY"><iframe src="https://player.vimeo.com/video/446723990" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-    </div>
+        <!-- Video Container -->
+	<div class="relative rounded-lg cursor-pointer">
+                <div class="ratio-video rounded-lg border border-gray-200">
+                    <iframe src="https://player.vimeo.com/video/446723990" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                </div>
+            </div>
 
         <div class="flex flex-col lg:flex-col xl:flex-row">
             <div class="flex-1">
@@ -138,6 +142,19 @@
                 
             </div>
             <div class="flex-1 xl:ml-8">
+
+                {% comment %} <div class="bg-gray-100 p-8 relative mt-8 pt-20 rounded-lg">
+                    <div class="absolute top-0 left-0 bg-pink-500 rounded-full px-4 py-2 text-white mt-5 -ml-3 font-bold text-sm">Completion</div>
+                    <img src="https://saasadventure.io/img/badges/day-1.png" alt="Badge Day 1" class="w-3/5 mx-auto badge-filter transition">
+                    <p class="text-gray-600 text-sm xl:text-normal mt-6 text-center px-4">After finishing your <span class="font-bold">homework</span>, mark this as
+                        <span class="font-bold">completed</span> to earn your badge.</p>
+                    <div class="h-16 bg-gray-400 flex flex-col justify-center text-center rounded mt-4 hover:bg-green-400 transition cursor-pointer">
+                        <div class="w-full">
+                            <span class="w-5 h-5 rounded bg-gray-200 mr-2 inline-block -mb-1"></span>
+                            <span class="text-lg uppercase font-medium text-white inline-block">Mark as Completed</span>
+                        </div>
+                    </div>
+                </div> {% endcomment %}
 
                 <div class="bg-gray-100 p-8 relative mt-8 pt-20 rounded-lg">
                     <div class="absolute top-0 left-0 bg-purple-500 rounded-full px-4 py-2 text-white mt-5 -ml-3 font-bold text-sm">Homework</div>
@@ -157,7 +174,16 @@
 </div>
 
 
-    <script  type="text/javascript" src="{% static 'Elearning/js/home.js' %}"></script>
+<script  type="text/javascript" src="{% static 'Elearning/js/home.js' %}"></script>
+  {% comment %} <script src="https://vjs.zencdn.net/7.8.2/video.js"></script> {% endcomment %}
+  <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=es6,Array.prototype.includes,CustomEvent,Object.entries,Object.values,URL"></script>
+  <script src="https://unpkg.com/plyr@3"></script>
+  <script>
+  const player = new Plyr('#player', {});
 
+// Expose player so it can be used from the console
+window.player = player;
+
+  </script>
     </body>
 </html>
