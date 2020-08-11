@@ -1,7 +1,7 @@
 {% extends "Elearning/base.html" %}
 {% load static %}
 
-{% block profile_image %}           {% if user_name.student.profile_picture_thumbnail.url %}
+{% block profile_image %}           {% if user_name.student.profile_picture %}
                                     <img class="h-8 w-8 rounded-full"
                                         src="{{ user_name.student.profile_picture_thumbnail.url }}"
                                         alt="" />

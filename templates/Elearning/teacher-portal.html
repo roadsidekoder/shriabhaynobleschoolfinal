@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block profile_image %}
-{% if user_name.teacher.profile_picture_thumbnail.url %}
+{% if user_name.teacher.profile_picture %}
 <img class="h-8 w-8 rounded-full" src="{{ user_name.teacher.profile_picture_thumbnail.url }}" alt="" />
 {% else %}
 <img class="h-8 w-8 rounded-full" src="{% static 'Elearning/img/profile_img.jpg' %}" alt="" />
