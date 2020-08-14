@@ -3,42 +3,47 @@
 
 <html>
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
- 
-                    <meta name="robots" content="noindex">
-                <title></title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Favicons -->
-     
-        <!-- End Favicons -->
+    <meta name="robots" content="noindex">
+    <title></title>
 
-        <!-- CSRF Token -->
-        <meta name="csrf-token" content="nhuqCjiyJkHdpJKnAZBqZv3DYa5P3eFZQw2St82N">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-  
-        <!-- MATERALIZE CSS -->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        
-        <link rel="stylesheet" href="{% static 'Elearning/css/app.css' %}">
-        
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.4.6/tailwind.css" integrity="sha256-4ni0O+ghCvfW+TWPJQbtmUZBA0qOkxRYaJZiEhyJZdU=" crossorigin="anonymous" />
-        
+    <!-- Favicons -->
+
+    <!-- End Favicons -->
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="nhuqCjiyJkHdpJKnAZBqZv3DYa5P3eFZQw2St82N">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <!-- MATERALIZE CSS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'Elearning/css/app.css' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.4.6/tailwind.css"
+        integrity="sha256-4ni0O+ghCvfW+TWPJQbtmUZBA0qOkxRYaJZiEhyJZdU=" crossorigin="anonymous" />
+
 </head>
+
 <body class="antialiased bg-white lg:bg-gray-100">
 
-<div id="app" class="container mx-auto lg:mx-0 bg-white">
-    <div id="sideNavBg" class="fixed inset-0 w-full h-full"></div>
-    <!-- Side Nav -->
-    <div id="sideNav" class="w-64 -ml-64 lg:ml-0 bg-white lg:bg-gray-100 h-full min-h-screen fixed overflow-y-scroll block left-0 z-50">
-        {% comment %} <div class="h-24 flex flex-col justify-center relative">
+    <div id="app" class="container mx-auto lg:mx-0 bg-white">
+        <div id="sideNavBg" class="fixed inset-0 w-full h-full"></div>
+        <!-- Side Nav -->
+        <div id="sideNav"
+            class="w-64 -ml-64 lg:ml-0 bg-white lg:bg-gray-100 h-full min-h-screen fixed overflow-y-scroll block left-0 z-50">
+            <!-- <div class="h-24 flex flex-col justify-center relative">
             <img src="{% static 'Elearning/img/logo.png' %}" alt="Logo" class="w-16 mx-auto -mt-2">
-            {% comment %} <div id="closeSideNav"  class="fixed right-0 bg-gray-100 h-8 w-8 flex justify-center items-center rounded-full text-2xl pt-0 pb-1 lg:hidden cursor-pointer mr-10" @click="sidebarOpen = false">&times;</div> {% endcomment %}
-        </div> {% endcomment %}
-<a href="{% url 'portal' %}" class="p-3 mr-3 mt-2 rounded-r-full text-sm uppercase font-medium text-gray-600 pl-8 hover:bg-gray-800 hover:text-white cursor-pointer transition hover-invert-img gilroy-bold flex items-center  bg-gray-200 ">
-        <svg class="svg-icon fill-current w-4 h-4 float-left -ml-1" viewBox="0 0 20 20">
-            <path d="M4.68,13.716v-0.169H4.554C4.592,13.605,4.639,13.658,4.68,13.716z M11.931,6.465
+            <div id="closeSideNav"  class="fixed right-0 bg-gray-100 h-8 w-8 flex justify-center items-center rounded-full text-2xl pt-0 pb-1 lg:hidden cursor-pointer mr-10" @click="sidebarOpen = false">&times;</div> 
+        </div>  -->
+            <a href="{% url 'portal' %}"
+                class="p-3 mr-3 mt-2 rounded-r-full text-sm uppercase font-medium text-gray-600 pl-8 hover:bg-gray-800 hover:text-white cursor-pointer transition hover-invert-img gilroy-bold flex items-center  bg-gray-200 ">
+                <svg class="svg-icon fill-current w-4 h-4 float-left -ml-1" viewBox="0 0 20 20">
+                    <path d="M4.68,13.716v-0.169H4.554C4.592,13.605,4.639,13.658,4.68,13.716z M11.931,6.465
             c-0.307-0.087-0.623,0.106-0.706,0.432l-1.389,5.484c-0.901,0.084-1.609,0.833-1.609,1.757c0,0.979,0.793,1.773,1.773,1.773
             c0.979,0,1.773-0.794,1.773-1.773c0-0.624-0.324-1.171-0.812-1.486l1.377-5.439C12.422,6.887,12.239,6.552,11.931,6.465z
             M10.591,14.729H9.408v-1.182h1.183V14.729z M15.32,13.716c0.04-0.058,0.087-0.11,0.126-0.169H15.32V13.716z M10,3.497
@@ -46,130 +51,151 @@
             C16.502,6.408,13.591,3.497,10,3.497z M10,0.542c-5.224,0-9.458,4.234-9.458,9.458c0,5.224,4.234,9.458,9.458,9.458
             c5.224,0,9.458-4.234,9.458-9.458C19.458,4.776,15.224,0.542,10,0.542z M15.32,16.335v0.167h-0.212
             c-1.407,1.107-3.179,1.773-5.108,1.773c-1.93,0-3.701-0.666-5.108-1.773H4.68v-0.167C2.874,14.816,1.724,12.543,1.724,10
-            c0-4.571,3.706-8.276,8.276-8.276c4.57,0,8.275,3.706,8.275,8.276C18.275,12.543,17.126,14.816,15.32,16.335z"></path>
-        </svg>
-        <span class="ml-1 leading-loose">Dashboard</span>
-    </a>
-          {% comment %} {% for section in sections.subject.all %}
-      <div class="accordion">
-        <div class="accordion-header bg-gray-300 p-3 mr-3 rounded-r-full text-sm uppercase font-medium text-gray-600 pl-8 hover:bg-gray-800 hover:text-white cursor-pointer transition hover-invert-img">
-             {{ section.name }}
-        </div>
-        <ul class="accordion-content">
-                            {% for l in lecture %}
-            <li>
-                <a href="#" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block bg-purple-500 text-white rounded-r-full">
-                    <img src="https://saasadventure.io/img/svgs/dot.svg" alt="dot" class="float-left mt-1 mr-2">
-                    <span class="font-bold mr-1">{{ l.topic }}</span>
-                </a>
-            </li>
-            {% endfor %}
-        </ul>
-      </div>
-        {% endfor %} {% endcomment %}
+            c0-4.571,3.706-8.276,8.276-8.276c4.57,0,8.275,3.706,8.275,8.276C18.275,12.543,17.126,14.816,15.32,16.335z">
+                    </path>
+                </svg>
+                <span class="ml-1 leading-loose">Dashboard</span>
+            </a>
+            {% comment %} {% for section in sections.subject.all %}
+            <div class="accordion">
+                <div
+                    class="accordion-header bg-gray-300 p-3 mr-3 rounded-r-full text-sm uppercase font-medium text-gray-600 pl-8 hover:bg-gray-800 hover:text-white cursor-pointer transition hover-invert-img">
+                    {{ section.name }}
+                </div>
+                <ul class="accordion-content">
+                    {% for l in lecture %}
+                    <li>
+                        <a href="#"
+                            class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block bg-purple-500 text-white rounded-r-full">
+                            <img src="https://saasadventure.io/img/svgs/dot.svg" alt="dot" class="float-left mt-1 mr-2">
+                            <span class="font-bold mr-1">{{ l.topic }}</span>
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %} {% endcomment %}
 
-         {% for section in sections.subject.all %} 
-         
-        <div class="accordion">
-          <div class="accordion-header bg-gray-300 p-3 mr-3 mt-2 rounded-r-full text-sm uppercase font-medium text-gray-600 pl-8 hover:bg-gray-800 hover:text-white cursor-pointer transition hover-invert-img">
-              {{ section.name }}
-        </div>
-          <ul class="accordion-content">
+            {% for section in sections.subject.all %}
 
-             {% for lectures in lecture_list %}                                     
-            
+            <div class="accordion">
+                <div
+                    class="accordion-header bg-gray-300 p-3 mr-3 mt-2 rounded-r-full text-sm uppercase font-medium text-gray-600 pl-8 hover:bg-gray-800 hover:text-white cursor-pointer transition hover-invert-img">
+                    {{ section.name }}
+                </div>
+                <ul class="accordion-content">
+
+                    {% for lectures in lecture_list %}
+
                     {% for lecture in lectures %}
-                    {% if lecture.subject.name == section.name %}  
- 
-            <li>
-                <a href="{% url 'video_pk' sections.pk lecture.pk %}" class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block bg-purple-500 text-white rounded-r-full">
-                   <i class="fa fa-circle" aria-hidden="true" class="float-left mt-1 mr-2"></i> 
-                    <span class="font-bold mr-1">{{ lecture.topic }}</span>
-                </a>
-            </li>
-             {% endif %}
+                    {% if lecture.subject.name == section.name %}
+
+                    <li>
+                        <a href="{% url 'video_pk' sections.pk lecture.pk %}"
+                            class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block bg-purple-500 text-white rounded-r-full">
+                            <i class="fa fa-circle" aria-hidden="true" class="float-left mt-1 mr-2"></i>
+                            <span class="font-bold mr-1">{{ lecture.topic }}</span>
+                        </a>
+                    </li>
+                    {% endif %}
                     {% endfor %}
 
+                    {% endfor %}
+
+                </ul>
+            </div>
             {% endfor %}
-           
-        </ul>
-      </div>
-{% endfor %}
 
 
-        <div class="bg-pink-400 hover:bg-pink-500 p-3 mr-3 mt-2 rounded-r-full text-sm uppercase font-medium text-white pl-8 clearfix relative overflow-hidden transition cursor-pointer img-hover-animate">
-            {% comment %} <img src="https://saasadventure.io/img/svgs/arrow-right.svg" alt="right arrow" class="float-left mr-2 mt-small"> {% endcomment %}
-            <span class="float-left ml-2">Goodies<span><img src="https://saasadventure.io/img/svgs/goodies.svg" alt="donut icon" class="w-16 absolute -mr-1 right-0 top-0 float-right clearfix">
-        </div>
+            <div
+                class="bg-pink-400 hover:bg-pink-500 p-3 mr-3 mt-2 rounded-r-full text-sm uppercase font-medium text-white pl-8 clearfix relative overflow-hidden transition cursor-pointer img-hover-animate">
+                {% comment %} <img src="https://saasadventure.io/img/svgs/arrow-right.svg" alt="right arrow"
+                    class="float-left mr-2 mt-small"> {% endcomment %}
+                <span class="float-left ml-2">Goodies<span><img src="https://saasadventure.io/img/svgs/goodies.svg"
+                            alt="donut icon" class="w-16 absolute -mr-1 right-0 top-0 float-right clearfix">
+            </div>
 
 
-    </div><!-- Side Nav -->
-    <!-- Main Content lg:ml-64 lg:pl-10 mb-12 -->
-    <div class="lg:ml-64 lg:pl-10 lg:pr-10 pb-12 min-h-screen px-3 md:px-0 overflow-x-hidden">
-        <div class="flex flex-col justify-center h-24 py-2">
-            <div class="flex space-around">
-                <h1 class="flex-1 text-base font-bold justify-center gilroy-bold">
-                    <span id="menuBtn" class="inline-block lg:hidden mr-4 h-10 w-8 float-left rounded-full flex justify-center cursor-pointer">
-                        <img src="https://saasadventure.io/img/svgs/menu.svg" alt="menu icon">
-                     </span>
-            <span class="uppercase">{{ lecture_url.subject.name }}</span> - {{ lecture_url.topic }}
-            </h1>
-        </div>
-        </div>
-        
-        <!-- Video Container -->
-	<div class="relative rounded-lg cursor-pointer">
+        </div><!-- Side Nav -->
+        <!-- Main Content lg:ml-64 lg:pl-10 mb-12 -->
+        <div class="lg:ml-64 lg:pl-10 lg:pr-10 pb-12 min-h-screen px-3 md:px-0 overflow-x-hidden">
+            <div class="flex flex-col justify-center h-24 py-2">
+                <div class="flex space-around">
+                    <h1 class="flex-1 text-base font-bold justify-center gilroy-bold">
+                        <span id="menuBtn"
+                            class="inline-block lg:hidden mr-4 h-10 w-8 float-left rounded-full flex justify-center cursor-pointer">
+                            <img src="https://saasadventure.io/img/svgs/menu.svg" alt="menu icon">
+                        </span>
+                        <span class="uppercase">{{ lecture_url.subject.name }}</span> - {{ lecture_url.topic }}
+                    </h1>
+                </div>
+            </div>
+
+            <!-- Video Container -->
+            <div class="relative rounded-lg cursor-pointer">
                 <div class="ratio-video rounded-lg border border-gray-200">
                     {{ lecture_url.video| safe }}
                 </div>
             </div>
 
-        <div class="flex flex-col lg:flex-col xl:flex-row">
-            <div class="flex-1">
-              
-                <div class="bg-gray-100 p-8 relative mt-8 pt-20 rounded-lg">
-                    <div class="absolute top-0 left-0 bg-purple-500 rounded-full px-4 py-2 text-white mt-5 -ml-3 font-bold text-sm">Video Details</div>
-                    <p class="text-gray-600 text-sm xl:text-normal">{{ lecture_url.video_detail }}</p>
-                </div>
-                
-            </div>
-            <div class="flex-1 xl:ml-8">
+            <div class="flex flex-col lg:flex-col xl:flex-row">
+                <div class="flex-1">
 
-                {% comment %} <div class="bg-gray-100 p-8 relative mt-8 pt-20 rounded-lg">
-                    <div class="absolute top-0 left-0 bg-pink-500 rounded-full px-4 py-2 text-white mt-5 -ml-3 font-bold text-sm">Completion</div>
-                    <img src="https://saasadventure.io/img/badges/day-1.png" alt="Badge Day 1" class="w-3/5 mx-auto badge-filter transition">
-                    <p class="text-gray-600 text-sm xl:text-normal mt-6 text-center px-4">After finishing your <span class="font-bold">homework</span>, mark this as
-                        <span class="font-bold">completed</span> to earn your badge.</p>
-                    <div class="h-16 bg-gray-400 flex flex-col justify-center text-center rounded mt-4 hover:bg-green-400 transition cursor-pointer">
-                        <div class="w-full">
-                            <span class="w-5 h-5 rounded bg-gray-200 mr-2 inline-block -mb-1"></span>
-                            <span class="text-lg uppercase font-medium text-white inline-block">Mark as Completed</span>
-                        </div>
+                    <div class="bg-gray-100 p-8 relative mt-8 pt-20 rounded-lg">
+                        <div
+                            class="absolute top-0 left-0 bg-purple-500 rounded-full px-4 py-2 text-white mt-5 -ml-3 font-bold text-sm">
+                            Video Details</div>
+                        <p class="text-gray-600 text-sm xl:text-normal">{{ lecture_url.video_detail }}</p>
                     </div>
-                </div> {% endcomment %}
 
-                <div class="bg-gray-100 p-8 relative mt-8 pt-20 rounded-lg">
-                    <div class="absolute top-0 left-0 bg-purple-500 rounded-full px-4 py-2 text-white mt-5 -ml-3 font-bold text-sm">Homework</div>
-                    {% if homework %}
-                    <p class="text-gray-600 text-sm xl:text-normal">Here are your homework tasks for the day:</p>
-                    <ol class="list-disc text-gray-700 mt-6 text-normal xl:text-lg ml-5 xl:ml-8">
-                        
-                        {% for home in lecture_url.homework.all %}
-                        <li class="no-underline text-indigo-400"><a href="{{ home.your_file.url }}" download="{{ home.name }}.pdf">{{ home.name }}</a></li>
-                        {% endfor %}
-
-                    </ol>
-                    {% else %}
-                    <p class="text-gray-600 text-sm xl:text-normal">There is no tasks</p>
-                    {% endif %}
                 </div>
+                <div class="flex-1 xl:ml-8">
 
+                    {% comment %} <div class="bg-gray-100 p-8 relative mt-8 pt-20 rounded-lg">
+                        <div
+                            class="absolute top-0 left-0 bg-pink-500 rounded-full px-4 py-2 text-white mt-5 -ml-3 font-bold text-sm">
+                            Completion</div>
+                        <img src="https://saasadventure.io/img/badges/day-1.png" alt="Badge Day 1"
+                            class="w-3/5 mx-auto badge-filter transition">
+                        <p class="text-gray-600 text-sm xl:text-normal mt-6 text-center px-4">After finishing your <span
+                                class="font-bold">homework</span>, mark this as
+                            <span class="font-bold">completed</span> to earn your badge.</p>
+                        <div
+                            class="h-16 bg-gray-400 flex flex-col justify-center text-center rounded mt-4 hover:bg-green-400 transition cursor-pointer">
+                            <div class="w-full">
+                                <span class="w-5 h-5 rounded bg-gray-200 mr-2 inline-block -mb-1"></span>
+                                <span class="text-lg uppercase font-medium text-white inline-block">Mark as
+                                    Completed</span>
+                            </div>
+                        </div>
+                    </div> {% endcomment %}
+
+                    <div class="bg-gray-100 p-8 relative mt-8 pt-20 rounded-lg">
+                        <div
+                            class="absolute top-0 left-0 bg-purple-500 rounded-full px-4 py-2 text-white mt-5 -ml-3 font-bold text-sm">
+                            Homework</div>
+                        {% if homework %}
+                        <p class="text-gray-600 text-sm xl:text-normal">Here are your homework tasks for the day:</p>
+                        <ol class="list-disc text-gray-700 mt-6 text-normal xl:text-lg ml-5 xl:ml-8">
+
+                            {% for home in lecture_url.homework.all %}
+                            <li class="no-underline text-indigo-400"><a href="{{ home.your_file.url }}"
+                                    download="{{ home.name }}.pdf">{{ home.name }}</a></li>
+                            {% endfor %}
+
+                        </ol>
+                        {% else %}
+                        <p class="text-gray-600 text-sm xl:text-normal">There is no tasks</p>
+                        {% endif %}
+                    </div>
+
+                </div>
             </div>
-        </div>
-    </div><!-- Main Content -->
-</div>
+        </div><!-- Main Content -->
+    </div>
 
 
-<script  type="text/javascript" src="{% static 'Elearning/js/home.js' %}"></script>
-    </body>
+    <script type="text/javascript" src="{% static 'Elearning/js/home.js' %}"></script>
+</body>
+
 </html>
