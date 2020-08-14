@@ -1,0 +1,421 @@
+[
+{
+    "model": "dashboard.userdashboardmodule",
+    "pk": 1,
+    "fields": {
+        "title": "Quick links",
+        "module": "jet.dashboard.modules.LinkList",
+        "app_label": null,
+        "user": 1,
+        "column": 0,
+        "order": 0,
+        "settings": "{\"draggable\": false, \"deletable\": false, \"collapsible\": false, \"layout\": \"inline\"}",
+        "children": "[{\"title\": \"Return to site\", \"url\": \"/\"}, {\"title\": \"Change password\", \"url\": \"/admin/password_change/\"}, {\"title\": \"Log out\", \"url\": \"/admin/logout/\"}]",
+        "collapsed": false
+    }
+},
+{
+    "model": "dashboard.userdashboardmodule",
+    "pk": 2,
+    "fields": {
+        "title": "Applications",
+        "module": "jet.dashboard.modules.AppList",
+        "app_label": null,
+        "user": 1,
+        "column": 1,
+        "order": 0,
+        "settings": "{\"models\": null, \"exclude\": [\"auth.*\"]}",
+        "children": "",
+        "collapsed": false
+    }
+},
+{
+    "model": "dashboard.userdashboardmodule",
+    "pk": 3,
+    "fields": {
+        "title": "Administration",
+        "module": "jet.dashboard.modules.AppList",
+        "app_label": null,
+        "user": 1,
+        "column": 2,
+        "order": 0,
+        "settings": "{\"models\": [\"auth.*\"], \"exclude\": null}",
+        "children": "",
+        "collapsed": false
+    }
+},
+{
+    "model": "dashboard.userdashboardmodule",
+    "pk": 4,
+    "fields": {
+        "title": "Recent Actions",
+        "module": "jet.dashboard.modules.RecentActions",
+        "app_label": null,
+        "user": 1,
+        "column": 0,
+        "order": 1,
+        "settings": "{\"limit\": 10, \"include_list\": null, \"exclude_list\": null, \"user\": null}",
+        "children": "",
+        "collapsed": false
+    }
+},
+{
+    "model": "dashboard.userdashboardmodule",
+    "pk": 5,
+    "fields": {
+        "title": "Latest Django News",
+        "module": "jet.dashboard.modules.Feed",
+        "app_label": null,
+        "user": 1,
+        "column": 1,
+        "order": 1,
+        "settings": "{\"feed_url\": \"http://www.djangoproject.com/rss/weblog/\", \"limit\": 5}",
+        "children": "",
+        "collapsed": false
+    }
+},
+{
+    "model": "dashboard.userdashboardmodule",
+    "pk": 6,
+    "fields": {
+        "title": "Support",
+        "module": "jet.dashboard.modules.LinkList",
+        "app_label": null,
+        "user": 1,
+        "column": 2,
+        "order": 1,
+        "settings": "{\"draggable\": true, \"deletable\": true, \"collapsible\": true, \"layout\": \"stacked\"}",
+        "children": "[{\"title\": \"Django documentation\", \"url\": \"http://docs.djangoproject.com/\", \"external\": true}, {\"title\": \"Django \\\"django-users\\\" mailing list\", \"url\": \"http://groups.google.com/group/django-users\", \"external\": true}, {\"title\": \"Django irc channel\", \"url\": \"irc://irc.freenode.net/django\", \"external\": true}]",
+        "collapsed": false
+    }
+},
+{
+    "model": "dashboard.userdashboardmodule",
+    "pk": 7,
+    "fields": {
+        "title": "Application models",
+        "module": "jet.dashboard.modules.ModelList",
+        "app_label": "Nobles",
+        "user": 1,
+        "column": 0,
+        "order": 0,
+        "settings": "{\"models\": [\"Nobles.*\"], \"exclude\": null}",
+        "children": "",
+        "collapsed": false
+    }
+},
+{
+    "model": "dashboard.userdashboardmodule",
+    "pk": 8,
+    "fields": {
+        "title": "Recent Actions",
+        "module": "jet.dashboard.modules.RecentActions",
+        "app_label": "Nobles",
+        "user": 1,
+        "column": 1,
+        "order": 0,
+        "settings": "{\"limit\": 10, \"include_list\": [\"Nobles.*\"], \"exclude_list\": null, \"user\": null}",
+        "children": "",
+        "collapsed": false
+    }
+},
+{
+    "model": "dashboard.userdashboardmodule",
+    "pk": 9,
+    "fields": {
+        "title": "Application models",
+        "module": "jet.dashboard.modules.ModelList",
+        "app_label": "auth",
+        "user": 1,
+        "column": 0,
+        "order": 0,
+        "settings": "{\"models\": [\"auth.*\"], \"exclude\": null}",
+        "children": "",
+        "collapsed": false
+    }
+},
+{
+    "model": "dashboard.userdashboardmodule",
+    "pk": 10,
+    "fields": {
+        "title": "Recent Actions",
+        "module": "jet.dashboard.modules.RecentActions",
+        "app_label": "auth",
+        "user": 1,
+        "column": 1,
+        "order": 0,
+        "settings": "{\"limit\": 10, \"include_list\": [\"auth.*\"], \"exclude_list\": null, \"user\": null}",
+        "children": "",
+        "collapsed": false
+    }
+},
+{
+    "model": "dashboard.userdashboardmodule",
+    "pk": 11,
+    "fields": {
+        "title": "Quick links",
+        "module": "jet.dashboard.modules.LinkList",
+        "app_label": null,
+        "user": 2,
+        "column": 0,
+        "order": 0,
+        "settings": "{\"draggable\": false, \"deletable\": false, \"collapsible\": false, \"layout\": \"inline\"}",
+        "children": "[{\"title\": \"Return to site\", \"url\": \"/\"}, {\"title\": \"Change password\", \"url\": \"/admin/password_change/\"}, {\"title\": \"Log out\", \"url\": \"/admin/logout/\"}]",
+        "collapsed": false
+    }
+},
+{
+    "model": "dashboard.userdashboardmodule",
+    "pk": 12,
+    "fields": {
+        "title": "Applications",
+        "module": "jet.dashboard.modules.AppList",
+        "app_label": null,
+        "user": 2,
+        "column": 1,
+        "order": 0,
+        "settings": "{\"models\": null, \"exclude\": [\"auth.*\"]}",
+        "children": "",
+        "collapsed": false
+    }
+},
+{
+    "model": "dashboard.userdashboardmodule",
+    "pk": 13,
+    "fields": {
+        "title": "Administration",
+        "module": "jet.dashboard.modules.AppList",
+        "app_label": null,
+        "user": 2,
+        "column": 2,
+        "order": 0,
+        "settings": "{\"models\": [\"auth.*\"], \"exclude\": null}",
+        "children": "",
+        "collapsed": false
+    }
+},
+{
+    "model": "dashboard.userdashboardmodule",
+    "pk": 14,
+    "fields": {
+        "title": "Recent Actions",
+        "module": "jet.dashboard.modules.RecentActions",
+        "app_label": null,
+        "user": 2,
+        "column": 0,
+        "order": 1,
+        "settings": "{\"limit\": 10, \"include_list\": null, \"exclude_list\": null, \"user\": null}",
+        "children": "",
+        "collapsed": false
+    }
+},
+{
+    "model": "dashboard.userdashboardmodule",
+    "pk": 15,
+    "fields": {
+        "title": "Latest Django News",
+        "module": "jet.dashboard.modules.Feed",
+        "app_label": null,
+        "user": 2,
+        "column": 1,
+        "order": 1,
+        "settings": "{\"feed_url\": \"http://www.djangoproject.com/rss/weblog/\", \"limit\": 5}",
+        "children": "",
+        "collapsed": false
+    }
+},
+{
+    "model": "dashboard.userdashboardmodule",
+    "pk": 16,
+    "fields": {
+        "title": "Support",
+        "module": "jet.dashboard.modules.LinkList",
+        "app_label": null,
+        "user": 2,
+        "column": 2,
+        "order": 1,
+        "settings": "{\"draggable\": true, \"deletable\": true, \"collapsible\": true, \"layout\": \"stacked\"}",
+        "children": "[{\"title\": \"Django documentation\", \"url\": \"http://docs.djangoproject.com/\", \"external\": true}, {\"title\": \"Django \\\"django-users\\\" mailing list\", \"url\": \"http://groups.google.com/group/django-users\", \"external\": true}, {\"title\": \"Django irc channel\", \"url\": \"irc://irc.freenode.net/django\", \"external\": true}]",
+        "collapsed": false
+    }
+},
+{
+    "model": "dashboard.userdashboardmodule",
+    "pk": 42,
+    "fields": {
+        "title": "Application models",
+        "module": "jet.dashboard.modules.ModelList",
+        "app_label": "Elearning",
+        "user": 1,
+        "column": 0,
+        "order": 0,
+        "settings": "{\"models\": [\"Elearning.*\"], \"exclude\": null}",
+        "children": "",
+        "collapsed": false
+    }
+},
+{
+    "model": "dashboard.userdashboardmodule",
+    "pk": 43,
+    "fields": {
+        "title": "Recent Actions",
+        "module": "jet.dashboard.modules.RecentActions",
+        "app_label": "Elearning",
+        "user": 1,
+        "column": 1,
+        "order": 0,
+        "settings": "{\"limit\": 10, \"include_list\": [\"Elearning.*\"], \"exclude_list\": null, \"user\": null}",
+        "children": "",
+        "collapsed": false
+    }
+},
+{
+    "model": "dashboard.userdashboardmodule",
+    "pk": 44,
+    "fields": {
+        "title": "Quick links",
+        "module": "jet.dashboard.modules.LinkList",
+        "app_label": null,
+        "user": 36,
+        "column": 0,
+        "order": 0,
+        "settings": "{\"draggable\": false, \"deletable\": false, \"collapsible\": false, \"layout\": \"inline\"}",
+        "children": "[{\"title\": \"Return to site\", \"url\": \"/\"}, {\"title\": \"Change password\", \"url\": \"/admin/password_change/\"}, {\"title\": \"Log out\", \"url\": \"/admin/logout/\"}]",
+        "collapsed": false
+    }
+},
+{
+    "model": "dashboard.userdashboardmodule",
+    "pk": 45,
+    "fields": {
+        "title": "Applications",
+        "module": "jet.dashboard.modules.AppList",
+        "app_label": null,
+        "user": 36,
+        "column": 1,
+        "order": 0,
+        "settings": "{\"models\": null, \"exclude\": [\"auth.*\"]}",
+        "children": "",
+        "collapsed": false
+    }
+},
+{
+    "model": "dashboard.userdashboardmodule",
+    "pk": 46,
+    "fields": {
+        "title": "Administration",
+        "module": "jet.dashboard.modules.AppList",
+        "app_label": null,
+        "user": 36,
+        "column": 2,
+        "order": 0,
+        "settings": "{\"models\": [\"auth.*\"], \"exclude\": null}",
+        "children": "",
+        "collapsed": false
+    }
+},
+{
+    "model": "dashboard.userdashboardmodule",
+    "pk": 47,
+    "fields": {
+        "title": "Recent Actions",
+        "module": "jet.dashboard.modules.RecentActions",
+        "app_label": null,
+        "user": 36,
+        "column": 0,
+        "order": 1,
+        "settings": "{\"limit\": 10, \"include_list\": null, \"exclude_list\": null, \"user\": null}",
+        "children": "",
+        "collapsed": false
+    }
+},
+{
+    "model": "dashboard.userdashboardmodule",
+    "pk": 48,
+    "fields": {
+        "title": "Latest Django News",
+        "module": "jet.dashboard.modules.Feed",
+        "app_label": null,
+        "user": 36,
+        "column": 1,
+        "order": 1,
+        "settings": "{\"feed_url\": \"http://www.djangoproject.com/rss/weblog/\", \"limit\": 5}",
+        "children": "",
+        "collapsed": false
+    }
+},
+{
+    "model": "dashboard.userdashboardmodule",
+    "pk": 49,
+    "fields": {
+        "title": "Support",
+        "module": "jet.dashboard.modules.LinkList",
+        "app_label": null,
+        "user": 36,
+        "column": 2,
+        "order": 1,
+        "settings": "{\"draggable\": true, \"deletable\": true, \"collapsible\": true, \"layout\": \"stacked\"}",
+        "children": "[{\"title\": \"Django documentation\", \"url\": \"http://docs.djangoproject.com/\", \"external\": true}, {\"title\": \"Django \\\"django-users\\\" mailing list\", \"url\": \"http://groups.google.com/group/django-users\", \"external\": true}, {\"title\": \"Django irc channel\", \"url\": \"irc://irc.freenode.net/django\", \"external\": true}]",
+        "collapsed": false
+    }
+},
+{
+    "model": "dashboard.userdashboardmodule",
+    "pk": 50,
+    "fields": {
+        "title": "Application models",
+        "module": "jet.dashboard.modules.ModelList",
+        "app_label": "auth",
+        "user": 36,
+        "column": 0,
+        "order": 0,
+        "settings": "{\"models\": [\"auth.*\"], \"exclude\": null}",
+        "children": "",
+        "collapsed": false
+    }
+},
+{
+    "model": "dashboard.userdashboardmodule",
+    "pk": 51,
+    "fields": {
+        "title": "Recent Actions",
+        "module": "jet.dashboard.modules.RecentActions",
+        "app_label": "auth",
+        "user": 36,
+        "column": 1,
+        "order": 0,
+        "settings": "{\"limit\": 10, \"include_list\": [\"auth.*\"], \"exclude_list\": null, \"user\": null}",
+        "children": "",
+        "collapsed": false
+    }
+},
+{
+    "model": "dashboard.userdashboardmodule",
+    "pk": 52,
+    "fields": {
+        "title": "Application models",
+        "module": "jet.dashboard.modules.ModelList",
+        "app_label": "Nobles",
+        "user": 36,
+        "column": 0,
+        "order": 0,
+        "settings": "{\"models\": [\"Nobles.*\"], \"exclude\": null}",
+        "children": "",
+        "collapsed": false
+    }
+},
+{
+    "model": "dashboard.userdashboardmodule",
+    "pk": 53,
+    "fields": {
+        "title": "Recent Actions",
+        "module": "jet.dashboard.modules.RecentActions",
+        "app_label": "Nobles",
+        "user": 36,
+        "column": 1,
+        "order": 0,
+        "settings": "{\"limit\": 10, \"include_list\": [\"Nobles.*\"], \"exclude_list\": null, \"user\": null}",
+        "children": "",
+        "collapsed": false
+    }
+}

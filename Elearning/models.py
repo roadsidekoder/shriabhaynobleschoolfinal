@@ -65,7 +65,7 @@ class Lecture(models.Model):
                             unique_for_date='publish')
     video_detail = models.TextField(blank=True, null=True)
     # video = models.FileField(upload_to = 'files/')
-    video = models.CharField(max_length=300)
+    video = models.CharField(max_length=400)
     classroom = models.ForeignKey('Elearning.Classroom', on_delete=models.CASCADE)
     subject = models.ForeignKey('Elearning.Subject', on_delete=models.CASCADE)
     homework = models.ManyToManyField('Elearning.Homework',blank=True)
