@@ -75,6 +75,8 @@ class Lecture(models.Model):
 
     def __str__(self):
         return self.topic
+    class Meta:
+         ordering = ['-published']
     
 class Homework(models.Model):    
     # Source : https://www.dangtrinh.com/2015/11/django-imagefield-rename-file-on-upload.html
