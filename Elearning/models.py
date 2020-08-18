@@ -19,6 +19,8 @@ class Student(models.Model):
 
     def __str__(self):
         return self.first_name
+    class Meta:
+         ordering = ['first_name']
     
     
 class Teacher(models.Model):
