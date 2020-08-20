@@ -40,9 +40,9 @@ def portal(request):
         return render(request, 'Elearning/portal.html', {'classroom' : classroom, 'lecture_id' : lecture, 'homework_list': homework_list, 'user_name': user_name})
     else:
         classrooms = Classroom.objects.all()
-        homework_list = Homework.objects.all()
+        # homework_list = Homework.objects.all()
         lecture_id = Lecture.objects.filter(classroom=classrooms[0])
-        return render(request,'Elearning/teacher-portal.html', {'classrooms' : classrooms, 'user_name': user_name, 'homework_list': homework_list, 'lecture_id': lecture_id})
+        return render(request,'Elearning/teacher-portal.html', {'classrooms' : classrooms, 'user_name': user_name, 'lecture_id': lecture_id})
 
 
 @login_required
