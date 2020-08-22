@@ -26,7 +26,7 @@ class Student(models.Model):
 class Teacher(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
-    profile_picture = models.ImageField(upload_to='images/profile_picture/', null=True)
+    profile_picture = models.ImageField(upload_to='images/profile_picture/', blank=True)
     profile_picture_thumbnail = ImageSpecField(source='profile_picture',
                                       processors=[ResizeToFill(256, 256)],
                                       format='JPEG',
