@@ -19,7 +19,7 @@ class LectureAdmin(admin.ModelAdmin):
 class StudentAdmin(admin.ModelAdmin):
     list_display = ('first_name', 'last_name','user', )
     ordering = ('first_name',)
-    search_fields = ('first_name', 'user',)
+    search_fields = ('first_name', 'user__username',)
 
 class TeacherAdmin(admin.ModelAdmin):
     list_display = ('first_name', 'last_name','user', )
