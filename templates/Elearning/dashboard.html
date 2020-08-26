@@ -68,7 +68,7 @@
                     {% for l in lecture %}
                     <li>
                         <a href="#"
-                            class="text-xs p-3 pr-0 pl-4 mt-2 mr-10 block bg-purple-500 text-white rounded-r-full">
+                            class="text-xs p-3 pr-0 pl-3 mt-2 mr-10 block bg-purple-500 text-white rounded-r-full">
                             <img src="https://saasadventure.io/img/svgs/dot.svg" alt="dot" class="float-left mt-1 mr-2">
                             <span class="font-bold mr-1">{{ l.topic }}</span>
                         </a>
@@ -94,7 +94,7 @@
 
                     <li>
                         <a href="{% url 'video_pk' sections.pk lecture.pk %}"
-                            class="text-xs p-3 pr-0 pl-8 mt-2 mr-10 block bg-purple-500 text-white rounded-r-full">
+                            class="text-xs p-3 pr-0 pl-3 mt-2 mr-10 block bg-purple-500 text-white rounded-r-full">
                             <i class="fa fa-circle" aria-hidden="true" class="float-left mt-1 mr-2"></i>
                             <span class="font-bold mr-1">{{ lecture.topic }}</span>
                         </a>
