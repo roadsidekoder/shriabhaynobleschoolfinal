@@ -8,12 +8,13 @@ class HomeworkAdmin(admin.ModelAdmin):
 	list_filter = ('classroom', 'added')
 	search_fields = ('name', 'classroom')
 
-# class LectureAdmin(admin.ModelAdmin):
-#         list_display  = ('topic', 'slug', 'publish', 'classroom','subject',)
-#         list_filter = ('classroom',)
-#         search_fields = ('topic', 'classroom',)
-#         date_hierarchy = ('publish')
-#         prepopulated_fields = {'slug' : ('topic',)}
+class LectureAdmin(admin.ModelAdmin):
+        list_display  = ('topic', 'slug', 'publish', 'classroom','subject',)
+        ordering = ('classroom',)
+        list_filter = ('classroom',)
+        search_fields = ('topic', 'classroom',)
+        date_hierarchy = ('publish')
+        prepopulated_fields = {'slug' : ('topic',)}
 
 class StudentAdmin(admin.ModelAdmin):
     list_display = ('first_name', 'last_name','user', )
@@ -24,7 +25,7 @@ class TeacherAdmin(admin.ModelAdmin):
     list_display = ('first_name', 'last_name','user', )
 
 
-admin.site.register(Lecture)
+admin.site.register(Lecture, LectureAdmin)
 admin.site.register(Subject)
 admin.site.register(Classroom)
 admin.site.register(Student,StudentAdmin)
