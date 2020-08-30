@@ -24,7 +24,7 @@ class TeacherAdmin(admin.ModelAdmin):
     list_display = ('first_name', 'last_name','user', )
 
 
-admin.site.register(Lecture, LectureAdmin)
+admin.site.register(Lecture)
 admin.site.register(Subject)
 admin.site.register(Classroom)
 admin.site.register(Student,StudentAdmin)
