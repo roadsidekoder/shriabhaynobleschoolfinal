@@ -10,7 +10,6 @@ class HomeworkAdmin(admin.ModelAdmin):
 
 class LectureAdmin(admin.ModelAdmin):
         list_display  = ('topic', 'slug', 'publish', 'classroom','subject',)
-        ordering = ('classroom',)
         list_filter = ('classroom',)
         search_fields = ('topic', 'classroom',)
         date_hierarchy = ('publish')
