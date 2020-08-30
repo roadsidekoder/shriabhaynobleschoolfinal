@@ -13,7 +13,7 @@ def teacher_portal(request):
 
 @login_required
 def portal(request):
-    user_name = User.objects.get(username=request.user.username)
+    user_name = User.objects.get(username=request.user.username)    
     print(user_name)
     if Student.objects.filter(user__username=user_name).exists():
         try:
@@ -55,7 +55,7 @@ def dashboard(request, num, video_url):
         list.append(int(section.id))                   
 
     for sub_id in list:
-        lecture_list.append(Lecture.objects.filter(classroom__id=num, subject__id=sub_id))
+        lecture_list.append(Lecture.objects.filter(classroom__id=num, subject__id=sub_id).order_by('publish'))
 
     lecture_url = Lecture.objects.get(pk=video_url)
     return render(request, 'Elearning/dashboard.html', {'lecture_list' : lecture_list, 'sections' : sections, 'lecture_url': lecture_url})

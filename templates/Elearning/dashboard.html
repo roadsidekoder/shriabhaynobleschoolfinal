@@ -89,7 +89,7 @@
 
                     {% for lectures in lecture_list %}
 
-                    {% for lecture in lectures %}
+                    {% for lecture in lectures reversed %}
                     {% if lecture.subject.name == section.name %}
 
                     <li>
