@@ -127,8 +127,8 @@ class Notice(models.Model):
                                 self.slug])
 
     class Meta:
-         verbose_name_plural = "Notice"
-         ordering = ('-publish',)
+        ordering = ('publish',)
+        verbose_name_plural = "Notice"
 
 class Infrastructure_and_Facilities(models.Model):
     image = models.ImageField(upload_to='images/')
