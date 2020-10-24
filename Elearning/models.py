@@ -73,7 +73,7 @@ class Lecture(models.Model):
     classroom = models.ForeignKey('Elearning.Classroom', on_delete=models.CASCADE)
     subject = models.ForeignKey('Elearning.Subject', on_delete=models.CASCADE)
     homework = models.ManyToManyField('Elearning.Homework',blank=True)
-    publish = models.DateTimeField('date created', timezone.now)
+    publish = models.DateTimeField('date created', default=timezone.now)
     created = models.DateTimeField(auto_now_add=True)
     last_updated = models.DateTimeField(auto_now=True)
 

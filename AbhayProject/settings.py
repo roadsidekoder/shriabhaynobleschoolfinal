@@ -110,14 +110,21 @@ TINYMCE_DEFAULT_CONFIG = {
     #}
 #}
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'abhay',
+#         'USER': 'abhayuser',
+#         'PASSWORD': 'abhay',
+#         'HOST': 'localhost',
+#         'PORT': '',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'abhay',
-        'USER': 'abhayuser',
-        'PASSWORD': 'abhay',
-        'HOST': 'localhost',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'mydatabase',
     }
 }
 
