@@ -74,8 +74,8 @@ class Lecture(models.Model):
     subject = models.ForeignKey('Elearning.Subject', on_delete=models.CASCADE)
     homework = models.ManyToManyField('Elearning.Homework',blank=True)
     publish = models.DateTimeField('date created', default=datetime.now())
-    created = models.DateField(auto_now_add=True)
-    last_updated = models.DateField(auto_now=True)
+    created = models.DateTimeField(auto_now_add=True)
+    last_updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.topic
