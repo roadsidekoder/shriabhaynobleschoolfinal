@@ -110,23 +110,23 @@ TINYMCE_DEFAULT_CONFIG = {
     #}
 #}
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'abhay',
-#         'USER': 'abhayuser',
-#         'PASSWORD': 'abhay',
-#         'HOST': 'localhost',
-#         'PORT': '',
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'mydatabase',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'abhay',
+        'USER': 'abhayuser',
+        'PASSWORD': 'abhay',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': 'mydatabase',
+#     }
+# }
 
 db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
