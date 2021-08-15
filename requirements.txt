@@ -23,7 +23,7 @@ idna==2.10
 jmespath==0.9.4
 jsmin==2.2.2
 pilkit==2.0
-Pillow==5.4.1
+Pillow==8.2.0
 psycopg2==2.8.3
 psycopg2-binary==2.8.2
 #Pillow
