@@ -7,6 +7,8 @@ from django.utils import timezone
 from django.urls import reverse
 import os
 from uuid import uuid4
+
+
 # Create your models here.
 
 class PublishedManager(models.Manager):
@@ -195,47 +197,8 @@ class Download(models.Model):
     def __str__(self):
         return self.name
 
-class Student(models.Model):
-    classroom = models.CharField(max_length=100)
-    cid = models.IntegerField(null=True)
-    def __str__(self):
-        return self.classroom
-    class Meta:
-        ordering = ['cid']
-        verbose_name_plural = "Classroom"
-
-# class Homeworks(models.Model):    
-#     # Source : https://www.dangtrinh.com/2015/11/django-imagefield-rename-file-on-upload.html
-#     def path_and_rename(instance, filename):
-#         upload_to = 'files/'
-#         ext = filename.split('.')[-1]
-#         # get filename
-#         print(instance.name)
-#         if instance.name:
-#             filename = '{}_{}.{}'.format(instance.name,instance.added, ext)
-#         else:
-#             # set filename as random string
-#             filename = '{}.{}'.format(uuid4().hex, ext)
-#         # return the whole path to the file
-#         return os.path.join(upload_to, filename)
-
-#     name = models.CharField(max_length=200)
-#     your_file = models.FileField(upload_to=path_and_rename)
-#     description = models.TextField(blank=True, null=True)
-#     student = models.ForeignKey('Student',on_delete=models.CASCADE) 
-#     added = models.DateTimeField('date created', default=timezone.now)
-
-#     def __str__(self):
-#         return self.name
-
-#     class Meta:
-#          verbose_name_plural = "Homeworks"
-#          ordering = ['added']
-    
-
 class Toppers(models.Model):
     name = models.CharField(max_length=200)
-    student = models.ForeignKey('Student',on_delete=models.CASCADE)
     percentage = models.DecimalField(max_digits=5, decimal_places=2, blank=True, null=True)
     grade = models.CharField(max_length=10, blank=True, null=True)
     photo = models.ImageField(upload_to='images/')
@@ -251,3 +214,15 @@ class Toppers(models.Model):
          verbose_name_plural = "Toppers"
 
 
+class schoolClassroom(models.Model):
+    classroom = models.CharField(max_length=100)
+    cid = models.IntegerField(null=True)
+    session_start = models.DateField(default=timezone.now)
+    created = models.DateField(auto_now_add=True, null=True, blank=True)
+    last_updated = models.DateField(auto_now=True)
+    toppers = models.ManyToManyField(Toppers)
+    def __str__(self):
+        return self.classroom
+    class Meta:
+        ordering = ['cid']
+        verbose_name_plural = "Classroom"

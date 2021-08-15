@@ -5,16 +5,17 @@ from django.core.paginator import Paginator, EmptyPage,\
 from django.views.generic import ListView
 
 # Create your views here.
-from Nobles.models import Gallery, Faculty, Notice, Infrastructure_and_Facilities, Achievements, Download, Toppers
+from Nobles.models import Gallery, Faculty, Notice, Infrastructure_and_Facilities, Achievements, Download, Toppers, schoolClassroom
+
 from Elearning.models import Classroom
 def index(request):
     notices = Notice.published.all()
     infra = Infrastructure_and_Facilities.objects.all()
     achievements = Achievements.objects.all()
-    class_8_top = Toppers.objects.filter(student__classroom="Class 8")
-    class_10_top = Toppers.objects.filter(student__classroom="Class 10")
-    class_12science_top = Toppers.objects.filter(student__classroom="Class 12 (Science)")
-    return render(request,'Nobles/html/index.html', { 'notices' : notices, 'infrastructures' : infra, 'achievements' : achievements,'class_8_top' : class_8_top, 'class_10_top' : class_10_top, 'class_12science_top' : class_12science_top})
+    # class_8_top = Toppers.objects.filter(student__classroom="Class 8")
+    # class_10_top = Toppers.objects.filter(student__classroom="Class 10")
+    # class_12science_top = Toppers.objects.filter(student__classroom="Class 12 (Science)")
+    return render(request,'Nobles/html/index.html', { 'notices' : notices, 'infrastructures' : infra, 'achievements' : achievements})
 
 def about(request):
     return render(request,'Nobles/html/about.html')
@@ -94,20 +95,6 @@ def homework(request):
     return render(request, 'Nobles/html/homework.html', {'classes' : classes})
 
 def toppers(request):
-    class_1_top = Toppers.objects.filter(student__classroom="Class 1").order_by('-percentage')
-    class_2_top = Toppers.objects.filter(student__classroom="Class 2").order_by('-percentage')
-    class_3_top = Toppers.objects.filter(student__classroom="Class 3").order_by('-percentage')
-    class_4_top = Toppers.objects.filter(student__classroom="Class 4").order_by('-percentage')
-    class_5_top = Toppers.objects.filter(student__classroom="Class 5").order_by('-percentage')
-    class_6_top = Toppers.objects.filter(student__classroom="Class 6").order_by('-percentage')
-    class_7_top = Toppers.objects.filter(student__classroom="Class 7").order_by('-percentage')
-    class_8_top = Toppers.objects.filter(student__classroom="Class 8").order_by('-percentage')
-    class_9_top = Toppers.objects.filter(student__classroom="Class 9").order_by('-percentage')
-    class_10_top = Toppers.objects.filter(student__classroom="Class 10").order_by('-percentage')
-    class_11science_top = Toppers.objects.filter(student__classroom="Class 11(Science)").order_by('-percentage')
-    class_12science_top = Toppers.objects.filter(student__classroom="Class 12 (Science)").order_by('-percentage')
-    class_11commerce_top = Toppers.objects.filter(student__classroom="Class 11(Commerce)").order_by('-percentage')
-    class_12commerce_top = Toppers.objects.filter(student__classroom="Class 12(Commerce)").order_by('-percentage')
-    class_11arts_top = Toppers.objects.filter(student__classroom="Class 11(Arts)").order_by('-percentage')
-    class_11agr_top = Toppers.objects.filter(student__classroom="Class 11 Agr.(Science)").order_by('-percentage')
-    return render(request, 'Nobles/html/toppers.html', {'class_1_top' : class_1_top,'class_2_top' : class_2_top,'class_3_top' : class_3_top,'class_4_top' : class_4_top,'class_5_top' : class_5_top,'class_6_top' : class_6_top,'class_7_top' : class_7_top,'class_8_top' : class_8_top,'class_9_top' : class_9_top, 'class_10_top' : class_10_top, 'class_11science_top' : class_11science_top,'class_12science_top' : class_12science_top,'class_11commerce_top' : class_11commerce_top,'class_12commerce_top' : class_12commerce_top,'class_11arts_top' : class_11arts_top,'class_11agr_top' : class_11agr_top,})
+    classrooms = schoolClassroom.objects.all().order_by('cid')
+    classroomsSessionEnd = str(classrooms[0].session_start.year + 1)[-2:] if classrooms else '2222';
+    return render(request, 'Nobles/html/toppers.html', {'classrooms': classrooms, 'classroomsSessionEnd': classroomsSessionEnd})
