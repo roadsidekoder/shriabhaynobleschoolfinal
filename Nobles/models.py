@@ -212,6 +212,7 @@ class Toppers(models.Model):
     
     class Meta:
          verbose_name_plural = "Toppers"
+         ordering = ['-percentage']
 
 
 class schoolClassroom(models.Model):
