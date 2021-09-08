@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'tinymce',
     'django_cleanup',
     'filebrowser',
+    'rangefilter',
     'Nobles.apps.NoblesConfig',
     'Elearning.apps.ElearningConfig',
     'django.contrib.admin',
@@ -227,16 +228,3 @@ FILEBROWSER_DIRECTORY = ''
 DIRECTORY = ''
 
 USE_DJANGO_JQUERY = True
-
-# VIMEO_CLIENT_ID = '41612d8e9924f69738b5c04ad33af1c502c32927'
-# VIMEO_CLIENT_SECRET = '1tpwwRomOXgYaOhVjGY5PiXM+nPdof4W9NQlxvflUyfm+j7MSDCJ1Hai12Z1SnMNQmDwEhxPTnK/DxFoyX6S18yRpX+tbyDkSq9KXnXmZdIyVw7fk6uZ/+96mGr4KNt2'
-# VIMEO_ACCESS_TOKEN = '14f7f62faf33652de1227fd9ce2a0543'
-
-# # Make the request to the server for the "/me" endpoint.
-# about_me = v.get('/me')
-
-# # Make sure we got back a successful response.
-# assert about_me.status_code == 200
-
-# # Load the body's JSON data.
-# print about_me.json()

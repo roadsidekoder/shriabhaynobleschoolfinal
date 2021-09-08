@@ -1,11 +1,13 @@
 from django.contrib import admin
 from .models import Subject, Lecture, Classroom, Homework, Student, Teacher
+from rangefilter.filter import DateRangeFilter, DateTimeRangeFilter
+
 # Register your models here.
 
 class HomeworkAdmin(admin.ModelAdmin):
 	list_display  = ('name', 'classroom',)
 	ordering = ('classroom',)
-	list_filter = ('classroom', 'added')
+	list_filter = ('classroom', ('added', DateRangeFilter))
 	search_fields = ('name', 'classroom')
 
 class LectureAdmin(admin.ModelAdmin):
