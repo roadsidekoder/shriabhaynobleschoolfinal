@@ -1,4 +1,4 @@
-ARG PYTHON_VERSION=3.8-slim-bullseye
+ARG PYTHON_VERSION=3.9-slim-bullseye
 
 FROM python:${PYTHON_VERSION}
 
