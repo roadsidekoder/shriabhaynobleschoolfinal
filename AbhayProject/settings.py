@@ -134,7 +134,11 @@ DATABASES = {
     }
 }
 
-DATABASES['default'] = dj_database_url.parse(DATABASE_URL, conn_max_age=600)
+DATABASES['default'] = dj_database_url.config(
+    default=DATABASES.default,
+    conn_max_age=600,
+    conn_health_checks=True,
+)
 
 
 ROOT_URLCONF = 'AbhayProject.urls'
