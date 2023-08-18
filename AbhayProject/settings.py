@@ -29,7 +29,7 @@ env = environ.Env(  # <-- Updated!
     DEBUG=(bool, False),
 )
 
-environ.Env.read_env(BASE_DIR / '.env') 
+environ.Env.read_env(BASE_DIR, '.env') 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
