@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 import dj_database_url
-from decouple import config
+import environ
 # import vimeo
 
 
@@ -23,15 +23,21 @@ from decouple import config
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE_DIR = os.path.join(BASE_DIR,  'templates')
-
+environ.Env.read_env(BASE_DIR / '.env') 
+env = environ.Env(  # <-- Updated!
+    # set casting, default value
+    DEBUG=(bool, False),
+)
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', cast=bool)
+
+
+DEBUG = env('DEBUG')
 
 
 ALLOWED_HOSTS = ['*']
@@ -132,11 +138,8 @@ DATABASES = {
 # db_from_env = dj_database_url.config()
 # DATABASES['default'].update(db_from_env)
 DATABASES = {
-    'default': dj_database_url.config(
-        # Feel free to alter this value to suit your needs.
-        default='postgresql://postgres:postgres@localhost:5432/mysite',
-        conn_max_age=600
-    )
+    # read os.environ['DATABASE_URL']
+    'default': env.db()  # <-- Updated!
 }
 
 ROOT_URLCONF = 'AbhayProject.urls'
