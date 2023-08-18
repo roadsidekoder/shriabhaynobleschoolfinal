@@ -121,7 +121,6 @@ TINYMCE_DEFAULT_CONFIG = {
 
 # db_from_env = dj_database_url.config()
 # DATABASES['default'].update(db_from_env)
-DATABASE_URL = config('DATABASE_URL')
 
 DATABASES = {
     'default': {
