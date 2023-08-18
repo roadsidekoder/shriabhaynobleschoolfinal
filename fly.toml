@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for delicate-water-9816 on 2023-08-18T17:47:27+05:30
+# fly.toml app configuration file generated for shriabhaynobleschoolfinal on 2023-08-18T17:47:27+05:30
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "delicate-water-9816"
+app = "shriabhaynobleschoolfinal"
 primary_region = "ams"
 console_command = "/code/manage.py shell"
 
