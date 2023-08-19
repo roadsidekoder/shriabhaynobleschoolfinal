@@ -104,23 +104,6 @@ TINYMCE_DEFAULT_CONFIG = {
     }
 
 
-#DATABASES = {
- #   'default': {
-  #      'ENGINE': 'django.db.backends.sqlite3',
-   #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    #}
-#}
-
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': 'mydatabase',
-#     }
-# }
-
-# db_from_env = dj_database_url.config()
-# DATABASES['default'].update(db_from_env)
 
 DATABASES = {
     'default': {
@@ -133,8 +116,14 @@ DATABASES = {
     }
 }
 
-db_from_env = dj_database_url.config(conn_max_age=600)
-DATABASES['default'].update(db_from_env)
+DATABASES = {
+    'default': dj_database_url.config(
+        # Feel free to alter this value to suit your needs.
+        default='postgresql://postgres:postgres@localhost:5432/mysite',
+        conn_max_age=600
+    )
+}
+
 
 ROOT_URLCONF = 'AbhayProject.urls'
 
